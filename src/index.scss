@@ -1,7 +1,9 @@
-@import "styles/typography";
+@import 'styles/typography';
+@import 'styles/colors';
 
 body {
   margin: 0;
+  font-family: $paragraph-font;
 }
 
 h1,
@@ -15,4 +17,31 @@ h6 {
 
 p {
   font-family: $paragraph-font;
+}
+
+// Bootstrap extented
+
+.btn-darken-primary {
+  color: white !important;
+  border: 1px solid white !important;
+  background-color: $lighten-primary !important;
+
+  &.outline {
+    color: $primary !important;
+    background: white !important;
+    border: 1px solid $primary !important;
+  }
+
+  &:active,
+  &:active:focus,
+  &:active:hover,
+  &:focus,
+  &:hover {
+    color: white !important;
+    background: #72B351 !important;
+  }
+}
+
+.btn-warning {
+
 }
