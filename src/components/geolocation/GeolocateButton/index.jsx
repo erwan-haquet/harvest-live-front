@@ -1,4 +1,4 @@
-import styles from './styles.css';
+import styles from './styles.scss';
 
 const GeolocateButton = () => {
   return ("OK");

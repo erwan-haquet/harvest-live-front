@@ -1,5 +1,8 @@
+@import '../../styles/colors';
+@import '../../styles/typography';
+
 .wrapper {
-  background: #5a9449;
+  background: $primary;
   height: 50px;
   display: flex;
   align-items: center;
@@ -13,14 +16,14 @@
 }
 
 .logo {
-  width: 30px;
-  height: 30px;
+  width: 26px;
+  height: 26px;
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
 }
 
 .teaser {
-    color: white;
+  color: white;
   display: inline;
   margin: 0;
 }

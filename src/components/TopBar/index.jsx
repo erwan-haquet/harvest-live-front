@@ -1,14 +1,16 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button'
 
 import logo from '../../images/logo.png';
-import styles from './styles.module.css';
+import styles from './styles.module.scss';
 
 const TopBar = () => (
   <div className={styles.wrapper}>
     <div className={styles.brand}>
       <img src={logo} alt="logo" className={styles.logo} />
-      <h3 className={styles.teaser}>Moisson-live</h3>
+      <h5 className={styles.teaser}>Moisson Live</h5>
     </div>
+    <Button variant="primary">Primary</Button>
   </div>
 );
 
