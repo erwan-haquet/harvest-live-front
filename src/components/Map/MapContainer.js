@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Map from '../Map';
 import { buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
-import { getLocation } from '../../selectors/location';
+import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
 
 const accessToken =
   'pk.eyJ1IjoiZXJ3YW5ubiIsImEiOiJjandqbnRvM2swNHg5NDhwanNyN3J5eHI0In0.wST16iOcVJ3HQsTv0FxtXg';
@@ -17,11 +17,11 @@ class MapContainer extends Component {
   };
 
   render() {
-    const { location, zoom, style } = this.props;
+    const { askedPosition, zoom, style } = this.props;
 
     const position =
-      location.position.latitude || location.position.longitude
-        ? [location.position.latitude, location.position.longitude]
+      askedPosition.latitude || askedPosition.longitude
+        ? [askedPosition.latitude, askedPosition.longitude]
         : [48.449715, 1.492092]; // Setup location to chartres by default
 
     return (
@@ -37,10 +37,11 @@ class MapContainer extends Component {
 }
 
 MapContainer.defaultProps = {
-  zoom: 10,
+  zoom: 8,
   style: 'streets-v11',
 };
 
 export default connect(state => ({
-  location: getLocation(state),
+  askedPosition: getAskedPosition(state),
+  isFetching: isFetching(state),
 }))(MapContainer);

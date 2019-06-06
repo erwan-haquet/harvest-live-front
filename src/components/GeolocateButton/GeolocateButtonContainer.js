@@ -3,12 +3,10 @@ import { connect } from 'react-redux';
 
 import GeolocateButton from '../GeolocateButton';
 import LatLng from '../../models/latLng';
-import { setPositionAction } from '../../actions/location';
-import { getLocation } from '../../selectors/location';
+import { setAskedPositionAction } from '../../actions/askedPosition';
 
 const PERMISSION_GRANTED = 'granted';
 const PERMISSION_DENIED = 'denied';
-const PERMISSION_PROMPT = 'prompt';
 
 class GeolocateButtonContainer extends Component {
   constructor(props) {
@@ -16,21 +14,26 @@ class GeolocateButtonContainer extends Component {
     this.state = { permission: null };
 
     navigator.permissions
-        .query({ name: 'geolocation' })
-        .then(this.handlePermissionChange);
+      .query({ name: 'geolocation' })
+      .then(this.handlePermissionChange);
   }
 
   handlePermissionChange = permissionStatus => {
-    if (this.state.permission === null || this.state.permission ===  PERMISSION_PROMPT) {
-      this.setState({
-        permission: permissionStatus.state,
-      });
+    if (permissionStatus.state === PERMISSION_GRANTED) {
+      navigator.geolocation.getCurrentPosition(
+        this.acceptGeolocation,
+      );
+    } else if (permissionStatus.state === PERMISSION_DENIED) {
+      this.denyGeolocation();
     }
   };
 
   handleClick = () => {
     if (navigator.geolocation) {
-      navigator.geolocation.getCurrentPosition(this.acceptGeolocation, this.denyGeolocation);
+      navigator.geolocation.getCurrentPosition(
+        this.acceptGeolocation,
+        this.denyGeolocation,
+      );
     } else {
       console.log('nope');
     }
@@ -39,13 +42,13 @@ class GeolocateButtonContainer extends Component {
   acceptGeolocation = position => {
     this.setLocation(position);
     this.setState({
-      permission:PERMISSION_GRANTED,
+      permission: PERMISSION_GRANTED,
     });
   };
 
   denyGeolocation = () => {
     this.setState({
-      permission:PERMISSION_DENIED,
+      permission: PERMISSION_DENIED,
     });
   };
 
@@ -57,7 +60,7 @@ class GeolocateButtonContainer extends Component {
       longitude: position.coords.longitude,
     });
 
-    dispatch(setPositionAction(positionFound));
+    dispatch(setAskedPositionAction(positionFound));
   };
 
   render() {
@@ -69,6 +72,4 @@ class GeolocateButtonContainer extends Component {
   }
 }
 
-export default connect(state => ({
-  location: getLocation(state),
-}))(GeolocateButtonContainer);
+export default connect()(GeolocateButtonContainer);
