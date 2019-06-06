@@ -10,9 +10,9 @@ const accessToken =
   'pk.eyJ1IjoiZXJ3YW5ubiIsImEiOiJjandqbnRvM2swNHg5NDhwanNyN3J5eHI0In0.wST16iOcVJ3HQsTv0FxtXg';
 
 class MapContainer extends Component {
-  handleLoad = event => {
+  handlePositionChanged = event => {
     const { dispatch } = this.props;
-    const location = buildFromLeafletMap(event.target._map);
+    const location = buildFromLeafletMap(event.target);
     dispatch(setLocationAction(location));
   };
 
@@ -30,7 +30,7 @@ class MapContainer extends Component {
         zoom={zoom}
         style={style}
         accessToken={accessToken}
-        onLoad={this.handleLoad}
+        onPositionChanged={this.handlePositionChanged}
       />
     );
   }

@@ -34,8 +34,6 @@ class GeolocateButtonContainer extends Component {
         this.acceptGeolocation,
         this.denyGeolocation,
       );
-    } else {
-      console.log('nope');
     }
   };
 
