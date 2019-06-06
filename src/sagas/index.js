@@ -2,13 +2,30 @@ import { takeLatest } from 'redux-saga/effects';
 
 import * as askedPositionActions from '../actions/askedPosition';
 import * as askedPositionSagas from './askedPosition';
+
 import * as barleyObservationActions from '../actions/barleyObservation';
 import * as barleyObservationSagas from './barleyObservation';
+
+import * as cornObservationActions from '../actions/cornObservation';
+import * as cornObservationSagas from './cornObservation';
+
+import * as rapeseedObservationActions from '../actions/rapeseedObservation';
+import * as rapeseedObservationSagas from './rapeseedObservation';
+
+import * as sunflowerObservationActions from '../actions/sunflowerObservation';
+import * as sunflowerObservationSagas from './sunflowerObservation';
+
+import * as wheatObservationActions from '../actions/wheatObservation';
+import * as wheatObservationSagas from './wheatObservation';
 
 export default function* saga() {
   const relations = [
       [askedPositionActions, askedPositionSagas],
       [barleyObservationActions, barleyObservationSagas],
+      [cornObservationActions, cornObservationSagas],
+      [rapeseedObservationActions, rapeseedObservationSagas],
+      [sunflowerObservationActions, sunflowerObservationSagas],
+      [wheatObservationActions, wheatObservationSagas],
   ];
 
   for (const [actions, sagas] of relations) {
