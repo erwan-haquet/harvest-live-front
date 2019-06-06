@@ -5,6 +5,7 @@ import Map from '../Map';
 import { buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
 import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
+import {closeObservationDetailsAction} from "../../actions/observationDetails";
 
 const accessToken =
   'pk.eyJ1IjoiZXJ3YW5ubiIsImEiOiJjandqbnRvM2swNHg5NDhwanNyN3J5eHI0In0.wST16iOcVJ3HQsTv0FxtXg';
@@ -14,6 +15,11 @@ class MapContainer extends Component {
     const { dispatch } = this.props;
     const location = buildFromLeafletMap(event.target);
     dispatch(setLocationAction(location));
+  };
+
+  handleMapClick = () => {
+    const { dispatch } = this.props;
+    dispatch(closeObservationDetailsAction());
   };
 
   render() {
@@ -30,6 +36,7 @@ class MapContainer extends Component {
         zoom={zoom}
         style={style}
         accessToken={accessToken}
+        onClick={this.handleMapClick}
         onPositionChanged={this.handlePositionChanged}
       />
     );

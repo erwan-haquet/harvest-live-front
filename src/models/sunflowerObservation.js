@@ -1,24 +1,27 @@
 import { Record, fromJS } from 'immutable';
 import LatLng from './latLng';
 
-export const SunflowerObservation = Record({
-  specificWeight: null,
-  email: null,
-  phone: null,
-  variety: null,
-  yield: null,
-  humidity: null,
-  yieldNotation: null,
-  nitrogenQuantityUsed: null,
-  nitrogenProductUsed: null,
-  comment: null,
-  cultivationMethod: null,
-  targetPrice: null,
-  place: null,
-  coordinates: new LatLng(),
-  id: null,
-  createdAt: null,
-});
+export const SunflowerObservation = Record(
+  {
+    specificWeight: null,
+    email: null,
+    phone: null,
+    variety: null,
+    yield: null,
+    humidity: null,
+    yieldNotation: null,
+    nitrogenQuantityUsed: null,
+    nitrogenProductUsed: null,
+    comment: null,
+    cultivationMethod: null,
+    targetPrice: null,
+    place: null,
+    coordinates: new LatLng(),
+    id: null,
+    createdAt: null,
+  },
+  'SunflowerObservation',
+);
 
 export const toSunflowerObservation = observation =>
   new SunflowerObservation(
