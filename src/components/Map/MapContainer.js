@@ -9,7 +9,7 @@ import { closeObservationDetailsAction } from '../../actions/observationDetails'
 import { getMapStyle } from '../../selectors/mapStyle';
 
 const accessToken =
-  'pk.eyJ1IjoiZXJ3YW5ubiIsImEiOiJjandqbnRvM2swNHg5NDhwanNyN3J5eHI0In0.wST16iOcVJ3HQsTv0FxtXg';
+  'pk.eyJ1IjoiZXJ3YW5ubiIsImEiOiJjandsejQyNzYxOGpwNGNuNjZlbGZuMTF2In0.jDRqr2VDjGDB7_hpppdunQ';
 
 class MapContainer extends Component {
   handlePositionChanged = event => {

@@ -26,10 +26,10 @@
 }
 
 .logo {
-  width: 20px;
-  height: 20px;
+  width: 32px;
+  height: 32px;
   display: inline-block;
-  margin-right: 5px;
+  margin-right: 10px;
 }
 
 .teaser {
@@ -44,4 +44,14 @@
 
 .markerText {
   font-size: 0.85em;
+}
+
+@media (max-width: 576px) {
+  .teaser {
+    font-size: 0.9em;
+  }
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
 }

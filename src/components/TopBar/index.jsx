@@ -10,7 +10,7 @@ const TopBar = () => (
   <div className={styles.wrapper}>
     <div className={styles.brand}>
       <img src={logo} alt="logo" className={styles.logo} />
-      <h5 className={styles.teaser}>Moisson Live</h5>
+      <h4 className={styles.teaser}>Moisson Live</h4>
     </div>
     <Button variant="darken-primary">
       <FontAwesomeIcon className={styles.markerIcon} icon={faMapMarkerAlt} />
