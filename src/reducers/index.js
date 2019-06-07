@@ -8,6 +8,7 @@ import wheatObservation from './wheatObservation';
 import selectedObservation from './selectedObservation';
 import observationDetails from './observationDetails';
 import toast from './toast';
+import mapStyle from './mapStyle';
 
 export default {
   location,
@@ -20,4 +21,5 @@ export default {
   selectedObservation,
   observationDetails,
   toast,
+  mapStyle,
 };

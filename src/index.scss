@@ -63,3 +63,32 @@ p {
     background: $darken-warning !important;
   }
 }
+
+.btn-rounded-light {
+  color: $silver !important;
+  border: 1px solid $silver !important;
+  background-color: white !important;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  opacity: 0.8;
+
+  &.outline {
+    color: white !important;
+    background: white !important;
+    border: 1px solid white !important;
+  }
+
+  &:hover {
+    opacity: 1;
+  }
+
+  &:active,
+  &:active:focus,
+  &:active:hover,
+  &:focus,
+  &:hover {
+    color: $dark-grey !important;
+    background: white !important;
+  }
+}

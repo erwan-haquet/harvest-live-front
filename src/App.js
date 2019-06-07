@@ -8,6 +8,7 @@ import TopBar from './components/TopBar';
 import MapContainer from './components/Map/MapContainer';
 import GeolocateButtonContainer from './components/GeolocateButton/GeolocateButtonContainer';
 import ObservationDetailsContainer from "./components/ObservationDetails/ObservationDetailsContainer";
+import MapLayerButtonContainer from "./components/MapLayerButton/MapLayerButtonContainer";
 
 import './App.css';
 import './styles/import.scss';
@@ -18,6 +19,7 @@ const App = () => (
     <MapContainer />
     <ObservationDetailsContainer />
     <GeolocateButtonContainer />
+    <MapLayerButtonContainer />
   </Provider>
 );
 

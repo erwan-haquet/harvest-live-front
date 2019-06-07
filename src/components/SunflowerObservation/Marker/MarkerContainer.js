@@ -17,9 +17,14 @@ class MarkerContainer extends Component {
     const { observation } = this.props;
 
     const icon = new L.Icon({
-      iconUrl: require('../../../images/marker-purple.svg'),
-      iconSize: new L.Point(50, 50),
+      iconUrl: 'https://cdn.rawgit.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconSize: new L.Point(25, 41),
+      iconAnchor: new L.Point(12, 41),
+      popupAnchor: new L.Point(1, -34),
+      shadowSize: new L.Point(41, 41),
     });
+
 
     return (
       <ObservationMarker
