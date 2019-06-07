@@ -21,6 +21,7 @@ export const WheatObservation = Record(
     coordinates: new LatLng(),
     id: null,
     createdAt: null,
+    cultureName: 'Blé',
   },
   'WheatObservation',
 );

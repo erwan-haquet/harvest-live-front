@@ -24,7 +24,7 @@ p {
 .btn-darken-primary {
   color: white !important;
   border: 1px solid white !important;
-  background-color: $lighten-primary !important;
+  background-color: $primary !important;
 
   &.outline {
     color: $primary !important;
@@ -38,7 +38,7 @@ p {
   &:focus,
   &:hover {
     color: white !important;
-    background: #72B351 !important;
+    background: $lighten-primary !important;
   }
 }
 

@@ -7,6 +7,7 @@ import sunflowerObservation from './sunflowerObservation';
 import wheatObservation from './wheatObservation';
 import selectedObservation from './selectedObservation';
 import observationDetails from './observationDetails';
+import toast from './toast';
 
 export default {
   location,
@@ -18,4 +19,5 @@ export default {
   wheatObservation,
   selectedObservation,
   observationDetails,
+  toast,
 };

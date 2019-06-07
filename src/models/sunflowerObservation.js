@@ -19,6 +19,7 @@ export const SunflowerObservation = Record(
     coordinates: new LatLng(),
     id: null,
     createdAt: null,
+    cultureName: 'Tournesol',
   },
   'SunflowerObservation',
 );

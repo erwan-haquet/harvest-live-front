@@ -19,6 +19,7 @@ export const BarleyObservation = Record(
     coordinates: new LatLng(),
     id: null,
     createdAt: null,
+    cultureName: 'Orge',
   },
   'BarleyObservation',
 );

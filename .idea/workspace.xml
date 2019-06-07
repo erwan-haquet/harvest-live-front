@@ -1,40 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="538a66b1-b057-4067-965b-307eea268d02" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/actions/observationDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/actions/selectedObservation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObservationDetails/ObservationDetailsContainer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObservationDetails/index.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/ObservationDetails/styles.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/observationDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/observationDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/reducers/selectedObservation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/selectors/observationDetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/selectors/selectedObservation.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="0c339d6f-3f0f-45de-8645-dd913523ddda" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/actions/toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ObservationToast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/reducers/toast.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/sagas/toast.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/BarleyObservation/Marker/MarkerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BarleyObservation/Marker/MarkerContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/CornObservation/Marker/MarkerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CornObservation/Marker/MarkerContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Map/MapContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/MapContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/Map/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/RapeseedObservation/Marker/MarkerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/RapeseedObservation/Marker/MarkerContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/SunflowerObservation/Marker/MarkerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/SunflowerObservation/Marker/MarkerContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Map/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Map/styles.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/ObservationDetails/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/ObservationDetails/styles.module.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/TopBar/styles.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TopBar/styles.module.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/WheatObservation/Marker/MarkerContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/WheatObservation/Marker/MarkerContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/common/ObservationMarker/index.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/common/ObservationMarker/index.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/marker-blue.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/marker-blue.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/images/marker-green.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/images/marker-green.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/marker-blue.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/marker-green.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/marker-orange.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/marker-purple.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/images/marker-red.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/barleyObservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/barleyObservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/cornObservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/cornObservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/rapeseedObservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/rapeseedObservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/sunflowerObservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sunflowerObservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/models/wheatObservation.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/wheatObservation.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/reducers/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/reducers/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sagas/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sagas/index.js" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -48,22 +41,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/components/Map/index.jsx">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-              <folding>
-                <element signature="e#0#26#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/BarleyObservation/Marker/MarkerContainer.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="561">
-              <caret line="33" selection-start-line="33" selection-end-line="33" />
+            <state relative-caret-position="595">
+              <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -71,47 +52,19 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/App.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="323">
+              <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
+              <folding>
+                <element signature="e#0#26#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
     </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>eslint</find>
-      <find>esl</find>
-      <find>var tile</find>
-      <find>fontaw</find>
-      <find>location</find>
-      <find>debugger</find>
-      <find>handlePermissionChange</find>
-      <find>debug</find>
-      <find>constr</find>
-      <find>console.log</find>
-      <find>debugg</find>
-      <find>barley</find>
-      <find>corn</find>
-      <find>Rapeseed</find>
-      <find>rapese</find>
-      <find>Sunflower</find>
-      <find>barl</find>
-      <find>logo.pn</find>
-      <find>state</find>
-      <find>Corn</find>
-      <find>Record</find>
-      <find>FonTaw</find>
-      <find>close</find>
-      <find>shad</find>
-      <find>calc</find>
-      <find>.svg</find>
-    </findStrings>
-    <replaceStrings>
-      <replace>Wheat</replace>
-      <replace>Sunflower</replace>
-      <replace>Rapeseed</replace>
-    </replaceStrings>
-    <dirStrings>
-      <dir>$PROJECT_DIR$</dir>
-      <dir>$PROJECT_DIR$/src</dir>
-      <dir>$PROJECT_DIR$/src/components</dir>
-    </dirStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -119,68 +72,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/reducers/rapeseedObservation.js" />
-        <option value="$PROJECT_DIR$/src/reducers/cornObservation.js" />
-        <option value="$PROJECT_DIR$/src/reducers/sunflowerObservation.js" />
-        <option value="$PROJECT_DIR$/src/actions/wheatObservation.js" />
-        <option value="$PROJECT_DIR$/src/reducers/wheatObservation.js" />
-        <option value="$PROJECT_DIR$/src/sagas/cornObservation.js" />
-        <option value="$PROJECT_DIR$/src/sagas/rapessedObservation.js" />
-        <option value="$PROJECT_DIR$/src/sagas/sunflowerObservation.js" />
-        <option value="$PROJECT_DIR$/src/sagas/wheatObservation.js" />
-        <option value="$PROJECT_DIR$/src/selectors/cornObservation.js" />
-        <option value="$PROJECT_DIR$/src/selectors/rapeseedObservation.js" />
-        <option value="$PROJECT_DIR$/src/selectors/sunflowerObservation.js" />
-        <option value="$PROJECT_DIR$/src/selectors/wheatObservation.js" />
-        <option value="$PROJECT_DIR$/src/components/CornObservation/MarkerList/MarkerListContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/BarleyObservation/MarkerList/MarkerListContainer.js" />
-        <option value="$PROJECT_DIR$/src/sagas/index.js" />
-        <option value="$PROJECT_DIR$/src/components/BarleyObservation/Marker/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/CornObservation/Marker/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/common/Marker/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/BarleyObservation/MarkerList/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/CornObservation/MarkerList/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/RapeseedObservation/MarkerList/MarkerListContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/SunflowerObservation/MarkerList/MarkerListContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/WheatObservation/MarkerList/MarkerListContainer.js" />
         <option value="$PROJECT_DIR$/src/App.js" />
-        <option value="$PROJECT_DIR$/src/actions/currentObservation.js" />
-        <option value="$PROJECT_DIR$/src/reducers/selectedObservation.js" />
-        <option value="$PROJECT_DIR$/src/selectors/selectedObservation.js" />
-        <option value="$PROJECT_DIR$/src/components/common/ObservationMarker/index.jsx" />
-        <option value="$PROJECT_DIR$/src/models/barleyObservation.js" />
-        <option value="$PROJECT_DIR$/src/models/cornObservation.js" />
-        <option value="$PROJECT_DIR$/src/models/rapeseedObservation.js" />
-        <option value="$PROJECT_DIR$/src/models/sunflowerObservation.js" />
-        <option value="$PROJECT_DIR$/src/models/wheatObservation.js" />
-        <option value="$PROJECT_DIR$/src/models/ui/observationDetails.js" />
-        <option value="$PROJECT_DIR$/src/actions/observationDetails.js" />
-        <option value="$PROJECT_DIR$/src/reducers/index.js" />
-        <option value="$PROJECT_DIR$/src/selectors/observationDetails.js" />
-        <option value="$PROJECT_DIR$/src/reducers/observationDetails.js" />
-        <option value="$PROJECT_DIR$/src/components/Map/MapContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/Map/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/ObservationDetails/ObservationDetailsContainer.js" />
-        <option value="$PROJECT_DIR$/src/index.scss" />
-        <option value="$PROJECT_DIR$/src/components/ObservationDetails/index.jsx" />
-        <option value="$PROJECT_DIR$/src/components/TopBar/styles.module.scss" />
-        <option value="$PROJECT_DIR$/src/components/ObservationDetails/styles.module.scss" />
-        <option value="$PROJECT_DIR$/src/components/CornObservation/Marker/MarkerContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/WheatObservation/Marker/MarkerContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/SunflowerObservation/Marker/MarkerContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/RapeseedObservation/Marker/MarkerContainer.js" />
-        <option value="$PROJECT_DIR$/src/components/BarleyObservation/Marker/MarkerContainer.js" />
       </list>
     </option>
-  </component>
-  <component name="PhpServers">
-    <servers />
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="1667" />
-    <option name="y" value="-2" />
-    <option name="width" value="1013" />
-    <option name="height" value="1922" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -197,6 +91,11 @@
             <path>
               <item name="harvest-live-front" type="b2602c69:ProjectViewProjectNode" />
               <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="harvest-live-front" type="b2602c69:ProjectViewProjectNode" />
+              <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -204,41 +103,6 @@
               <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="harvest-live-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="BarleyObservation" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="harvest-live-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="BarleyObservation" type="462c0819:PsiDirectoryNode" />
-              <item name="Marker" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="harvest-live-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="Map" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="harvest-live-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="TopBar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="harvest-live-front" type="b2602c69:ProjectViewProjectNode" />
-              <item name="harvest-live-front" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -246,39 +110,6 @@
       </pane>
       <pane id="Scope" />
     </panes>
-  </component>
-  <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/images" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.stylelint" value="true" />
-    <property name="node.js.path.for.package.eslint" value="project" />
-    <property name="node.js.path.for.package.stylelint" value="project" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.stylelint" value="$PROJECT_DIR$/node_modules/stylelint" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.appearance" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/models" />
-      <recent name="$PROJECT_DIR$/src/components/BarleyObservation" />
-      <recent name="$PROJECT_DIR$/src/components" />
-      <recent name="$PROJECT_DIR$/src/styles" />
-      <recent name="$PROJECT_DIR$/src/reducers" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/selectors" />
-      <recent name="$PROJECT_DIR$/src/actions" />
-      <recent name="$PROJECT_DIR$/src/reducers" />
-      <recent name="$PROJECT_DIR$/src/models/ui" />
-      <recent name="$PROJECT_DIR$/src/components/ObservationDetails" />
-    </key>
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -296,26 +127,16 @@
     <configuration />
   </component>
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="538a66b1-b057-4067-965b-307eea268d02" name="Default Changelist" comment="" />
-      <created>1559741441150</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1559741441150</updated>
-      <workItem from="1559741442351" duration="11946000" />
-      <workItem from="1559805173503" duration="34579000" />
-      <workItem from="1559849956086" duration="2440000" />
-    </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="64941000" />
+    <option name="totallyTimeSpent" value="6000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1667" y="-2" width="1013" height="1922" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.32885212" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.39400208" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -329,7 +150,7 @@
       <window_info anchor="bottom" id="Docker" order="7" weight="0.32961518" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3937535" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.3937535" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="TypeScript" order="12" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
@@ -360,427 +181,23 @@
       <window_info anchor="right" id="Database" order="3" />
     </layout-to-restore>
   </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/sagas/sunflowerObservation.js">
+    <entry file="file://$PROJECT_DIR$/src/components/BarleyObservation/Marker/MarkerContainer.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="25" selection-start-line="13" selection-start-column="25" selection-end-line="13" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/wheatObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="10" lean-forward="true" selection-start-line="17" selection-start-column="10" selection-end-line="17" selection-end-column="10" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/rapeseedObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="26" selection-start-line="21" selection-start-column="26" selection-end-line="21" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#47#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/sunflowerObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/rapeseedObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/cornObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/wheatObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CornObservation/MarkerList/MarkerListContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="30" column="25" lean-forward="true" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
+        <state relative-caret-position="595">
+          <caret line="35" lean-forward="true" selection-start-line="35" selection-end-line="35" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/sagas/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CornObservation/Marker/index.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/BarleyObservation/Marker/index.jsx" />
-    <entry file="file://$PROJECT_DIR$/src/components/BarleyObservation/MarkerList/MarkerListContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="27" column="34" lean-forward="true" selection-start-line="27" selection-start-column="34" selection-end-line="27" selection-end-column="34" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/BarleyObservation/MarkerList/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="16" selection-start-line="6" selection-start-column="16" selection-end-line="6" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CornObservation/MarkerList/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RapeseedObservation/MarkerList/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WheatObservation/MarkerList/MarkerListContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GeolocateButton/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-end-line="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SunflowerObservation/MarkerList/MarkerListContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="14" selection-start-line="12" selection-start-column="14" selection-end-line="12" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Map/styles.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" selection-start-line="1" selection-end-line="3" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/GeolocateButton/styles.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" selection-start-line="3" selection-end-line="6" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/selectedObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/selectedObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/selectedObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" lean-forward="true" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RapeseedObservation/MarkerList/MarkerListContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" column="27" lean-forward="true" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/common/ObservationMarker/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="48" lean-forward="true" selection-start-line="3" selection-start-column="48" selection-end-line="3" selection-end-column="48" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/wheatObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="22" column="20" selection-start-line="22" selection-start-column="20" selection-end-line="22" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/sunflowerObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="20" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/rapeseedObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="20" column="20" lean-forward="true" selection-start-line="20" selection-start-column="20" selection-end-line="20" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/cornObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="19" selection-start-line="19" selection-start-column="19" selection-end-line="19" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/actions/observationDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="42" selection-start-line="3" selection-start-column="42" selection-end-line="3" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="19" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#34#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/RapeseedObservation/Marker/MarkerContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" selection-start-line="13" selection-end-line="13" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/SunflowerObservation/Marker/MarkerContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/WheatObservation/Marker/MarkerContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="12" column="45" selection-start-line="12" selection-start-column="45" selection-end-line="12" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/selectors/observationDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="37" selection-start-column="13" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/observationDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/reducers/observationDetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
-          <folding>
-            <element signature="e#0#42#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/styles/colors.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="8" selection-start-line="7" selection-end-line="7" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Map/MapContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ObservationDetails/ObservationDetailsContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="935">
-          <caret line="55" column="23" selection-start-line="55" selection-start-column="23" selection-end-line="55" selection-end-column="23" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/barleyObservation.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#43#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/CornObservation/Marker/MarkerContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="42" selection-start-line="18" selection-start-column="42" selection-end-line="18" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TopBar/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/App.css">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/src/App.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="25" lean-forward="true" selection-start-line="25" selection-start-column="25" selection-end-line="25" selection-end-column="25" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/index.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="3" lean-forward="true" selection-start-line="12" selection-start-column="3" selection-end-line="12" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ObservationDetails/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
-          <caret line="30" column="17" lean-forward="true" selection-start-line="30" selection-start-column="17" selection-end-line="30" selection-end-column="17" />
+          <caret line="19" column="32" lean-forward="true" selection-start-line="19" selection-start-column="32" selection-end-line="19" selection-end-column="32" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/ObservationDetails/styles.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="20" column="15" lean-forward="true" selection-start-line="20" selection-start-column="15" selection-end-line="20" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/TopBar/styles.module.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/Map/index.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" column="18" lean-forward="true" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/BarleyObservation/Marker/MarkerContainer.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="33" selection-start-line="33" selection-end-line="33" />
-          <folding>
-            <element signature="e#0#41#0" expanded="true" />
           </folding>
         </state>
       </provider>

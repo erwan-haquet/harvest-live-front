@@ -19,6 +19,8 @@ export const RapeseedObservation = Record(
     coordinates: new LatLng(),
     id: null,
     createdAt: null,
+      cultureName: 'Colza',
+
   },
   'RapeseedObservation',
 );

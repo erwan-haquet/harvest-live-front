@@ -18,6 +18,9 @@ import * as sunflowerObservationSagas from './sunflowerObservation';
 import * as wheatObservationActions from '../actions/wheatObservation';
 import * as wheatObservationSagas from './wheatObservation';
 
+import * as toastActions from '../actions/toast';
+import * as toastSagas from './toast';
+
 export default function* saga() {
   const relations = [
       [askedPositionActions, askedPositionSagas],
@@ -26,6 +29,7 @@ export default function* saga() {
       [rapeseedObservationActions, rapeseedObservationSagas],
       [sunflowerObservationActions, sunflowerObservationSagas],
       [wheatObservationActions, wheatObservationSagas],
+      [toastActions, toastSagas],
   ];
 
   for (const [actions, sagas] of relations) {

@@ -19,6 +19,7 @@ const Map = ({ zoom, position, style, accessToken, onPositionChanged, onClick })
         onMoveEnd={onPositionChanged}
         onZommEnd={onPositionChanged}
         onClick={onClick}
+        zoomControl={false}
       >
         <TileLayer
           url={`https://api.mapbox.com/styles/v1/mapbox/${style}/tiles/256/{z}/{x}/{y}?access_token=${accessToken}`}

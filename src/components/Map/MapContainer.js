@@ -5,7 +5,7 @@ import Map from '../Map';
 import { buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
 import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
-import {closeObservationDetailsAction} from "../../actions/observationDetails";
+import { closeObservationDetailsAction } from '../../actions/observationDetails';
 
 const accessToken =
   'pk.eyJ1IjoiZXJ3YW5ubiIsImEiOiJjandqbnRvM2swNHg5NDhwanNyN3J5eHI0In0.wST16iOcVJ3HQsTv0FxtXg';
@@ -25,9 +25,17 @@ class MapContainer extends Component {
   render() {
     const { askedPosition, zoom, style } = this.props;
 
+    // A kick and dirty fix to enforce a new position every time user require to recenter map on same position
+    const randomFloat = parseFloat(
+      (Math.random() * (0.0002 - 0.0001) + 0.0001).toFixed(6),
+    );
+
     const position =
       askedPosition.latitude || askedPosition.longitude
-        ? [askedPosition.latitude, askedPosition.longitude]
+        ? [
+            askedPosition.latitude + randomFloat,
+            askedPosition.longitude + randomFloat,
+          ]
         : [48.449715, 1.492092]; // Setup location to chartres by default
 
     return (

@@ -9,11 +9,11 @@
   -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  overflow-y: scroll;
-  bottom: 0;
-  left: 0;
-  top:50px;
+  left: 20px;
+  top:90px;
   z-index: 1200;
+  opacity: 0.9;
+  border-radius: 5px;
 }
 
 .header {
@@ -49,4 +49,9 @@
   float: right;
 }
 
-
+@media (max-width: 576px) {
+  .wrapper {
+    left: 0;
+    top:70px;
+  }
+}

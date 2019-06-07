@@ -18,6 +18,7 @@ export const CornObservation = Record(
     coordinates: new LatLng(),
     id: null,
     createdAt: null,
+    cultureName: 'Maïs',
   },
   'CornObservation',
 );
