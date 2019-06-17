@@ -2,11 +2,11 @@ import React from 'react';
 import { Map as LeafletMap, TileLayer } from 'react-leaflet';
 
 import styles from './styles.module.scss';
-import BarleyMarkerListContainer from '../BarleyObservation/MarkerList/MarkerListContainer';
-import CornMarkerListContainer from '../CornObservation/MarkerList/MarkerListContainer';
-import RapeseedMarkerListContainer from '../RapeseedObservation/MarkerList/MarkerListContainer';
-import SunflowerMarkerListContainer from '../SunflowerObservation/MarkerList/MarkerListContainer';
-import WheatMarkerListContainer from '../WheatObservation/MarkerList/MarkerListContainer';
+import BarleyMarkerListContainer from '../observations/BarleyObservation/MarkerList/MarkerListContainer';
+import CornMarkerListContainer from '../observations/CornObservation/MarkerList/MarkerListContainer';
+import RapeseedMarkerListContainer from '../observations/RapeseedObservation/MarkerList/MarkerListContainer';
+import SunflowerMarkerListContainer from '../observations/SunflowerObservation/MarkerList/MarkerListContainer';
+import WheatMarkerListContainer from '../observations/WheatObservation/MarkerList/MarkerListContainer';
 
 const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
   return (

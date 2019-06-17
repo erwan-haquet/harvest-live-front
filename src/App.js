@@ -6,11 +6,11 @@ import saga from './sagas/';
 import { sagaMiddleware } from './middleware';
 import TopBarContainer from './components/TopBar/TopBarContainer';
 import MapContainer from './components/Map/MapContainer';
-import GeolocateButtonContainer from './components/GeolocateButton/GeolocateButtonContainer';
+import GeolocateButtonContainer from './components/buttons/GeolocateButton/GeolocateButtonContainer';
 import StatisticsModalContainer from './components/StatisticsModal/StatisticsModalContainer';
 import ObservationDetailsContainer from './components/ObservationDetails/ObservationDetailsContainer';
-import MapLayerButtonContainer from './components/MapLayerButton/MapLayerButtonContainer';
-import ColorLegendButtonContainer from "./components/ColorLegendButton/ColorLegendButtonContainer";
+import MapLayerButtonContainer from './components/buttons/MapLayerButton/MapLayerButtonContainer';
+import ColorLegendButtonContainer from "./components/buttons/ColorLegendButton/ColorLegendButtonContainer";
 
 import './App.css';
 import './styles/import.scss';
