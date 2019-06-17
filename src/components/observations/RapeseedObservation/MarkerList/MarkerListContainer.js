@@ -5,6 +5,8 @@ import { fetchRapeseedObservationsRequestAction } from '../../../../actions/rape
 import { getRapeseedObservations } from '../../../../selectors/rapeseedObservation';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
+import {cultures} from "../../../../constants/availableObservationCultures";
+import {getSelectedCulture} from "../../../../selectors/filters";
 
 class MarkerListContainer extends Component {
   componentDidUpdate(prevProps) {
@@ -19,7 +21,11 @@ class MarkerListContainer extends Component {
   }
 
   render() {
-    const { rapeseedObservations } = this.props;
+    const { rapeseedObservations, selectedCulture } = this.props;
+
+    if (selectedCulture && selectedCulture !== cultures.RAPESEED) {
+      return null;
+    }
 
     return <MarkerList observations={rapeseedObservations} />;
   }
@@ -28,4 +34,5 @@ class MarkerListContainer extends Component {
 export default connect(state => ({
   rapeseedObservations: getRapeseedObservations(state),
   location: getLocation(state),
+  selectedCulture: getSelectedCulture(state),
 }))(MarkerListContainer);

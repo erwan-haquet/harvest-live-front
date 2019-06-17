@@ -5,6 +5,8 @@ import { fetchBarleyObservationsRequestAction } from '../../../../actions/barley
 import { getBarleyObservations } from '../../../../selectors/barleyObservation';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
+import { getSelectedCulture } from '../../../../selectors/filters';
+import { cultures } from '../../../../constants/availableObservationCultures';
 
 class MarkerListContainer extends Component {
   componentDidUpdate(prevProps) {
@@ -19,7 +21,11 @@ class MarkerListContainer extends Component {
   }
 
   render() {
-    const { barleyObservations } = this.props;
+    const { barleyObservations, selectedCulture } = this.props;
+
+    if (selectedCulture && selectedCulture !== cultures.BARLEY) {
+      return null;
+    }
 
     return <MarkerList observations={barleyObservations} />;
   }
@@ -28,4 +34,5 @@ class MarkerListContainer extends Component {
 export default connect(state => ({
   barleyObservations: getBarleyObservations(state),
   location: getLocation(state),
+  selectedCulture: getSelectedCulture(state),
 }))(MarkerListContainer);

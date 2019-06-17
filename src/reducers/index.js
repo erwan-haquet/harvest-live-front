@@ -11,6 +11,7 @@ import toast from './toast';
 import mapStyle from './mapStyle';
 import statisticsModal from './statisticsModal';
 import colorLegend from './colorLegend';
+import filters from './filters';
 
 export default {
   location,
@@ -26,4 +27,5 @@ export default {
   mapStyle,
   statisticsModal,
   colorLegend,
+  filters,
 };

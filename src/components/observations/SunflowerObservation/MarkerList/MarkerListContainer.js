@@ -5,6 +5,8 @@ import { fetchSunflowerObservationsRequestAction } from '../../../../actions/sun
 import { getSunflowerObservations } from '../../../../selectors/sunflowerObservation';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
+import { cultures } from '../../../../constants/availableObservationCultures';
+import { getSelectedCulture } from '../../../../selectors/filters';
 
 class MarkerListContainer extends Component {
   componentDidUpdate(prevProps) {
@@ -19,7 +21,11 @@ class MarkerListContainer extends Component {
   }
 
   render() {
-    const { sunflowerObservations } = this.props;
+    const { sunflowerObservations, selectedCulture } = this.props;
+
+    if (selectedCulture && selectedCulture !== cultures.SUNFLOWER) {
+      return null;
+    }
 
     return <MarkerList observations={sunflowerObservations} />;
   }
@@ -28,4 +34,5 @@ class MarkerListContainer extends Component {
 export default connect(state => ({
   sunflowerObservations: getSunflowerObservations(state),
   location: getLocation(state),
+  selectedCulture: getSelectedCulture(state),
 }))(MarkerListContainer);

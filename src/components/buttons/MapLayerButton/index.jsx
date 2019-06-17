@@ -7,7 +7,7 @@ import {faLayerGroup} from "@fortawesome/free-solid-svg-icons";
 
 const MapLayerButton = ({ onClick }) => (
     <div className={styles.wrapper}>
-        <Button variant="rounded-light" size="lg" onClick={onClick}>
+        <Button variant="rounded-light" size="md" onClick={onClick}>
             <FontAwesomeIcon icon={faLayerGroup} />
         </Button>
     </div>

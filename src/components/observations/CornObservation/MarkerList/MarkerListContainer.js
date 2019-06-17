@@ -5,6 +5,8 @@ import { fetchCornObservationsRequestAction } from '../../../../actions/cornObse
 import { getCornObservations } from '../../../../selectors/cornObservation';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
+import { cultures } from '../../../../constants/availableObservationCultures';
+import { getSelectedCulture } from '../../../../selectors/filters';
 
 class MarkerListContainer extends Component {
   componentDidUpdate(prevProps) {
@@ -19,7 +21,11 @@ class MarkerListContainer extends Component {
   }
 
   render() {
-    const { cornObservations } = this.props;
+    const { cornObservations, selectedCulture } = this.props;
+
+    if (selectedCulture && selectedCulture !== cultures.CORN) {
+      return null;
+    }
 
     return <MarkerList observations={cornObservations} />;
   }
@@ -28,4 +34,5 @@ class MarkerListContainer extends Component {
 export default connect(state => ({
   cornObservations: getCornObservations(state),
   location: getLocation(state),
+  selectedCulture: getSelectedCulture(state),
 }))(MarkerListContainer);
