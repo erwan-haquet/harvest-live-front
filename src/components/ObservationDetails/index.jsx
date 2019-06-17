@@ -4,18 +4,20 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import Table from 'react-bootstrap/Table';
 import Moment from 'react-moment';
 import StarRatings from 'react-star-ratings';
+import cx from 'classnames';
 
 import styles from './styles.module.scss';
 
 const ObservationDetails = ({
   observation,
   culture,
+  type,
   onClose,
   cultivationMethod,
 }) => {
   return (
     <div className={styles.wrapper}>
-      <h5 className={styles.header}>
+      <h5 className={cx(styles.header, styles[type])}>
         <span className={styles.closeButton} onClick={onClose}>
           <FontAwesomeIcon icon={faTimes} />
         </span>

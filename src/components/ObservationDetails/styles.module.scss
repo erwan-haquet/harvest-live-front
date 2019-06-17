@@ -29,6 +29,21 @@
     font-size: 0.6em;
     font-weight: normal;
   }
+  &.BarleyObservation {
+    background: $barley-color;
+  }
+  &.WheatObservation {
+    background: $wheat-color;
+  }
+  &.SunflowerObservation {
+    background: $sunflower-color;
+  }
+  &.RapeseedObservation {
+    background: $rapeseed-color;
+  }
+  &.CornObservation {
+    background: $corn-color;
+  }
 }
 
 .tableWrapper {
