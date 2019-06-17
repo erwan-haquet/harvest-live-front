@@ -8,7 +8,7 @@ import RapeseedMarkerListContainer from '../RapeseedObservation/MarkerList/Marke
 import SunflowerMarkerListContainer from '../SunflowerObservation/MarkerList/MarkerListContainer';
 import WheatMarkerListContainer from '../WheatObservation/MarkerList/MarkerListContainer';
 
-const Map = ({ zoom, position, style, accessToken, onPositionChanged, onClick }) => {
+const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
   return (
     <div className={styles.wrapper}>
       <LeafletMap
@@ -21,9 +21,7 @@ const Map = ({ zoom, position, style, accessToken, onPositionChanged, onClick })
         onClick={onClick}
         zoomControl={false}
       >
-        <TileLayer
-          url={`https://api.mapbox.com/styles/v1/mapbox/${style}/tiles/256/{z}/{x}/{y}?access_token=${accessToken}`}
-        />
+        <TileLayer url={style} />
         <BarleyMarkerListContainer />
         <CornMarkerListContainer />
         <RapeseedMarkerListContainer />

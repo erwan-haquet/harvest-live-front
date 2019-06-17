@@ -4,17 +4,18 @@ import { connect } from 'react-redux';
 import MapLayerButton from '../MapLayerButton';
 import { getMapStyle } from '../../selectors/mapStyle';
 import { setMapStyle } from '../../actions/mapStyle';
+import { layers } from '../../constants/mapStyle';
 
 class MapLayerButtonContainer extends Component {
   handleClick = () => {
     const { dispatch, mapStyle: currentMapStyle } = this.props;
 
     switch (currentMapStyle) {
-      case 'streets-v11':
-        dispatch(setMapStyle('satellite-streets-v9'));
+      case layers.STREET:
+        dispatch(setMapStyle(layers.SATELLITE));
         break;
-      case 'satellite-streets-v9':
-        dispatch(setMapStyle('streets-v11'));
+      case layers.SATELLITE:
+        dispatch(setMapStyle(layers.STREET));
         break;
       default:
         break;

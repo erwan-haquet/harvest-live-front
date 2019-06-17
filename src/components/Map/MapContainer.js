@@ -6,10 +6,10 @@ import { buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
 import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
 import { closeObservationDetailsAction } from '../../actions/observationDetails';
+import { closeStatisticsModalAction } from '../../actions/statisticsModal';
 import { getMapStyle } from '../../selectors/mapStyle';
 
-const accessToken =
-  'pk.eyJ1IjoiZXJ3YW5ubiIsImEiOiJjandsejQyNzYxOGpwNGNuNjZlbGZuMTF2In0.jDRqr2VDjGDB7_hpppdunQ';
+const accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
 
 class MapContainer extends Component {
   handlePositionChanged = event => {
@@ -21,6 +21,7 @@ class MapContainer extends Component {
   handleMapClick = () => {
     const { dispatch } = this.props;
     dispatch(closeObservationDetailsAction());
+    dispatch(closeStatisticsModalAction());
   };
 
   render() {

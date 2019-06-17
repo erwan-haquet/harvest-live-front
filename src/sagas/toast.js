@@ -4,7 +4,7 @@ import {
   addToastAction,
   removeToastAction,
 } from '../actions/toast';
-import ObservationToast from "../models/ObservationToast";
+import ObservationToast from "../models/observationToast";
 
 export function* createObservationToastAction({ payload: observation }) {
   const toast = new ObservationToast({
