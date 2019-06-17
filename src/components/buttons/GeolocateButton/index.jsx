@@ -7,7 +7,7 @@ import Button from "react-bootstrap/Button";
 
 const GeolocateButton = ({ onClick }) => (
     <div className={styles.wrapper}>
-      <Button variant="rounded-warning" size="lg" onClick={onClick}>
+      <Button variant="rounded-light" size="md" onClick={onClick}>
         <FontAwesomeIcon icon={faLocationArrow} />
       </Button>
     </div>

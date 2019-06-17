@@ -1,0 +1,32 @@
+@import '../../../../styles/colors';
+
+.radio {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.label {
+  cursor: pointer;
+  background: $background-grey;
+  padding: 10px 20px;
+}
+
+.radio:checked + img {
+  border: 1px solid black;
+}
+
+.col {
+  text-align: center;
+}
+
+.image {
+  width: 80px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+}
+
+.culture {
+  text-align: center;
+}

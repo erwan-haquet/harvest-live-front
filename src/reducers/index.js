@@ -12,6 +12,7 @@ import mapStyle from './mapStyle';
 import statisticsModal from './statisticsModal';
 import colorLegend from './colorLegend';
 import filters from './filters';
+import observationFormModal from './observationFormModal';
 
 export default {
   location,
@@ -28,4 +29,5 @@ export default {
   statisticsModal,
   colorLegend,
   filters,
+  observationFormModal,
 };

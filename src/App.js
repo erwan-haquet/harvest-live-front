@@ -12,6 +12,8 @@ import ObservationDetailsContainer from './components/ObservationDetails/Observa
 import MapLayerButtonContainer from './components/buttons/MapLayerButton/MapLayerButtonContainer';
 import ColorLegendButtonContainer from "./components/buttons/ColorLegendButton/ColorLegendButtonContainer";
 import ColorLegendContainer from "./components/ColorLegend/ColorLegendContainer";
+import AddObservationButtonContainer from "./components/buttons/AddObservationButton/AddObservationButtonContainer";
+import ObservationFormModalContainer from "./components/ObservationFormModal/ObservationFormModalContainer";
 
 import './App.css';
 import './styles/import.scss';
@@ -26,6 +28,8 @@ const App = () => (
     <MapLayerButtonContainer />
     <ColorLegendButtonContainer />
     <ColorLegendContainer />
+    <AddObservationButtonContainer />
+    <ObservationFormModalContainer />
   </Provider>
 );
 

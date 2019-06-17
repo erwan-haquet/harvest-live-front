@@ -1,0 +1,26 @@
+@import '../../../styles/colors';
+
+.wrapper {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  z-index: 999;
+}
+
+.icon {
+  margin-right: 10px;
+}
+
+
+.button {
+  width: 100%;
+}
+
+@media (max-width: 576px) {
+  .wrapper {
+    left: 20px;
+  }
+  .button {
+    width: 100%;
+  }
+}
