@@ -10,6 +10,7 @@ import GeolocateButtonContainer from './components/GeolocateButton/GeolocateButt
 import StatisticsModalContainer from './components/StatisticsModal/StatisticsModalContainer';
 import ObservationDetailsContainer from './components/ObservationDetails/ObservationDetailsContainer';
 import MapLayerButtonContainer from './components/MapLayerButton/MapLayerButtonContainer';
+import ColorLegendButtonContainer from "./components/ColorLegendButton/ColorLegendButtonContainer";
 
 import './App.css';
 import './styles/import.scss';
@@ -22,6 +23,7 @@ const App = () => (
     <StatisticsModalContainer />
     <GeolocateButtonContainer />
     <MapLayerButtonContainer />
+    <ColorLegendButtonContainer />
   </Provider>
 );
 

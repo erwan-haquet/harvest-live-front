@@ -10,6 +10,7 @@ import observationDetails from './observationDetails';
 import toast from './toast';
 import mapStyle from './mapStyle';
 import statisticsModal from './statisticsModal';
+import colorLegend from './colorLegend';
 
 export default {
   location,
@@ -24,4 +25,5 @@ export default {
   toast,
   mapStyle,
   statisticsModal,
+  colorLegend,
 };
