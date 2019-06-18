@@ -3,9 +3,9 @@ import { Form } from 'react-bootstrap';
 import Label from '../Label';
 import StarRatings from 'react-star-ratings';
 
-const RatingInput = ({ input, meta, label }) => (
+const RatingInput = ({ input, meta: { touched, error }, label, required }) => (
   <Form.Group>
-    <Label label={label} />
+    <Label label={label} required={required} />
     <br />
     <StarRatings
       rating={input.value}
@@ -15,6 +15,14 @@ const RatingInput = ({ input, meta, label }) => (
       numberOfStars={5}
       name="rating"
     />
+    {touched && error && (
+      <Form.Control.Feedback
+        className="invalid-feedback d-block"
+        type="invalid"
+      >
+        {error}
+      </Form.Control.Feedback>
+    )}
   </Form.Group>
 );
 

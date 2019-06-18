@@ -51,11 +51,12 @@ class ZipcodeInputContainer extends Component {
         value={props.input.value}
         label={props.label}
         loadOptions={this.loadOptions}
-        onBlur={() => {
-          props.input.onBlur(props.input.value);
-        }}
+        onBlur={event => event.preventDefault()}
         onChange={this.handleChange}
         props={props}
+        placeholder={props.placeholder}
+        required={props.required}
+        meta={props.meta}
       />
     );
   }

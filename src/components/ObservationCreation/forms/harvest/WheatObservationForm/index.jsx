@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import NavigationBar from '../../../NavigationBar';
+import validate from './validate';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './styles.module.scss';
@@ -10,14 +11,13 @@ import SelectInput from '../../../../common/form/SelectInput';
 import RatingInput from '../../../../common/form/RatingInput';
 import TextareaInput from '../../../../common/form/TextareaInput';
 import ZipcodeInputContainer from '../../../../common/form/ZipcodeInput/ZipcodeInputContainer';
-import LatLng from "../../../../../models/latLng";
+import LatLng from '../../../../../models/latLng';
 
 const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
   return (
     <Fragment>
       <SectionTitle title="Reseignez votre observation" />
-
-      <form onSubmit={handleSubmit} className={styles.form}>
+      <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <Row>
           <Col xs={12} md={6}>
             <Field
@@ -25,11 +25,23 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               type="select"
               component={SelectInput}
               label="Méthode de culture"
+              required
               choices={[
                 { value: 'conventional', label: 'Conventionnel' },
                 { value: 'simplified cultivation methods', label: 'TCS' },
                 { value: 'organic farming', label: 'Bio' },
               ]}
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <Field
+              name="place"
+              type="select"
+              component={ZipcodeInputContainer}
+              label="Lieu de la récolte"
+              formName="observation"
+              placeholder="votre code postal"
+              required
             />
           </Col>
           <Col xs={6}>
@@ -39,6 +51,27 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               component={FieldInput}
               label="Pois spécifique"
               append="kg/hl"
+              required
+            />
+          </Col>
+          <Col xs={6}>
+            <Field
+              name="fallingNumber"
+              type="number"
+              component={FieldInput}
+              label="Temps de chute"
+              append="s"
+              required
+            />
+          </Col>
+          <Col xs={6}>
+            <Field
+              name="protein"
+              type="number"
+              component={FieldInput}
+              label="Protéines"
+              append="%"
+              required
             />
           </Col>
           <Col xs={6}>
@@ -48,18 +81,10 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               component={FieldInput}
               label="Humidité"
               append="%"
+              required
             />
           </Col>
-          <Col xs={6}>
-            <Field
-              name="yield"
-              type="number"
-              component={FieldInput}
-              label="Rendement"
-              append="q"
-            />
-          </Col>
-          <Col xs={6}>
+          <Col xs={12} md={6}>
             <Field
               name="variety"
               type="text"
@@ -67,12 +92,14 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               label="Variété"
             />
           </Col>
+          <Col md={6} />
           <Col xs={12} md={6}>
             <Field
               name="nitrogenProductUsed"
               type="select"
               component={SelectInput}
               label="Engrais Azoté utilisé"
+              required
               choices={[
                 { value: 'Solution Azotée', label: 'Solution Azotée' },
                 { value: 'Ammonitrate', label: 'Ammonitrate' },
@@ -87,6 +114,27 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               type="number"
               component={FieldInput}
               label="Quantité d'azote utilisée"
+              required
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <Field
+              name="yield"
+              type="number"
+              component={FieldInput}
+              label="Rendement"
+              append="q"
+              required
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <Field
+              name="yieldNotation"
+              type="number"
+              component={RatingInput}
+              label="Note de rendement comparé aux 5 dernières années"
+              append="€/T"
+              required
             />
           </Col>
           <Col xs={12} md={6}>
@@ -100,33 +148,17 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name="yieldNotation"
-              type="number"
-              component={RatingInput}
-              label="Note de rendement comparé aux 5 dernières années"
-              append="€/T"
-            />
-          </Col>
-          <Col xs={12} md={6}>
-            <Field
               name="comment"
               type="textarea"
               component={TextareaInput}
               label="Commentaire"
             />
           </Col>
-          <Col xs={12} md={6}>
-            <Field
-              name="place"
-              type="select"
-              component={ZipcodeInputContainer}
-              label="Code postal"
-              formName="observation"
-            />
-          </Col>
         </Row>
+        <div className={styles.navigationWrapper}>
+          <NavigationBar previousStep={previousStep} shouldSubmit={true} />
+        </div>
       </form>
-      <NavigationBar previousStep={previousStep} onSubmit={onSubmit} />
     </Fragment>
   );
 };
@@ -135,9 +167,9 @@ export default reduxForm({
   form: 'observation',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
+  validate,
   initialValues: {
-    cultivationMethod: 'conventional',
-    yieldNotation: 2,
+    yieldNotation: -1,
     coordinates: new LatLng(),
   },
 })(WheatObservationForm);

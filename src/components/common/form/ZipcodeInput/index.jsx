@@ -6,16 +6,18 @@ import Label from '../Label';
 
 const ZipcodeInput = ({
   input,
-  meta,
+  meta: { touched, error },
   label,
   value,
   onBlur,
   loadOptions,
   handleChange,
+  placeholder,
+  required,
   ...props
 }) => (
   <Form.Group>
-    <Label label={label} />
+    <Label label={label} required={required} />
     <AsyncSelect
       valueKey="value"
       cacheOptions
@@ -24,8 +26,12 @@ const ZipcodeInput = ({
       defaultOptions
       onBlur={onBlur}
       onChange={handleChange}
+      placeholder={placeholder}
       {...props}
     />
+    {touched && error && (
+      <Form.Control.Feedback className="invalid-feedback d-block" type="invalid">{error}</Form.Control.Feedback>
+    )}
   </Form.Group>
 );
 
