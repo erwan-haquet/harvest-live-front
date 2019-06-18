@@ -5,7 +5,6 @@ import styles from './styles.module.scss';
 import Button from 'react-bootstrap/Button';
 
 const NavigationBar = ({ previousStep, onSubmit }) => {
-  debugger;
   return (
     <div className={styles.wrapper}>
       {previousStep && (

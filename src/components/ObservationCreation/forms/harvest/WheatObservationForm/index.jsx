@@ -1,90 +1,16 @@
 import React, { Fragment } from 'react';
 import { Field, reduxForm } from 'redux-form';
 import NavigationBar from '../../../NavigationBar';
-import { Form, InputGroup } from 'react-bootstrap';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import styles from './styles.module.scss';
 import SectionTitle from '../../../SectionTitle';
-import StarRatings from 'react-star-ratings';
-
-const renderFieldInput = ({
-  input,
-  meta,
-  type,
-  placeholder,
-  min,
-  max,
-  label,
-  append,
-}) => {
-  return (
-    <Form.Group>
-      <Form.Label className={styles.label}>{label}</Form.Label>
-      <InputGroup>
-        <Form.Control
-          type={type}
-          placeholder={placeholder}
-          min={min}
-          max={max}
-          value={input.value}
-          onChange={input.onChange}
-        />
-        {append && (
-          <InputGroup.Append>
-            <InputGroup.Text id="inputGroupAppend">{append}</InputGroup.Text>
-          </InputGroup.Append>
-        )}
-      </InputGroup>
-    </Form.Group>
-  );
-};
-
-const renderSelectInput = ({ input, meta, label, choices }) => {
-  return (
-    <Form.Group>
-      <Form.Label className={styles.label}>{label}</Form.Label>
-      <Form.Control value={input.value} onChange={input.onChange} as="select">
-        {choices.map(choice => (
-          <option key={choice.value} value={choice.value}>
-            {choice.label}
-          </option>
-        ))}
-      </Form.Control>
-    </Form.Group>
-  );
-};
-
-const renderTextareaInput = ({ input, meta, label }) => {
-  return (
-    <Form.Group>
-      <Form.Label className={styles.label}>{label}</Form.Label>
-      <Form.Control
-        value={input.value}
-        onChange={input.onChange}
-        as="textarea"
-      />
-    </Form.Group>
-  );
-};
-
-const renderRatingInput = ({ input, meta, label }) => {
-  return (
-    <Form.Group>
-      <Form.Label className={styles.label}>{label}</Form.Label>
-        <br />
-      <StarRatings
-        rating={input.value}
-        starRatedColor="#F37F2B"
-        // starDimension="17px"
-        // starSpacing="3px"
-        changeRating={input.onChange}
-        numberOfStars={5}
-        name="rating"
-      />
-    </Form.Group>
-  );
-};
+import FieldInput from '../../../../common/form/FieldInput';
+import SelectInput from '../../../../common/form/SelectInput';
+import RatingInput from '../../../../common/form/RatingInput';
+import TextareaInput from '../../../../common/form/TextareaInput';
+import ZipcodeInputContainer from '../../../../common/form/ZipcodeInput/ZipcodeInputContainer';
+import LatLng from "../../../../../models/latLng";
 
 const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
   return (
@@ -97,7 +23,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="cultivationMethod"
               type="select"
-              component={renderSelectInput}
+              component={SelectInput}
               label="Méthode de culture"
               choices={[
                 { value: 'conventional', label: 'Conventionnel' },
@@ -110,7 +36,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="specificWeight"
               type="number"
-              component={renderFieldInput}
+              component={FieldInput}
               label="Pois spécifique"
               append="kg/hl"
             />
@@ -119,7 +45,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="humidity"
               type="number"
-              component={renderFieldInput}
+              component={FieldInput}
               label="Humidité"
               append="%"
             />
@@ -128,7 +54,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="yield"
               type="number"
-              component={renderFieldInput}
+              component={FieldInput}
               label="Rendement"
               append="q"
             />
@@ -137,7 +63,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="variety"
               type="text"
-              component={renderFieldInput}
+              component={FieldInput}
               label="Variété"
             />
           </Col>
@@ -145,7 +71,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="nitrogenProductUsed"
               type="select"
-              component={renderSelectInput}
+              component={SelectInput}
               label="Engrais Azoté utilisé"
               choices={[
                 { value: 'Solution Azotée', label: 'Solution Azotée' },
@@ -159,7 +85,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="nitrogenQuantityUsed"
               type="number"
-              component={renderFieldInput}
+              component={FieldInput}
               label="Quantité d'azote utilisée"
             />
           </Col>
@@ -167,7 +93,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="targetPrice"
               type="number"
-              component={renderFieldInput}
+              component={FieldInput}
               label="Prix objectif"
               append="€/T"
             />
@@ -176,7 +102,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="yieldNotation"
               type="number"
-              component={renderRatingInput}
+              component={RatingInput}
               label="Note de rendement comparé aux 5 dernières années"
               append="€/T"
             />
@@ -185,8 +111,17 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="comment"
               type="textarea"
-              component={renderTextareaInput}
+              component={TextareaInput}
               label="Commentaire"
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <Field
+              name="place"
+              type="select"
+              component={ZipcodeInputContainer}
+              label="Code postal"
+              formName="observation"
             />
           </Col>
         </Row>
@@ -203,7 +138,6 @@ export default reduxForm({
   initialValues: {
     cultivationMethod: 'conventional',
     yieldNotation: 2,
+    coordinates: new LatLng(),
   },
 })(WheatObservationForm);
-
-// - "place": "Madison square park"

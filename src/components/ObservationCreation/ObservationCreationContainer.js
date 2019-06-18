@@ -15,7 +15,6 @@ import { getCurrentStep } from '../../selectors/observationFormModal';
 class ObservationCreationContainer extends Component {
   nextStep = () => {
     const { dispatch } = this.props;
-    debugger;
     dispatch(nextStepObservationFormModal());
   };
 
