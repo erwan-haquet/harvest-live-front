@@ -1,21 +1,44 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
-import markerBlue from '../../images/marker-blue.svg';
-import markerGreen from '../../images/marker-green.svg';
-import markerPurple from '../../images/marker-purple.svg';
-import markerOrange from '../../images/marker-orange.svg';
-import markerRed from '../../images/marker-red.svg';
-import {cultures} from "../../constants/availableObservationCultures";
+import markerCorn from '../../images/marker-corn.svg';
+import markerBarley from '../../images/marker-barley.svg';
+import markerSunflower from '../../images/marker-sunflower.svg';
+import markerRapeseed from '../../images/marker-rapeseed.svg';
+import markerWheat from '../../images/marker-wheat.svg';
+import { cultures } from '../../constants/availableObservationCultures';
 
-const ColorLegend = ({onClick}) => {
+const ColorLegend = ({ onClick }) => {
   return (
     <ul className={styles.list}>
-        <li className={styles.item} onClick={() => onClick(cultures.CORN)}><img src={markerBlue} alt="blue marker" /> Maïs</li>
-        <li className={styles.item} onClick={() => onClick(cultures.BARLEY)}><img src={markerGreen} alt="green marker" /> Orge</li>
-        <li className={styles.item} onClick={() => onClick(cultures.SUNFLOWER)}><img src={markerPurple} alt="purple marker" /> Tournesol</li>
-        <li className={styles.item} onClick={() => onClick(cultures.WHEAT)}><img src={markerOrange} alt="orange marker" /> Blé</li>
-        <li className={styles.item} onClick={() => onClick(cultures.RAPESEED)}><img src={markerRed} alt="red marker" /> Colza</li>
+      <li className={styles.item} onClick={() => onClick(cultures.RAPESEED)}>
+        <img
+          className={styles.image}
+          src={markerRapeseed}
+          alt="rapeseed marker"
+        />
+        Colza
+      </li>
+      <li className={styles.item} onClick={() => onClick(cultures.SUNFLOWER)}>
+        <img
+          className={styles.image}
+          src={markerSunflower}
+          alt="sunflower marker"
+        />
+        Tournesol
+      </li>
+      <li className={styles.item} onClick={() => onClick(cultures.WHEAT)}>
+        <img className={styles.image} src={markerWheat} alt="wheat marker" />{' '}
+        Blé
+      </li>
+
+      <li className={styles.item} onClick={() => onClick(cultures.CORN)}>
+        <img className={styles.image} src={markerCorn} alt="corn marker" /> Maïs
+      </li>
+      <li className={styles.item} onClick={() => onClick(cultures.BARLEY)}>
+        <img className={styles.image} src={markerBarley} alt="barley marker" />{' '}
+        Orge
+      </li>
     </ul>
   );
 };

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import CultureForm from './forms/CultureForm';
+import CultureFormContainer from './forms/CultureForm/CultureFormContainer';
 import ProductForm from './forms/ProductForm';
 import YieldForm from './forms/YieldForm';
 import UserForm from './forms/UserForm';
@@ -27,7 +27,7 @@ class ObservationFormContainer extends Component {
     const { onSubmit, currentStep } = this.props;
     return (
       <div>
-        {currentStep === 1 && <CultureForm onSubmit={this.nextStep} />}
+        {currentStep === 1 && <CultureFormContainer />}
         {currentStep === 2 && (
           <ProductForm
             previousStep={this.previousStep}

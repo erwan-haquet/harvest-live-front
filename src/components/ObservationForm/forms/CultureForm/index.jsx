@@ -1,5 +1,4 @@
 import React from 'react';
-import { Field, reduxForm } from 'redux-form';
 
 import styles from './styles.module.scss';
 
@@ -10,91 +9,46 @@ import sunflower from '../../../../images/sunflower.jpg';
 import barley from '../../../../images/barley.jpg';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from "react-bootstrap/Button";
+import {cultures} from "../../../../constants/availableObservationCultures";
 
-const renderCheckbox = ({ type, input, image, id, culture }) => {
+const CultureForm = ({ onClick }) => {
   return (
-    <label className={styles.label}>
-      <input
-        type={type}
-        name={input.name}
-        id={id}
-        checked
-        value={input.value}
-        onChange={input.onChange}
-        className={styles.radio}
-      />
-      <img src={image} className={styles.image} alt="selection" />
-      <h5 className={styles.culture}>{culture}</h5>
-    </label>
-  );
-};
-
-const CultureForm = ({ handleSubmit }) => {
-  return (
-    <form onSubmit={handleSubmit}>
+    <form >
       <Row>
-        <Col xs={4} md={3} lg={{ span: 2, offset: 1 }} className={styles.col}>
-          <Field
-            type="radio"
-            name="culture"
-            component={renderCheckbox}
-            image={wheat}
-            id="wheat"
-            culture="Blé"
-          />
+        <Col xs={4} md={4} lg={{ span: 2, offset: 1 }} className={styles.col}>
+            <Button variant="secondary"  onClick={() => onClick(cultures.WHEAT)}>
+                <img src={wheat} alt={cultures.WHEAT} className={styles.image} />
+                <p className={styles.label}>Blé</p>
+            </Button>
         </Col>
-        <Col xs={4} md={3} lg={2} className={styles.col}>
-          <Field
-            type="radio"
-            name="culture"
-            component={renderCheckbox}
-            image={rapeseed}
-            id="rapeseed"
-            culture="Colza"
-          />
+        <Col xs={4} md={4} lg={2} className={styles.col}>
+            <Button variant="secondary"  onClick={() => onClick(cultures.RAPESEED)}>
+                <img src={rapeseed} alt={cultures.RAPESEED} className={styles.image} />
+                <p className={styles.label}>Colza</p>
+            </Button>
         </Col>
-        <Col xs={4} md={3} lg={2} className={styles.col}>
-          <Field
-            type="radio"
-            name="culture"
-            component={renderCheckbox}
-            image={sunflower}
-            id="sunflower"
-            culture="Tournesol"
-          />
+        <Col xs={4} md={4} lg={2} className={styles.col}>
+            <Button variant="secondary"  onClick={() => onClick(cultures.CORN)}>
+                <img src={corn} alt={cultures.CORN} className={styles.image} />
+                <p className={styles.label}>Maïs</p>
+            </Button>
         </Col>
-        <Col xs={4} md={3} lg={2} className={styles.col}>
-          <Field
-            type="radio"
-            name="culture"
-            component={renderCheckbox}
-            image={corn}
-            id="corn"
-            culture="Maïs"
-          />
+        <Col xs={4} md={4} lg={2} className={styles.col}>
+            <Button variant="secondary"  onClick={() => onClick(cultures.SUNFLOWER)}>
+                <img src={sunflower} alt={cultures.SUNFLOWER} className={styles.image} />
+                <p className={styles.label}>Tournesol</p>
+            </Button>
         </Col>
-        <Col xs={4} md={3} lg={2} className={styles.col}>
-          <Field
-            type="radio"
-            name="culture"
-            component={renderCheckbox}
-            image={barley}
-            id="barley"
-            culture="Orge"
-          />
+        <Col xs={4} md={4} lg={2} className={styles.col}>
+            <Button variant="secondary"  onClick={() => onClick(cultures.BARLEY)}>
+                <img src={barley} alt={cultures.BARLEY} className={styles.image} />
+                <p className={styles.label}>Orge</p>
+            </Button>
         </Col>
       </Row>
-      <div>
-        <button type="submit" className="next">
-          Next
-        </button>
-      </div>
     </form>
   );
 };
 
-export default reduxForm({
-  form: 'wizard',
-  destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true,
-})(CultureForm);
+export default CultureForm;

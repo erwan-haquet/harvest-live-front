@@ -11,20 +11,20 @@ const ProductForm = ({ handleSubmit, previousStep }) => {
         label="First Name"
       />
       <Field name="lastName" type="text" component="input" label="Last Name" />
-        <div>
-            <button type="button" className="previous" onClick={previousStep}>
-                Previous
-            </button>
-            <button type="submit" className="next">
-                Next
-            </button>
-        </div>
+      <div>
+        <button type="button" className="previous" onClick={previousStep}>
+          Previous
+        </button>
+        <button type="submit" className="next">
+          Next
+        </button>
+      </div>
     </form>
   );
 };
 
 export default reduxForm({
-  form: 'wizard',
+  form: 'observation',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
 })(ProductForm);
