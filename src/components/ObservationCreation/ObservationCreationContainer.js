@@ -3,19 +3,44 @@ import React, { Component } from 'react';
 import ObservationFormContainer from './forms/ObservationForm/ObservationFormContainer';
 import UserForm from './forms/UserForm';
 import TypeSelectionContainer from './TypeSelection/TypeSelectionContainer';
-import CultureSelectionContainer from "./CultureSelection/CultureSelectionContainer";
+import CultureSelectionContainer from './CultureSelection/CultureSelectionContainer';
 
 import {
   nextStepObservationFormModal,
   previousStepObservationFormModal,
 } from '../../actions/observationFormModal';
 import { connect } from 'react-redux';
-import { getCurrentStep } from '../../selectors/observationFormModal';
+import {
+  getCulture,
+  getCurrentStep,
+  getType,
+} from '../../selectors/observationFormModal';
+import { types } from '../../constants/observationTypes';
+import { cultures } from '../../constants/observationCultures';
+import { postWheatObservationRequestAction } from '../../actions/wheatObservation';
 
 class ObservationCreationContainer extends Component {
+  handleSubmit = form => {
+    const { dispatch, culture, type } = this.props;
+    debugger;
+
+    switch (type) {
+      case types.HARVEST:
+        switch (culture) {
+          case cultures.WHEAT:
+            dispatch(postWheatObservationRequestAction({ form: form }));
+            break;
+          default:
+            return null;
+        }
+      default:
+        return null;
+    }
+
+  };
+
   nextStep = () => {
     const { dispatch } = this.props;
-    debugger;
     dispatch(nextStepObservationFormModal());
   };
 
@@ -25,11 +50,13 @@ class ObservationCreationContainer extends Component {
   };
 
   render() {
-    const { onSubmit, currentStep } = this.props;
+    const { currentStep } = this.props;
     return (
       <div>
         {currentStep === 1 && <TypeSelectionContainer />}
-        {currentStep === 2 && <CultureSelectionContainer previousStep={this.previousStep} />}
+        {currentStep === 2 && (
+          <CultureSelectionContainer previousStep={this.previousStep} />
+        )}
         {currentStep === 3 && (
           <ObservationFormContainer
             previousStep={this.previousStep}
@@ -37,7 +64,10 @@ class ObservationCreationContainer extends Component {
           />
         )}
         {currentStep === 4 && (
-          <UserForm previousStep={this.previousStep} onSubmit={onSubmit} />
+          <UserForm
+            previousStep={this.previousStep}
+            onSubmit={this.handleSubmit}
+          />
         )}
       </div>
     );
@@ -46,4 +76,6 @@ class ObservationCreationContainer extends Component {
 
 export default connect(state => ({
   currentStep: getCurrentStep(state),
+  culture: getCulture(state),
+  type: getType(state),
 }))(ObservationCreationContainer);

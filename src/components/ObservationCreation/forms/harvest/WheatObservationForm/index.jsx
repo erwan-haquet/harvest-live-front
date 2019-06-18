@@ -156,7 +156,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
           </Col>
         </Row>
         <div className={styles.navigationWrapper}>
-          <NavigationBar previousStep={previousStep} shouldSubmit={true} />
+          <NavigationBar previousStep={previousStep} shouldSubmit={true} submitLabel="Suivant" />
         </div>
       </form>
     </Fragment>

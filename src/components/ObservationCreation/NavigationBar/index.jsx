@@ -4,7 +4,7 @@ import styles from './styles.module.scss';
 
 import Button from 'react-bootstrap/Button';
 
-const NavigationBar = ({ previousStep, shouldSubmit }) => {
+const NavigationBar = ({ previousStep, shouldSubmit, submitLabel }) => {
   return (
     <div className={styles.wrapper}>
       {previousStep && (
@@ -24,7 +24,7 @@ const NavigationBar = ({ previousStep, shouldSubmit }) => {
           type="submit"
           className={styles.nextButton}
         >
-          Suivant
+          {submitLabel}
         </Button>
       )}
     </div>
