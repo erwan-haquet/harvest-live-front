@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ObservationForm from './forms/ObservationForm';
+import ObservationFormContainer from './forms/ObservationForm/ObservationFormContainer';
 import UserForm from './forms/UserForm';
 import TypeSelectionContainer from './TypeSelection/TypeSelectionContainer';
 import CultureSelectionContainer from "./CultureSelection/CultureSelectionContainer";
@@ -12,9 +12,10 @@ import {
 import { connect } from 'react-redux';
 import { getCurrentStep } from '../../selectors/observationFormModal';
 
-class ObservationFormContainer extends Component {
+class ObservationCreationContainer extends Component {
   nextStep = () => {
     const { dispatch } = this.props;
+    debugger;
     dispatch(nextStepObservationFormModal());
   };
 
@@ -30,7 +31,7 @@ class ObservationFormContainer extends Component {
         {currentStep === 1 && <TypeSelectionContainer />}
         {currentStep === 2 && <CultureSelectionContainer previousStep={this.previousStep} />}
         {currentStep === 3 && (
-          <ObservationForm
+          <ObservationFormContainer
             previousStep={this.previousStep}
             onSubmit={this.nextStep}
           />
@@ -45,4 +46,4 @@ class ObservationFormContainer extends Component {
 
 export default connect(state => ({
   currentStep: getCurrentStep(state),
-}))(ObservationFormContainer);
+}))(ObservationCreationContainer);

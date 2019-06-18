@@ -4,7 +4,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 
 import styles from './styles.module.scss';
-import ObservationFormContainer from '../ObservationForm/ObservationFormContainer';
+import ObservationCreationContainer from '../ObservationCreation/ObservationCreationContainer';
 
 const ObservationFormModal = ({ currentStep, onClose }) => {
   return (
@@ -21,32 +21,32 @@ const ObservationFormModal = ({ currentStep, onClose }) => {
             [styles.isActive]: currentStep === 1,
           })}
         >
-          1. Type
+          Type
         </li>
         <li
           className={cx(styles.step, {
             [styles.isActive]: currentStep === 2,
           })}
         >
-          2. Culture
+          Culture
         </li>
         <li
           className={cx(styles.step, {
             [styles.isActive]: currentStep === 3,
           })}
         >
-          3. Observation
+          Observation
         </li>
         <li
           className={cx(styles.step, {
             [styles.isActive]: currentStep === 4,
           })}
         >
-          4. Coordonées
+          Coordonées
         </li>
       </ul>
       <div className={styles.formWrapper}>
-        <ObservationFormContainer />
+        <ObservationCreationContainer />
       </div>
     </div>
   );

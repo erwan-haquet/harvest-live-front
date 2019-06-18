@@ -4,7 +4,8 @@ import styles from './styles.module.scss';
 
 import Button from 'react-bootstrap/Button';
 
-const NavigationBar = ({ previousStep, nextStep }) => {
+const NavigationBar = ({ previousStep, onSubmit }) => {
+  debugger;
   return (
     <div className={styles.wrapper}>
       {previousStep && (
@@ -12,14 +13,17 @@ const NavigationBar = ({ previousStep, nextStep }) => {
           variant="light"
           onClick={previousStep}
           className={styles.previousButton}
+          size="lg"
         >
           Précedent
         </Button>
       )}
-      {nextStep && (
+      {onSubmit && (
         <Button
+          size="lg"
+          onClick={onSubmit}
           variant="success"
-          onClick={nextStep}
+          type="submit"
           className={styles.nextButton}
         >
           Suivant

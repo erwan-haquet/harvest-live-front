@@ -16,7 +16,7 @@
 }
 
 .header {
-  background: $premium;
+  background: $dark-grey;
   margin-bottom: 20px;
   color: white;
   padding: 10px;
@@ -54,7 +54,7 @@
   text-align: center;
   border: 1px solid white;
   &.isActive {
-    background: $primary;
+    background: $premium;
   }
 }
 
@@ -75,7 +75,7 @@
 
 @media (max-width: 576px) {
   .step {
-    font-size: 0.7em;
+    font-size: 0.8em;
     padding: 5px 2px;
   }
   .contentWrapper {
