@@ -6,7 +6,7 @@ import { getBarleyObservations } from '../../../../../selectors/barleyObservatio
 import { getLocation } from '../../../../../selectors/location';
 import MarkerList from './index';
 import { getSelectedCulture } from '../../../../../selectors/filters';
-import { cultures } from '../../../../../constants/availableObservationCultures';
+import { cultures } from '../../../../../constants/observationCultures';
 
 class MarkerListContainer extends Component {
   componentDidUpdate(prevProps) {

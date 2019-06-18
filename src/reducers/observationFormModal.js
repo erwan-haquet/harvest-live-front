@@ -6,6 +6,7 @@ import {
   nextStepObservationFormModal,
   previousStepObservationFormModal,
   setCultureObservationFormModal,
+  setTypeObservationFormModal,
 } from '../actions/observationFormModal';
 import InitialState from '../models/initialState';
 import ObservationFormModal from '../models/observationFormModal';
@@ -20,7 +21,9 @@ const reducer = createReducer(
     [previousStepObservationFormModal]: state =>
       state.setIn(['data', 'currentStep'], state.data.currentStep - 1),
     [setCultureObservationFormModal]: (state, payload) =>
-      state.setIn(['data', 'selectedCulture'], payload),
+      state.setIn(['data', 'culture'], payload),
+    [setTypeObservationFormModal]: (state, payload) =>
+      state.setIn(['data', 'type'], payload),
   },
   new InitialState({
     data: new ObservationFormModal(),

@@ -1,0 +1,27 @@
+@import '../../../styles/colors';
+
+.title {
+  margin-bottom: 20px;
+  border-bottom: 1px solid $silver;
+}
+
+.col {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+
+.icon {
+  margin-bottom: 5px;
+}
+
+.label {
+  text-align: center;
+  color: white;
+  margin-bottom: 0;
+}
+
+.button {
+  padding: 12px!important;
+  width: 100%;
+}

@@ -6,7 +6,7 @@ import markerBarley from '../../images/marker-barley.svg';
 import markerSunflower from '../../images/marker-sunflower.svg';
 import markerRapeseed from '../../images/marker-rapeseed.svg';
 import markerWheat from '../../images/marker-wheat.svg';
-import { cultures } from '../../constants/availableObservationCultures';
+import { cultures } from '../../constants/observationCultures';
 
 const ColorLegend = ({ onClick }) => {
   return (

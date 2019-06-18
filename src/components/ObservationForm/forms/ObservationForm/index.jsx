@@ -1,7 +1,7 @@
 import React from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-const ProductForm = ({ handleSubmit, previousStep }) => {
+const ObservationForm = ({ handleSubmit, previousStep }) => {
   return (
     <form onSubmit={handleSubmit}>
       <Field
@@ -27,4 +27,4 @@ export default reduxForm({
   form: 'observation',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-})(ProductForm);
+})(ObservationForm);

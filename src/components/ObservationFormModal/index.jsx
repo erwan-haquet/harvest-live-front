@@ -21,21 +21,21 @@ const ObservationFormModal = ({ currentStep, onClose }) => {
             [styles.isActive]: currentStep === 1,
           })}
         >
-          1. Culture
+          1. Type
         </li>
         <li
           className={cx(styles.step, {
             [styles.isActive]: currentStep === 2,
           })}
         >
-          2. Produit
+          2. Culture
         </li>
         <li
           className={cx(styles.step, {
             [styles.isActive]: currentStep === 3,
           })}
         >
-          3. Récolte
+          3. Observation
         </li>
         <li
           className={cx(styles.step, {

@@ -3,7 +3,8 @@ import { Record } from 'immutable';
 export const ObservationFormModal = Record({
   isOpen: false,
   currentStep: 1,
-  selectedCulture: null,
+  type: null,
+  culture: null,
 });
 
 export default ObservationFormModal;
