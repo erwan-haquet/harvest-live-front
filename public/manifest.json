@@ -1,15 +1,26 @@
 {
-  "short_name": "Harvest Live",
-  "name": "Harvest Live",
+  "short_name": "Moisson live",
+  "name": "Moisson live",
   "icons": [
     {
-      "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
-      "type": "image/x-icon"
+      "src": "images/logo_48.png",
+      "type": "image/png",
+      "sizes": "48x48"
+    },
+    {
+      "src": "images/logo_96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/logo_192.png",
+      "type": "image/png",
+      "sizes": "192x192"
     }
   ],
   "start_url": ".",
-  "display": "standalone",
+  "display": "fullscreen",
   "theme_color": "#000000",
+  "orientation": "portrait",
   "background_color": "#ffffff"
 }
