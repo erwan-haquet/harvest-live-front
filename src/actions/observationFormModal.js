@@ -1,8 +1,9 @@
 import { createAction } from 'redux-act';
 
-export const openObservationFormModal = createAction();
-export const closeObservationFormModal = createAction();
-export const nextStepObservationFormModal = createAction();
-export const previousStepObservationFormModal = createAction();
-export const setTypeObservationFormModal = createAction();
-export const setCultureObservationFormModal = createAction();
+export const openObservationFormModalAction = createAction();
+export const closeObservationFormModalAction = createAction();
+export const nextStepObservationFormModalAction = createAction();
+export const previousStepObservationFormModalAction = createAction();
+export const setStepObservationFormModalAction = createAction();
+export const setTypeObservationFormModalAction = createAction();
+export const setCultureObservationFormModalAction = createAction();

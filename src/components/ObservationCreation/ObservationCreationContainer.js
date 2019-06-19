@@ -6,8 +6,8 @@ import TypeSelectionContainer from './TypeSelection/TypeSelectionContainer';
 import CultureSelectionContainer from './CultureSelection/CultureSelectionContainer';
 
 import {
-  nextStepObservationFormModal,
-  previousStepObservationFormModal,
+  nextStepObservationFormModalAction,
+  previousStepObservationFormModalAction,
 } from '../../actions/observationFormModal';
 import { connect } from 'react-redux';
 import {
@@ -22,7 +22,6 @@ import { postWheatObservationRequestAction } from '../../actions/wheatObservatio
 class ObservationCreationContainer extends Component {
   handleSubmit = form => {
     const { dispatch, culture, type } = this.props;
-    debugger;
 
     switch (type) {
       case types.HARVEST:
@@ -33,20 +32,20 @@ class ObservationCreationContainer extends Component {
           default:
             return null;
         }
+        break;
       default:
         return null;
     }
-
   };
 
   nextStep = () => {
     const { dispatch } = this.props;
-    dispatch(nextStepObservationFormModal());
+    dispatch(nextStepObservationFormModalAction());
   };
 
   previousStep = () => {
     const { dispatch } = this.props;
-    dispatch(previousStepObservationFormModal());
+    dispatch(previousStepObservationFormModalAction());
   };
 
   render() {

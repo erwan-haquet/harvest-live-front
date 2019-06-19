@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ObservationFormModal from './index';
 import { isObservationFormModalOpen, getCurrentStep } from '../../selectors/observationFormModal';
-import { closeObservationFormModal } from '../../actions/observationFormModal';
+import { closeObservationFormModalAction } from '../../actions/observationFormModal';
 
 class ObservationFormModalContainer extends Component {
   handleClose = () => {
     const { dispatch } = this.props;
-    dispatch(closeObservationFormModal());
+    dispatch(closeObservationFormModalAction());
   };
 
   render() {
@@ -18,7 +18,7 @@ class ObservationFormModalContainer extends Component {
     }
 
     return (
-      <ObservationFormModal onClose={this.handleClose} currentStep={currentStep}/>
+      <ObservationFormModal handleClose={this.handleClose} currentStep={currentStep}/>
     );
   }
 }

@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import AddObservationButton from '../AddObservationButton';
-import { openObservationFormModal } from '../../../actions/observationFormModal';
+import { openObservationFormModalAction } from '../../../actions/observationFormModal';
 
 class AddObservationButtonContainer extends Component {
   handleClick = () => {
     const { dispatch } = this.props;
-    dispatch(openObservationFormModal());
+    dispatch(openObservationFormModalAction());
   };
 
   render() {

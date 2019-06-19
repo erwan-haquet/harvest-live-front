@@ -6,11 +6,11 @@ import cx from 'classnames';
 import styles from './styles.module.scss';
 import ObservationCreationContainer from '../ObservationCreation/ObservationCreationContainer';
 
-const ObservationFormModal = ({ currentStep, onClose }) => {
+const ObservationFormModal = ({ currentStep, handleClose }) => {
   return (
     <div className={styles.wrapper}>
       <h5 className={styles.header}>
-        <span className={styles.closeButton} onClick={onClose}>
+        <span className={styles.closeButton} onClick={handleClose}>
           <FontAwesomeIcon icon={faTimes} />
         </span>
         Mon observation

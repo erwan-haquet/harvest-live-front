@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 import CultureSelection from '../CultureSelection';
 
 import {
-  nextStepObservationFormModal,
-  setCultureObservationFormModal,
+  nextStepObservationFormModalAction,
+  setCultureObservationFormModalAction,
 } from '../../../actions/observationFormModal';
 import { connect } from 'react-redux';
 
 class CultureSelectionContainer extends Component {
   handleClick = culture => {
     const { dispatch } = this.props;
-    dispatch(setCultureObservationFormModal(culture));
-    dispatch(nextStepObservationFormModal());
+    dispatch(setCultureObservationFormModalAction(culture));
+    dispatch(nextStepObservationFormModalAction());
   };
 
   render() {

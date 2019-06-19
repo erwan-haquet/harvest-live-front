@@ -14,6 +14,7 @@ import ColorLegendButtonContainer from "./components/buttons/ColorLegendButton/C
 import ColorLegendContainer from "./components/ColorLegend/ColorLegendContainer";
 import AddObservationButtonContainer from "./components/buttons/AddObservationButton/AddObservationButtonContainer";
 import ObservationFormModalContainer from "./components/ObservationFormModal/ObservationFormModalContainer";
+import ToastListContainer from "./components/common/toast/ToastList/ToastListContainer";
 
 import './App.css';
 import './styles/import.scss';
@@ -21,6 +22,7 @@ import './styles/import.scss';
 const App = () => (
   <Provider store={store}>
     <TopBarContainer />
+    <ToastListContainer />
     <MapContainer />
     <ObservationDetailsContainer />
     <StatisticsModalContainer />
