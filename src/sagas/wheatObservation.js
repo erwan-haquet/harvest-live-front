@@ -17,6 +17,7 @@ import LatLng from '../models/latLng';
 import { setAskedPositionAction } from '../actions/askedPosition';
 import { createToastAction } from '../actions/toast';
 import Toast from '../models/toast';
+import { destroy } from 'redux-form';
 
 export function* fetchWheatObservationsRequestAction({ payload: { bounds } }) {
   try {
@@ -83,6 +84,7 @@ export function* postWheatObservationRequestAction({ payload: { form } }) {
     yield put(postWheatObservationSuccessAction());
     yield put(closeObservationFormModalAction());
     yield put(setStepObservationFormModalAction(1));
+    yield put(destroy('observation'));
 
     yield put(
       setAskedPositionAction(
@@ -102,29 +104,27 @@ export function* postWheatObservationRequestAction({ payload: { form } }) {
         }),
       ),
     );
-
   } catch (error) {
     if (error instanceof FormError) {
       yield put(
-          createToastAction(
-              new Toast({
-                title: 'Vérifier vos informations',
-                body: error.violations.map(v => v.message).join(" "),
-                variant: 'danger',
-              }),
-          ),
+        createToastAction(
+          new Toast({
+            title: 'Vérifier vos informations',
+            body: error.violations.map(v => v.message).join(' '),
+            variant: 'danger',
+          }),
+        ),
       );
-
     } else {
-        yield put(
-            createToastAction(
-                new Toast({
-                    title: 'Oops',
-                    body: 'Une erreur est survenue, merci de réessayer ultérieurement',
-                    variant: 'danger',
-                }),
-            ),
-        );
+      yield put(
+        createToastAction(
+          new Toast({
+            title: 'Oops',
+            body: 'Une erreur est survenue, merci de réessayer ultérieurement',
+            variant: 'danger',
+          }),
+        ),
+      );
     }
     yield put(postWheatObservationFailureAction());
   }

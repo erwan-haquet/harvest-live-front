@@ -2,9 +2,10 @@ import { put, call } from 'redux-saga/effects';
 import { List } from 'immutable';
 import { toBarleyObservation } from '../models/barleyObservation';
 import {
-    fetchBarleyObservationsSuccessAction,
-    fetchBarleyObservationsFailureAction,
-    postBarleyObservationSuccessAction, postBarleyObservationFailureAction,
+  fetchBarleyObservationsSuccessAction,
+  fetchBarleyObservationsFailureAction,
+  postBarleyObservationSuccessAction,
+  postBarleyObservationFailureAction,
 } from '../actions/barleyObservation';
 import fetch from 'cross-fetch';
 import FormError from '../errors/FormError';
@@ -16,6 +17,7 @@ import { setAskedPositionAction } from '../actions/askedPosition';
 import LatLng from '../models/latLng';
 import { createToastAction } from '../actions/toast';
 import Toast from '../models/toast';
+import { destroy } from 'redux-form';
 
 export function* fetchBarleyObservationsRequestAction({ payload: { bounds } }) {
   try {
@@ -80,6 +82,7 @@ export function* postBarleyObservationRequestAction({ payload: { form } }) {
     yield put(postBarleyObservationSuccessAction());
     yield put(closeObservationFormModalAction());
     yield put(setStepObservationFormModalAction(1));
+    yield put(destroy('observation'));
 
     yield put(
       setAskedPositionAction(

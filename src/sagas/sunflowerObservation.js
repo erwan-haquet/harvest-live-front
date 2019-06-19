@@ -3,21 +3,33 @@ import { List } from 'immutable';
 import { toSunflowerObservation } from '../models/sunflowerObservation';
 import {
   fetchSunflowerObservationsSuccessAction,
-  fetchSunflowerObservationsFailureAction, postSunflowerObservationSuccessAction, postSunflowerObservationFailureAction,
+  fetchSunflowerObservationsFailureAction,
+  postSunflowerObservationSuccessAction,
+  postSunflowerObservationFailureAction,
 } from '../actions/sunflowerObservation';
 import fetch from 'cross-fetch';
-import FormError from "../errors/FormError";
-import {closeObservationFormModalAction, setStepObservationFormModalAction} from "../actions/observationFormModal";
-import {setAskedPositionAction} from "../actions/askedPosition";
-import LatLng from "../models/latLng";
-import {createToastAction} from "../actions/toast";
-import Toast from "../models/toast";
+import FormError from '../errors/FormError';
+import {
+  closeObservationFormModalAction,
+  setStepObservationFormModalAction,
+} from '../actions/observationFormModal';
+import { setAskedPositionAction } from '../actions/askedPosition';
+import LatLng from '../models/latLng';
+import { createToastAction } from '../actions/toast';
+import Toast from '../models/toast';
+import { destroy } from 'redux-form';
 
-export function* fetchSunflowerObservationsRequestAction({ payload: { bounds } }) {
+export function* fetchSunflowerObservationsRequestAction({
+  payload: { bounds },
+}) {
   try {
     const response = yield call(
       fetch,
-      `https://api.capgrain.com/sunflower-observations?coordinates[within_box]=[${bounds.southWest.latitude},${bounds.southWest.longitude},${bounds.northEast.latitude},${bounds.northEast.longitude}`,
+      `https://api.capgrain.com/sunflower-observations?coordinates[within_box]=[${
+        bounds.southWest.latitude
+      },${bounds.southWest.longitude},${bounds.northEast.latitude},${
+        bounds.northEast.longitude
+      }`,
       {
         headers: {
           accept: 'application/json',
@@ -50,16 +62,16 @@ export function* postSunflowerObservationRequestAction({ payload: { form } }) {
     };
 
     const response = yield call(
-        fetch,
-        `https://api.capgrain.com/sunflower-observations`,
-        {
-          method: 'POST',
-          headers: {
-            accept: 'application/json',
-            'content-type': 'application/json',
-          },
-          body: JSON.stringify(body),
+      fetch,
+      `https://api.capgrain.com/sunflower-observations`,
+      {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
         },
+        body: JSON.stringify(body),
+      },
     );
 
     const responseBody = yield call([response, response.json]);
@@ -74,47 +86,46 @@ export function* postSunflowerObservationRequestAction({ payload: { form } }) {
     yield put(postSunflowerObservationSuccessAction());
     yield put(closeObservationFormModalAction());
     yield put(setStepObservationFormModalAction(1));
+    yield put(destroy('observation'));
 
     yield put(
-        setAskedPositionAction(
-            new LatLng({
-              latitude: responseBody.coordinates.latitude,
-              longitude: responseBody.coordinates.longitude,
-            }),
-        ),
+      setAskedPositionAction(
+        new LatLng({
+          latitude: responseBody.coordinates.latitude,
+          longitude: responseBody.coordinates.longitude,
+        }),
+      ),
     );
 
     yield put(
-        createToastAction(
-            new Toast({
-              title: 'Nouvelle observation',
-              body: 'Votre observation a été ajoutée avec succés! ',
-              variant: 'success',
-            }),
-        ),
+      createToastAction(
+        new Toast({
+          title: 'Nouvelle observation',
+          body: 'Votre observation a été ajoutée avec succés! ',
+          variant: 'success',
+        }),
+      ),
     );
-
   } catch (error) {
     if (error instanceof FormError) {
       yield put(
-          createToastAction(
-              new Toast({
-                title: 'Vérifier vos informations',
-                body: error.violations.map(v => v.message).join(" "),
-                variant: 'danger',
-              }),
-          ),
+        createToastAction(
+          new Toast({
+            title: 'Vérifier vos informations',
+            body: error.violations.map(v => v.message).join(' '),
+            variant: 'danger',
+          }),
+        ),
       );
-
     } else {
       yield put(
-          createToastAction(
-              new Toast({
-                title: 'Oops',
-                body: 'Une erreur est survenue, merci de réessayer ultérieurement',
-                variant: 'danger',
-              }),
-          ),
+        createToastAction(
+          new Toast({
+            title: 'Oops',
+            body: 'Une erreur est survenue, merci de réessayer ultérieurement',
+            variant: 'danger',
+          }),
+        ),
       );
     }
     yield put(postSunflowerObservationFailureAction());

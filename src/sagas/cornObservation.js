@@ -17,6 +17,7 @@ import { setAskedPositionAction } from '../actions/askedPosition';
 import LatLng from '../models/latLng';
 import { createToastAction } from '../actions/toast';
 import Toast from '../models/toast';
+import { destroy } from 'redux-form';
 
 export function* fetchCornObservationsRequestAction({ payload: { bounds } }) {
   try {
@@ -82,6 +83,7 @@ export function* postCornObservationRequestAction({ payload: { form } }) {
     yield put(postCornObservationSuccessAction());
     yield put(closeObservationFormModalAction());
     yield put(setStepObservationFormModalAction(1));
+    yield put(destroy('observation'));
 
     yield put(
       setAskedPositionAction(
