@@ -8,6 +8,10 @@ import {
 import { types } from '../../../../constants/observationTypes';
 import { cultures } from '../../../../constants/observationCultures';
 import WheatObservationForm from '../harvest/WheatObservationForm';
+import BarleyObservationForm from '../harvest/BarleyObservationForm';
+import SunflowerObservationForm from '../harvest/SunflowerObservationForm';
+import CornObservationForm from '../harvest/CornObservationForm';
+import RapeseedObservationForm from '../harvest/RapeseedObservationForm';
 
 class ObservationFormContainer extends Component {
   render() {
@@ -19,6 +23,34 @@ class ObservationFormContainer extends Component {
           case cultures.WHEAT:
             return (
               <WheatObservationForm
+                previousStep={previousStep}
+                onSubmit={onSubmit}
+              />
+            );
+          case cultures.BARLEY:
+            return (
+              <BarleyObservationForm
+                previousStep={previousStep}
+                onSubmit={onSubmit}
+              />
+            );
+          case cultures.SUNFLOWER:
+            return (
+              <SunflowerObservationForm
+                previousStep={previousStep}
+                onSubmit={onSubmit}
+              />
+            );
+          case cultures.CORN:
+            return (
+              <CornObservationForm
+                previousStep={previousStep}
+                onSubmit={onSubmit}
+              />
+            );
+          case cultures.RAPESEED:
+            return (
+              <RapeseedObservationForm
                 previousStep={previousStep}
                 onSubmit={onSubmit}
               />

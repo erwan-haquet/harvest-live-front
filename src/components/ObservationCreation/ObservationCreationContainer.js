@@ -18,6 +18,10 @@ import {
 import { types } from '../../constants/observationTypes';
 import { cultures } from '../../constants/observationCultures';
 import { postWheatObservationRequestAction } from '../../actions/wheatObservation';
+import { postBarleyObservationRequestAction } from '../../actions/barleyObservation';
+import {postSunflowerObservationRequestAction} from "../../actions/sunflowerObservation";
+import {postCornObservationRequestAction} from "../../actions/cornObservation";
+import {postRapeseedObservationRequestAction} from "../../actions/rapeseedObservation";
 
 class ObservationCreationContainer extends Component {
   handleSubmit = form => {
@@ -28,6 +32,18 @@ class ObservationCreationContainer extends Component {
         switch (culture) {
           case cultures.WHEAT:
             dispatch(postWheatObservationRequestAction({ form: form }));
+            break;
+          case cultures.BARLEY:
+            dispatch(postBarleyObservationRequestAction({ form: form }));
+            break;
+          case cultures.SUNFLOWER:
+            dispatch(postSunflowerObservationRequestAction({ form: form }));
+            break;
+          case cultures.CORN:
+            dispatch(postCornObservationRequestAction({ form: form }));
+            break;
+          case cultures.RAPESEED:
+            dispatch(postRapeseedObservationRequestAction({ form: form }));
             break;
           default:
             return null;

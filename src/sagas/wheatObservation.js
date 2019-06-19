@@ -105,7 +105,6 @@ export function* postWheatObservationRequestAction({ payload: { form } }) {
 
   } catch (error) {
     if (error instanceof FormError) {
-      console.log(error.violations);
       yield put(
           createToastAction(
               new Toast({
@@ -117,7 +116,15 @@ export function* postWheatObservationRequestAction({ payload: { form } }) {
       );
 
     } else {
-      console.log(error);
+        yield put(
+            createToastAction(
+                new Toast({
+                    title: 'Oops',
+                    body: 'Une erreur est survenue, merci de réessayer ultérieurement',
+                    variant: 'danger',
+                }),
+            ),
+        );
     }
     yield put(postWheatObservationFailureAction());
   }
