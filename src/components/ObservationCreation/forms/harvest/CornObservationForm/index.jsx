@@ -68,7 +68,6 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               type="select"
               component={SelectInput}
               label="Engrais Azoté utilisé"
-              required
               choices={[
                 { value: 'Solution Azotée', label: 'Solution Azotée' },
                 { value: 'Ammonitrate', label: 'Ammonitrate' },
@@ -83,7 +82,6 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               type="number"
               component={FieldInput}
               label="Quantité d'azote utilisée"
-              required
             />
           </Col>
           <Col xs={12} md={6}>

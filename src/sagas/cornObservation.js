@@ -18,6 +18,7 @@ import LatLng from '../models/latLng';
 import { createToastAction } from '../actions/toast';
 import Toast from '../models/toast';
 import { destroy } from 'redux-form';
+import { parseAndFormat } from '../utils/phoneUtil';
 
 export function* fetchCornObservationsRequestAction({ payload: { bounds } }) {
   try {
@@ -55,6 +56,7 @@ export function* postCornObservationRequestAction({ payload: { form } }) {
       nitrogenQuantityUsed: parseFloat(form.nitrogenQuantityUsed),
       humidity: parseFloat(form.humidity),
       place: form.place.label,
+      phone: form.phone ? parseAndFormat(form.phone) : undefined,
       targetPrice: form.targetPrice ? parseFloat(form.targetPrice) : undefined,
     };
 

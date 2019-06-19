@@ -12,12 +12,6 @@ const validate = values => {
   if (!values.humidity) {
     errors.humidity = 'Ce champs est requis';
   }
-  if (!values.nitrogenProductUsed) {
-    errors.nitrogenProductUsed = 'Ce champs est requis';
-  }
-  if (!values.nitrogenQuantityUsed) {
-    errors.nitrogenQuantityUsed = 'Ce champs est requis';
-  }
   if (!values.yield) {
     errors.yield = 'Ce champs est requis';
   }

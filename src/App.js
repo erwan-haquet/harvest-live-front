@@ -11,7 +11,6 @@ import StatisticsModalContainer from './components/StatisticsModal/StatisticsMod
 import ObservationDetailsContainer from './components/ObservationDetails/ObservationDetailsContainer';
 import MapLayerButtonContainer from './components/buttons/MapLayerButton/MapLayerButtonContainer';
 import ColorLegendContainer from "./components/ColorLegend/ColorLegendContainer";
-import AddObservationButtonContainer from "./components/buttons/AddObservationButton/AddObservationButtonContainer";
 import ObservationFormModalContainer from "./components/ObservationFormModal/ObservationFormModalContainer";
 import ToastListContainer from "./components/common/toast/ToastList/ToastListContainer";
 
@@ -28,7 +27,6 @@ const App = () => (
     <GeolocateButtonContainer />
     <MapLayerButtonContainer />
     <ColorLegendContainer />
-    <AddObservationButtonContainer />
     <ObservationFormModalContainer />
   </Provider>
 );

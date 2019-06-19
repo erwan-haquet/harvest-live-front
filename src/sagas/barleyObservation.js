@@ -18,6 +18,7 @@ import LatLng from '../models/latLng';
 import { createToastAction } from '../actions/toast';
 import Toast from '../models/toast';
 import { destroy } from 'redux-form';
+import { parseAndFormat } from '../utils/phoneUtil';
 
 export function* fetchBarleyObservationsRequestAction({ payload: { bounds } }) {
   try {
@@ -53,6 +54,7 @@ export function* postBarleyObservationRequestAction({ payload: { form } }) {
       yield: parseFloat(form.yield),
       nitrogenQuantityUsed: parseFloat(form.nitrogenQuantityUsed),
       humidity: parseFloat(form.humidity),
+      phone: form.phone ? parseAndFormat(form.phone) : undefined,
       place: form.place.label,
       targetPrice: form.targetPrice ? parseFloat(form.targetPrice) : undefined,
     };

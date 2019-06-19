@@ -4060,6 +4060,11 @@ globule@^1.0.0:
     lodash "~4.17.10"
     minimatch "~3.0.2"
 
+google-libphonenumber@^3.2.2:
+  version "3.2.2"
+  resolved "https://registry.yarnpkg.com/google-libphonenumber/-/google-libphonenumber-3.2.2.tgz#3d9d7ba727e99a50812f21b0ed313723b76c5c54"
+  integrity sha512-ubjGeosYPeusjYbUHy76lCniGTTI0k1rIFc+uKBX+jHQLDmWOSUtlFUxaeoLJ+Y+PAMM6dWp+C1HjHx5BI8kEw==
+
 graceful-fs@^4.1.11, graceful-fs@^4.1.15, graceful-fs@^4.1.2, graceful-fs@^4.1.6:
   version "4.1.15"
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.1.15.tgz#ffb703e1066e8a0eeaa4c8b80ba9253eeefbfb00"

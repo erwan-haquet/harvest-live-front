@@ -58,3 +58,22 @@
     display: none;
   }
 }
+
+.addObservationButtonWrapper {
+  margin-left: auto !important;
+  margin-right: 10px;
+
+}
+
+@media (max-width: 992px) {
+  .actionButton {
+    margin-left: auto !important;
+  }
+  .addObservationButtonWrapper {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 999;
+    left: 20px;
+  }
+}

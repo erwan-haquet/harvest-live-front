@@ -1,4 +1,4 @@
-import { takeLatest } from 'redux-saga/effects';
+import { takeEvery } from 'redux-saga/effects';
 
 import * as askedPositionActions from '../actions/askedPosition';
 import * as askedPositionSagas from './askedPosition';
@@ -35,7 +35,7 @@ export default function* saga() {
   for (const [actions, sagas] of relations) {
     for (const [actionName, action] of Object.entries(actions)) {
       const saga = sagas[actionName];
-      if (saga) yield takeLatest(action.getType(), saga);
+      if (saga) yield takeEvery(action.getType(), saga);
     }
   }
 }

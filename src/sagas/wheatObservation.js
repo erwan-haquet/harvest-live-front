@@ -18,6 +18,7 @@ import { setAskedPositionAction } from '../actions/askedPosition';
 import { createToastAction } from '../actions/toast';
 import Toast from '../models/toast';
 import { destroy } from 'redux-form';
+import { parseAndFormat } from '../utils/phoneUtil';
 
 export function* fetchWheatObservationsRequestAction({ payload: { bounds } }) {
   try {
@@ -56,6 +57,7 @@ export function* postWheatObservationRequestAction({ payload: { form } }) {
       nitrogenQuantityUsed: parseFloat(form.nitrogenQuantityUsed),
       humidity: parseFloat(form.humidity),
       place: form.place.label,
+      phone: form.phone ? parseAndFormat(form.phone) : undefined,
       targetPrice: form.targetPrice ? parseFloat(form.targetPrice) : undefined,
     };
 
