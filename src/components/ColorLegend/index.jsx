@@ -1,11 +1,11 @@
 import React from 'react';
 
 import styles from './styles.module.scss';
-import markerCorn from '../../images/marker-corn.svg';
-import markerBarley from '../../images/marker-barley.svg';
-import markerSunflower from '../../images/marker-sunflower.svg';
-import markerRapeseed from '../../images/marker-rapeseed.svg';
-import markerWheat from '../../images/marker-wheat.svg';
+import markerCorn from '../../images/marker-corn.png';
+import markerBarley from '../../images/marker-barley.png';
+import markerSunflower from '../../images/marker-sunflower.png';
+import markerRapeseed from '../../images/marker-rapeseed.png';
+import markerWheat from '../../images/marker-wheat.png';
 import { cultures } from '../../constants/observationCultures';
 
 const ColorLegend = ({ onClick }) => {

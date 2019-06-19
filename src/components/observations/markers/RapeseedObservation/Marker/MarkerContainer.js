@@ -5,7 +5,7 @@ import ObservationMarker from '../../../../common/ObservationMarker';
 import { setSelectedObservation } from '../../../../../actions/selectedObservation';
 import { connect } from 'react-redux';
 import { openObservationDetailsAction } from '../../../../../actions/observationDetails';
-import markerRapeseed from '../../../../../images/marker-rapeseed.svg';
+import markerRapeseed from '../../../../../images/marker-rapeseed.png';
 
 class MarkerContainer extends Component {
   handleClick = () => {
@@ -20,11 +20,10 @@ class MarkerContainer extends Component {
     const icon = new L.Icon({
       iconUrl: markerRapeseed,
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-      iconSize: new L.Point(40, 40),
-      iconAnchor: new L.Point(12, 40),
-      popupAnchor: new L.Point(1, -34),
-      shadowSize: new L.Point(40, 40),
-      shadowAnchor: new L.Point(5, 40)
+      iconSize: [25, 41],
+      iconAnchor: [12, 41],
+      popupAnchor: [1, -34],
+      shadowSize: [41, 41]
     });
 
 
