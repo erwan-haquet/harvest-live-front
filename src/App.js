@@ -10,7 +10,6 @@ import GeolocateButtonContainer from './components/buttons/GeolocateButton/Geolo
 import StatisticsModalContainer from './components/StatisticsModal/StatisticsModalContainer';
 import ObservationDetailsContainer from './components/ObservationDetails/ObservationDetailsContainer';
 import MapLayerButtonContainer from './components/buttons/MapLayerButton/MapLayerButtonContainer';
-import ColorLegendButtonContainer from "./components/buttons/ColorLegendButton/ColorLegendButtonContainer";
 import ColorLegendContainer from "./components/ColorLegend/ColorLegendContainer";
 import AddObservationButtonContainer from "./components/buttons/AddObservationButton/AddObservationButtonContainer";
 import ObservationFormModalContainer from "./components/ObservationFormModal/ObservationFormModalContainer";
@@ -28,7 +27,6 @@ const App = () => (
     <StatisticsModalContainer />
     <GeolocateButtonContainer />
     <MapLayerButtonContainer />
-    <ColorLegendButtonContainer />
     <ColorLegendContainer />
     <AddObservationButtonContainer />
     <ObservationFormModalContainer />

@@ -14,3 +14,4 @@ const GeolocateButton = ({ onClick }) => (
 );
 
 export default GeolocateButton;
+

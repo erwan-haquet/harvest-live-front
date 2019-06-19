@@ -11,6 +11,9 @@ import { cultures } from '../../constants/observationCultures';
 const ColorLegend = ({ onClick }) => {
   return (
     <ul className={styles.list}>
+      <li className={styles.item} onClick={() => onClick()}>
+        Tous
+      </li>
       <li className={styles.item} onClick={() => onClick(cultures.RAPESEED)}>
         <img
           className={styles.image}
@@ -28,15 +31,16 @@ const ColorLegend = ({ onClick }) => {
         Tournesol
       </li>
       <li className={styles.item} onClick={() => onClick(cultures.WHEAT)}>
-        <img className={styles.image} src={markerWheat} alt="wheat marker" />{' '}
+        <img className={styles.image} src={markerWheat} alt="wheat marker" />
         Blé
       </li>
 
       <li className={styles.item} onClick={() => onClick(cultures.CORN)}>
-        <img className={styles.image} src={markerCorn} alt="corn marker" /> Maïs
+        <img className={styles.image} src={markerCorn} alt="corn marker" />
+        Maïs
       </li>
       <li className={styles.item} onClick={() => onClick(cultures.BARLEY)}>
-        <img className={styles.image} src={markerBarley} alt="barley marker" />{' '}
+        <img className={styles.image} src={markerBarley} alt="barley marker" />
         Orge
       </li>
     </ul>

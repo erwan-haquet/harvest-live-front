@@ -21,14 +21,14 @@ const CultureSelection = ({ onClick, previousStep }) => {
       <SectionTitle title="Selectionnez la culture" />
       <Row>
         <Col xs={4} md={4} lg={2} className={styles.col}>
-          <Button variant="secondary" onClick={() => onClick(cultures.WHEAT)}>
+          <Button variant="outline-secondary" onClick={() => onClick(cultures.WHEAT)}>
             <img src={wheat} alt={cultures.WHEAT} className={styles.image} />
             <p className={styles.label}>Blé</p>
           </Button>
         </Col>
         <Col xs={4} md={4} lg={2} className={styles.col}>
           <Button
-            variant="secondary"
+            variant="outline-secondary"
             onClick={() => onClick(cultures.RAPESEED)}
           >
             <img
@@ -40,14 +40,14 @@ const CultureSelection = ({ onClick, previousStep }) => {
           </Button>
         </Col>
         <Col xs={4} md={4} lg={2} className={styles.col}>
-          <Button variant="secondary" onClick={() => onClick(cultures.CORN)}>
+          <Button variant="outline-secondary" onClick={() => onClick(cultures.CORN)}>
             <img src={corn} alt={cultures.CORN} className={styles.image} />
             <p className={styles.label}>Maïs</p>
           </Button>
         </Col>
         <Col xs={4} md={4} lg={2} className={styles.col}>
           <Button
-            variant="secondary"
+            variant="outline-secondary"
             onClick={() => onClick(cultures.SUNFLOWER)}
           >
             <img
@@ -59,13 +59,13 @@ const CultureSelection = ({ onClick, previousStep }) => {
           </Button>
         </Col>
         <Col xs={4} md={4} lg={2} className={styles.col}>
-          <Button variant="secondary" onClick={() => onClick(cultures.BARLEY)}>
+          <Button variant="outline-secondary" onClick={() => onClick(cultures.BARLEY)}>
             <img src={barley} alt={cultures.BARLEY} className={styles.image} />
             <p className={styles.label}>Orge</p>
           </Button>
         </Col>
         <Col xs={4} md={4} lg={2} className={styles.col}>
-          <Button variant="secondary" disabled>
+          <Button variant="outline-secondary" disabled>
             <img src={peas} alt={cultures.PEAS} className={styles.image} />
             <p className={styles.label}>Pois</p>
           </Button>
