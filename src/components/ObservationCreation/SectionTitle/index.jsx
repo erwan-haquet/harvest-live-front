@@ -3,7 +3,7 @@ import React from 'react';
 import styles from './styles.module.scss';
 
 const SectionTitle = ({ title }) => (
-  <h5 className={styles.title}>{title}</h5>
+  <h6 className={styles.title}>{title}</h6>
 );
 
 export default SectionTitle;

@@ -21,6 +21,13 @@ p {
 
 // Bootstrap extented
 
+.btn {
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  -o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2  );
+}
+
 .btn-darken-primary {
   color: white !important;
   border: 1px solid white !important;
@@ -66,7 +73,7 @@ p {
 
 .btn-warning {
   color: white !important;
-  border: 1px solid white !important;
+  border: 1px solid $warning !important;
   background-color: $warning !important;
 
   &.outline {
