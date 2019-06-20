@@ -20,11 +20,13 @@ import Toast from '../models/toast';
 import { destroy } from 'redux-form';
 import { parseAndFormat } from '../utils/phoneUtil';
 
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
+
 export function* fetchCornObservationsRequestAction({ payload: { bounds } }) {
   try {
     const response = yield call(
       fetch,
-      `https://api.capgrain.com/corn-observations?coordinates[within_box]=[${
+      `${apiUrl}/corn-observations?coordinates[within_box]=[${
         bounds.southWest.latitude
       },${bounds.southWest.longitude},${bounds.northEast.latitude},${
         bounds.northEast.longitude
@@ -62,7 +64,7 @@ export function* postCornObservationRequestAction({ payload: { form } }) {
 
     const response = yield call(
       fetch,
-      `https://api.capgrain.com/corn-observations`,
+      `${apiUrl}/corn-observations`,
       {
         method: 'POST',
         headers: {

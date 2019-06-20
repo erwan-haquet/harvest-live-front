@@ -20,13 +20,15 @@ import Toast from '../models/toast';
 import { destroy } from 'redux-form';
 import { parseAndFormat } from '../utils/phoneUtil';
 
+const apiUrl = process.env.REACT_APP_API_BASE_URL;
+
 export function* fetchRapeseedObservationsRequestAction({
   payload: { bounds },
 }) {
   try {
     const response = yield call(
       fetch,
-      `https://api.capgrain.com/rapeseed-observations?coordinates[within_box]=[${
+      `${apiUrl}/rapeseed-observations?coordinates[within_box]=[${
         bounds.southWest.latitude
       },${bounds.southWest.longitude},${bounds.northEast.latitude},${
         bounds.northEast.longitude
@@ -65,7 +67,7 @@ export function* postRapeseedObservationRequestAction({ payload: { form } }) {
 
     const response = yield call(
       fetch,
-      `https://api.capgrain.com/rapeseed-observations`,
+      `${apiUrl}/rapeseed-observations`,
       {
         method: 'POST',
         headers: {
