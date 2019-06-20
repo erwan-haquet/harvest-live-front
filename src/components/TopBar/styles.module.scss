@@ -29,16 +29,10 @@
 }
 
 .logo {
-  width: 32px;
-  height: 32px;
+  width: 300px;
+  height: 60px;
   display: inline-block;
   margin-right: 10px;
-}
-
-.teaser {
-  color: white;
-  display: inline;
-  margin: 0;
 }
 
 .markerText {
@@ -47,12 +41,9 @@
 }
 
 @media (max-width: 576px) {
-  .teaser {
-    font-size: 0.9em;
-  }
   .logo {
-    width: 28px;
-    height: 28px;
+    width: 100px;
+    height: 60px;
   }
   .statisticLabel {
     display: none;

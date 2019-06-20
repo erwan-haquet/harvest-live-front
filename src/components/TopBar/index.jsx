@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartPie, faTruck } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 
-import logo from '../../images/logo.png';
+import logo from '../../images/logo.svg';
 import styles from './styles.module.scss';
 import AddObservationButtonContainer from '../buttons/AddObservationButton/AddObservationButtonContainer';
 
@@ -12,7 +12,6 @@ const TopBar = ({ onStatisticsClick }) => (
   <div className={styles.wrapper}>
     <div className={styles.brand}>
       <img src={logo} alt="logo" className={styles.logo} />
-      <h4 className={styles.teaser}>Moisson Live</h4>
     </div>
     <div className={styles.addObservationButtonWrapper}>
       <AddObservationButtonContainer />
