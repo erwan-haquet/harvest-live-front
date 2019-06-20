@@ -24,7 +24,7 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="cultivationMethod"
               type="select"
               component={SelectInput}
-              label="Méthode de culture"
+              label="Pratique culturale"
               required
               choices={[
                 { value: 'conventional', label: 'Conventionnel' },
@@ -121,7 +121,7 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="targetPrice"
               type="number"
               component={FieldInput}
-              label="Prix objectif"
+              label="Prix objectif de vente"
               append="€/T"
             />
           </Col>

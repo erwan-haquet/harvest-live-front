@@ -39,7 +39,7 @@ const ObservationDetails = ({
             </tr>
             <tr>
               <td>
-                <b>Méthode de culture:</b>
+                <b>Pratique culturale:</b>
               </td>
               <td>{cultivationMethod}</td>
             </tr>
