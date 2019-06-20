@@ -3,24 +3,24 @@
   "name": "Moisson live",
   "icons": [
     {
-      "src": "images/logo_48.png",
+      "src": "logo-48x48.png",
       "type": "image/png",
       "sizes": "48x48"
     },
     {
-      "src": "images/logo_96.png",
+      "src": "logo-96x96.png",
       "type": "image/png",
       "sizes": "96x96"
     },
     {
-      "src": "images/logo_192.png",
+      "src": "logo-192x192.png",
       "type": "image/png",
       "sizes": "192x192"
     }
   ],
-  "start_url": ".",
+  "start_url": "/?utm_source=pwa",
   "display": "fullscreen",
-  "theme_color": "#000000",
+  "theme_color": "#5a9449",
   "orientation": "portrait",
   "background_color": "#ffffff"
 }
