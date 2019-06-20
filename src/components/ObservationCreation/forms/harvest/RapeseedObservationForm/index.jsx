@@ -93,6 +93,7 @@ const RapeseedObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               type="number"
               component={FieldInput}
               label="Quantité d'azote utilisée"
+              append="u"
             />
           </Col>
           <Col xs={12} md={6}>
