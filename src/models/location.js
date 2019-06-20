@@ -26,4 +26,23 @@ export const buildFromLeafletMap = map => {
   });
 };
 
+export const buildDefault = () => {
+  return new Location({
+    position: new LatLng({
+      latitude: 48.45106561953216,
+      longitude: 1.50360210537829,
+    }),
+    bounds: new Bounds({
+      northEast: new LatLng({
+        latitude: 50.33494273843299,
+        longitude: 7.158814507722042,
+      }),
+      southWest: new LatLng({
+        latitude: 46.494610770689384,
+        longitude: -4.151610296965461,
+      }),
+    }),
+  });
+};
+
 export default Location;

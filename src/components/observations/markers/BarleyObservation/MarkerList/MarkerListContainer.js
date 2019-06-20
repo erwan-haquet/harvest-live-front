@@ -9,6 +9,14 @@ import { getSelectedCulture } from '../../../../../selectors/filters';
 import { cultures } from '../../../../../constants/observationCultures';
 
 class MarkerListContainer extends Component {
+  constructor(props) {
+    super(props);
+    
+    if (props.location.bounds) {
+      props.dispatch(fetchBarleyObservationsRequestAction({ bounds: props.location.bounds }));
+    }
+  }
+
   componentDidUpdate(prevProps) {
     const {
       location: { bounds },

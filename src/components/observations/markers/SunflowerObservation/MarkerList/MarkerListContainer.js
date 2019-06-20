@@ -9,6 +9,14 @@ import { cultures } from '../../../../../constants/observationCultures';
 import { getSelectedCulture } from '../../../../../selectors/filters';
 
 class MarkerListContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    if (props.location.bounds) {
+      props.dispatch(fetchSunflowerObservationsRequestAction({ bounds: props.location.bounds }));
+    }
+  }
+  
   componentDidUpdate(prevProps) {
     const {
       location: { bounds },

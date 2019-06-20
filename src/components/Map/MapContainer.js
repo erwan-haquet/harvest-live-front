@@ -2,16 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import Map from '../Map';
-import { buildFromLeafletMap } from '../../models/location';
+import { buildDefault, buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
 import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
 import { closeObservationDetailsAction } from '../../actions/observationDetails';
 import { closeStatisticsModalAction } from '../../actions/statisticsModal';
 import { getMapStyle } from '../../selectors/mapStyle';
 
-const accessToken = process.env.REACT_APP_MAPBOX_ACCESS_TOKEN;
-
 class MapContainer extends Component {
+  constructor(props) {
+    super(props);
+
+    // A quick fix to load location at initialization
+    const defaultLocation = buildDefault();
+    props.dispatch(setLocationAction(defaultLocation));
+  }
+
   handlePositionChanged = event => {
     const { dispatch } = this.props;
     const location = buildFromLeafletMap(event.target);
@@ -37,7 +43,6 @@ class MapContainer extends Component {
         position={position}
         zoom={zoom}
         style={mapStyle}
-        accessToken={accessToken}
         onClick={this.handleMapClick}
         onPositionChanged={this.handlePositionChanged}
       />
