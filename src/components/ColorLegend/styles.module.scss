@@ -32,6 +32,7 @@
   margin: 0 6px;
   font-weight: bold;
   cursor: pointer;
+  color: $silver;
 }
 
 .image {
@@ -41,9 +42,7 @@
 }
 
 .selected {
-  border: 1px solid $silver;
-  background: $lighten-grey;
-  border-radius: 5px;
+  color: $black
 }
 
 @media (max-width: 576px) {
