@@ -13,9 +13,11 @@ class GeolocateButtonContainer extends Component {
     super(props);
     this.state = { permission: null };
 
-    navigator.permissions
-      .query({ name: 'geolocation' })
-      .then(this.handlePermissionChange);
+    if (navigator.permissions) {
+      navigator.permissions
+          .query({ name: 'geolocation' })
+          .then(this.handlePermissionChange);
+    }
   }
 
   handlePermissionChange = permissionStatus => {
