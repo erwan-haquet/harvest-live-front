@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ColorLegend from './index';
 import { setSelectedCulture } from '../../actions/filters';
+import { getSelectedCulture } from '../../selectors/filters';
 
 class ColorLegendContainer extends Component {
   handleClick = culture => {
@@ -10,8 +11,12 @@ class ColorLegendContainer extends Component {
   };
 
   render() {
-    return <ColorLegend onClick={this.handleClick} />;
+    const { selectedCulture } = this.props;
+
+    return <ColorLegend selectedCulture={selectedCulture} onClick={this.handleClick} />;
   }
 }
 
-export default connect()(ColorLegendContainer);
+export default connect(state => ({
+  selectedCulture: getSelectedCulture(state),
+}))(ColorLegendContainer);
