@@ -17,7 +17,9 @@ const UserForm = ({ handleSubmit, previousStep, onSubmit }) => {
           <Col xs={12} md={6}>
             <Field
               name="email"
+              id="email"
               type="email"
+              autoComplete="email"
               component={FieldInput}
               label="Email"
               required
@@ -26,7 +28,9 @@ const UserForm = ({ handleSubmit, previousStep, onSubmit }) => {
           <Col xs={12} md={6}>
             <Field
               name="phone"
+              id="phone"
               type="tel"
+              autoComplete="tel"
               component={FieldInput}
               label="Téléphone"
             />

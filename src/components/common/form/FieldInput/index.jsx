@@ -4,6 +4,7 @@ import Label from '../Label';
 
 const FieldInput = ({
   input,
+  id,
   meta: { touched, error },
   type,
   placeholder,
@@ -12,12 +13,16 @@ const FieldInput = ({
   label,
   append,
   required,
+  autoComplete,
 }) => (
   <Form.Group>
     <Label label={label} required={required} />
     <InputGroup>
       <Form.Control
         type={type}
+        id={id}
+        name={id}
+        autoComplete={autoComplete}
         placeholder={placeholder}
         min={min}
         max={max}
