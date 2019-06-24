@@ -9,7 +9,6 @@ import SectionTitle from '../../../SectionTitle';
 import FieldInput from '../../../../common/form/FieldInput';
 import SelectInput from '../../../../common/form/SelectInput';
 import RatingInput from '../../../../common/form/RatingInput';
-import TextareaInput from '../../../../common/form/TextareaInput';
 import ZipcodeInputContainer from '../../../../common/form/ZipcodeInput/ZipcodeInputContainer';
 import LatLng from '../../../../../models/latLng';
 
@@ -19,6 +18,37 @@ const RapeseedObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
       <SectionTitle title="Reseignez votre observation" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Row>
+          <Col xs={12} md={6}>
+            <Field
+                name="place"
+                type="select"
+                component={ZipcodeInputContainer}
+                label="Lieu de la récolte"
+                formName="observation"
+                placeholder="votre code postal"
+                required
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <Field
+                name="yield"
+                type="number"
+                component={FieldInput}
+                label="Rendement"
+                append="q"
+                required
+            />
+          </Col>
+          <Col xs={6}>
+            <Field
+                name="humidity"
+                type="number"
+                component={FieldInput}
+                label="Humidité"
+                append="%"
+                required
+            />
+          </Col>
           <Col xs={12} md={6}>
             <Field
               name="cultivationMethod"
@@ -31,37 +61,6 @@ const RapeseedObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 { value: 'simplified cultivation methods', label: 'TCS' },
                 { value: 'organic farming', label: 'Bio' },
               ]}
-            />
-          </Col>
-          <Col xs={12} md={6}>
-            <Field
-              name="place"
-              type="select"
-              component={ZipcodeInputContainer}
-              label="Lieu de la récolte"
-              formName="observation"
-              placeholder="votre code postal"
-              required
-            />
-          </Col>
-          <Col xs={6}>
-            <Field
-              name="specificWeight"
-              type="number"
-              component={FieldInput}
-              label="Pois spécifique"
-              append="kg/hl"
-              required
-            />
-          </Col>
-          <Col xs={6}>
-            <Field
-              name="humidity"
-              type="number"
-              component={FieldInput}
-              label="Humidité"
-              append="%"
-              required
             />
           </Col>
           <Col xs={12} md={6}>
@@ -98,16 +97,6 @@ const RapeseedObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name="yield"
-              type="number"
-              component={FieldInput}
-              label="Rendement"
-              append="q"
-              required
-            />
-          </Col>
-          <Col xs={12} md={6}>
-            <Field
               name="yieldNotation"
               type="number"
               component={RatingInput}
@@ -123,14 +112,6 @@ const RapeseedObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               component={FieldInput}
               label="Prix objectif de vente"
               append="€/T"
-            />
-          </Col>
-          <Col xs={12} md={6}>
-            <Field
-              name="comment"
-              type="textarea"
-              component={TextareaInput}
-              label="Commentaire"
             />
           </Col>
         </Row>

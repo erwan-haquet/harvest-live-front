@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import NavigationBar from '../../NavigationBar';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Alert from 'react-bootstrap/Alert';
 import SectionTitle from '../../SectionTitle';
 import styles from './styles.module.scss';
 import FieldInput from '../../../common/form/FieldInput';
@@ -34,6 +35,12 @@ const UserForm = ({ handleSubmit, previousStep, onSubmit }) => {
               component={FieldInput}
               label="Téléphone"
             />
+          </Col>
+          <Col xs={12}>
+            <Alert variant="light">
+              Vos données personnelles resteront confidentielles et ne seront
+              pas partagées avec la communauté.
+            </Alert>
           </Col>
         </Row>
         <div className={styles.navigationWrapper}>

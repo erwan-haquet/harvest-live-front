@@ -1,8 +1,5 @@
 const validate = values => {
   const errors = {};
-  if (!values.specificWeight) {
-    errors.specificWeight = 'Ce champs est requis';
-  }
   if (!values.place) {
     errors.place = 'Ce champs est requis';
   }

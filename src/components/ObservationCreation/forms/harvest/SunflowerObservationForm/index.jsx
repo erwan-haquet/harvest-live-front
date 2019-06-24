@@ -9,7 +9,6 @@ import SectionTitle from '../../../SectionTitle';
 import FieldInput from '../../../../common/form/FieldInput';
 import SelectInput from '../../../../common/form/SelectInput';
 import RatingInput from '../../../../common/form/RatingInput';
-import TextareaInput from '../../../../common/form/TextareaInput';
 import ZipcodeInputContainer from '../../../../common/form/ZipcodeInput/ZipcodeInputContainer';
 import LatLng from '../../../../../models/latLng';
 
@@ -19,6 +18,48 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
       <SectionTitle title="Reseignez votre observation" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Row>
+          <Col xs={12} md={6}>
+            <Field
+                name="place"
+                type="select"
+                component={ZipcodeInputContainer}
+                label="Lieu de la récolte"
+                formName="observation"
+                placeholder="votre code postal"
+                required
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <Field
+                name="yield"
+                type="number"
+                component={FieldInput}
+                label="Rendement"
+                append="q"
+                required
+            />
+          </Col>
+
+          <Col xs={6}>
+            <Field
+                name="humidity"
+                type="number"
+                component={FieldInput}
+                label="Humidité"
+                append="%"
+                required
+            />
+          </Col>
+          <Col xs={6}>
+            <Field
+                name="specificWeight"
+                type="number"
+                component={FieldInput}
+                label="Pois spécifique"
+                append="kg/hl"
+                required
+            />
+          </Col>
           <Col xs={12} md={6}>
             <Field
               name="cultivationMethod"
@@ -35,44 +76,12 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name="place"
-              type="select"
-              component={ZipcodeInputContainer}
-              label="Lieu de la récolte"
-              formName="observation"
-              placeholder="votre code postal"
-              required
-            />
-          </Col>
-          <Col xs={6}>
-            <Field
-              name="specificWeight"
-              type="number"
-              component={FieldInput}
-              label="Pois spécifique"
-              append="kg/hl"
-              required
-            />
-          </Col>
-          <Col xs={6}>
-            <Field
-              name="humidity"
-              type="number"
-              component={FieldInput}
-              label="Humidité"
-              append="%"
-              required
-            />
-          </Col>
-          <Col xs={12} md={6}>
-            <Field
               name="variety"
               type="text"
               component={FieldInput}
               label="Variété"
             />
           </Col>
-          <Col md={6} />
           <Col xs={12} md={6}>
             <Field
               name="nitrogenProductUsed"
@@ -96,16 +105,7 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               append="u"
             />
           </Col>
-          <Col xs={12} md={6}>
-            <Field
-              name="yield"
-              type="number"
-              component={FieldInput}
-              label="Rendement"
-              append="q"
-              required
-            />
-          </Col>
+
           <Col xs={12} md={6}>
             <Field
               name="yieldNotation"
@@ -125,14 +125,7 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               append="€/T"
             />
           </Col>
-          <Col xs={12} md={6}>
-            <Field
-              name="comment"
-              type="textarea"
-              component={TextareaInput}
-              label="Commentaire"
-            />
-          </Col>
+
         </Row>
         <div className={styles.navigationWrapper}>
           <NavigationBar previousStep={previousStep} shouldSubmit={true} submitLabel="Suivant" />
