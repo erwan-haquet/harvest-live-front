@@ -20,6 +20,7 @@ export const BarleyObservation = Record(
     id: null,
     createdAt: null,
     cultureName: 'Orge',
+    image: null,
   },
   'BarleyObservation',
 );

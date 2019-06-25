@@ -3,7 +3,6 @@ import LatLng from './latLng';
 
 export const RapeseedObservation = Record(
   {
-    specificWeight: null,
     email: null,
     phone: null,
     variety: null,
@@ -19,8 +18,8 @@ export const RapeseedObservation = Record(
     coordinates: new LatLng(),
     id: null,
     createdAt: null,
-      cultureName: 'Colza',
-
+    cultureName: 'Colza',
+    image: null,
   },
   'RapeseedObservation',
 );

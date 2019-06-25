@@ -7,6 +7,7 @@ const TextareaInput = ({
   meta: { touched, error },
   label,
   required,
+  ...props,
 }) => {
   return (
     <Form.Group>
@@ -16,6 +17,7 @@ const TextareaInput = ({
         onChange={input.onChange}
         as="textarea"
         isInvalid={error && touched}
+        {...props}
       />
       <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
     </Form.Group>

@@ -19,6 +19,7 @@ export const CornObservation = Record(
     id: null,
     createdAt: null,
     cultureName: 'Maïs',
+    image: null,
   },
   'CornObservation',
 );

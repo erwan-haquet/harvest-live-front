@@ -38,7 +38,7 @@ class MediaImageInputContainer extends Component {
     })
       .then(response => {
         response.json().then(results => {
-          dispatch(change(formName, input.name, results.id));
+          dispatch(change(formName, input.name, `/media-objects/${results.id}`));
 
           this.setState({
             mediaObject: new MediaObject(results),
@@ -65,7 +65,7 @@ class MediaImageInputContainer extends Component {
 
   handleRemove = () => {
     this.setState({
-      image: null,
+      mediaObject: new MediaObject(),
       id: null,
     });
   };

@@ -22,6 +22,7 @@ export const WheatObservation = Record(
     id: null,
     createdAt: null,
     cultureName: 'Blé',
+    image: null,
   },
   'WheatObservation',
 );

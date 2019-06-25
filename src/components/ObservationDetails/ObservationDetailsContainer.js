@@ -4,9 +4,30 @@ import { connect } from 'react-redux';
 import ObservationDetails from './index';
 import { getSelectedObservation } from '../../selectors/selectedObservation';
 import { isObservationDetailsOpen } from '../../selectors/observationDetails';
-import {closeObservationDetailsAction} from "../../actions/observationDetails";
+import { closeObservationDetailsAction } from '../../actions/observationDetails';
+import { getOne } from '../../api/mediaObject';
 
 class ObservationDetailsContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.state = { image: null };
+  }
+
+  componentDidUpdate(prevProps) {
+    const { observation } = this.props;
+
+    if (
+      !prevProps.observation ||
+      prevProps.observation.image !== observation.image
+    ) {
+      getOne(observation.image).then(mediaObject => {
+        this.setState({
+          image: mediaObject,
+        });
+      });
+    }
+  }
+
   getCultivationMethod = method => {
     switch (method) {
       case 'conventional':
@@ -56,9 +77,12 @@ class ObservationDetailsContainer extends Component {
         <ObservationDetails
           observation={observation}
           type={type}
+          image={this.state.image}
           onClose={this.handleClose}
           culture={this.getCultureName(type)}
-          cultivationMethod={this.getCultivationMethod(observation.cultivationMethod)}
+          cultivationMethod={this.getCultivationMethod(
+            observation.cultivationMethod,
+          )}
         />
       );
     }

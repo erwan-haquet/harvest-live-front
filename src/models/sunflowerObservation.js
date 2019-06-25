@@ -20,6 +20,7 @@ export const SunflowerObservation = Record(
     id: null,
     createdAt: null,
     cultureName: 'Tournesol',
+    image: null,
   },
   'SunflowerObservation',
 );

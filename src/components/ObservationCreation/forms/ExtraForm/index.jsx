@@ -28,8 +28,9 @@ const ExtraForm = ({ handleSubmit, previousStep, onSubmit }) => {
             <Field
               name="comment"
               type="textarea"
+              rows="6"
               component={TextareaInput}
-              label="Commentaire"
+              label="Ajouter un commentaire"
             />
           </Col>
         </Row>
