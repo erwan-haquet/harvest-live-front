@@ -152,11 +152,12 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
   );
 };
 
+// TODO Reactivate validate
 export default reduxForm({
   form: 'observation',
   destroyOnUnmount: false,
   forceUnregisterOnUnmount: true,
-  validate,
+  // validate,
   initialValues: {
     yieldNotation: -1,
     coordinates: new LatLng(),

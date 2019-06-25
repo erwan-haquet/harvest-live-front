@@ -20,28 +20,35 @@ const ObservationFormModal = ({ currentStep, handleClose }) => (
           [styles.isActive]: currentStep === 1,
         })}
       >
-        Type
+        <span className={styles.label}>Type</span>
       </li>
       <li
         className={cx(styles.step, {
           [styles.isActive]: currentStep === 2,
         })}
       >
-        Culture
+        <span className={styles.label}>Culture</span>
       </li>
       <li
         className={cx(styles.step, {
           [styles.isActive]: currentStep === 3,
         })}
       >
-        Observation
+        <span className={styles.label}>Observation</span>
       </li>
       <li
         className={cx(styles.step, {
           [styles.isActive]: currentStep === 4,
         })}
       >
-        Coordonées
+        <span className={styles.label}>Extra</span>
+      </li>
+      <li
+        className={cx(styles.step, {
+          [styles.isActive]: currentStep === 5,
+        })}
+      >
+        <span className={styles.label}>Coordonées</span>
       </li>
     </ul>
     <div className={styles.formWrapper}>

@@ -22,6 +22,7 @@ import { postBarleyObservationRequestAction } from '../../actions/barleyObservat
 import {postSunflowerObservationRequestAction} from "../../actions/sunflowerObservation";
 import {postCornObservationRequestAction} from "../../actions/cornObservation";
 import {postRapeseedObservationRequestAction} from "../../actions/rapeseedObservation";
+import ExtraForm from "./forms/ExtraForm";
 
 class ObservationCreationContainer extends Component {
   handleSubmit = form => {
@@ -79,6 +80,12 @@ class ObservationCreationContainer extends Component {
           />
         )}
         {currentStep === 4 && (
+          <ExtraForm
+            previousStep={this.previousStep}
+            onSubmit={this.nextStep}
+          />
+        )}
+        {currentStep === 5 && (
           <UserForm
             previousStep={this.previousStep}
             onSubmit={this.handleSubmit}

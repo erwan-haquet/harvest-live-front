@@ -1,5 +1,3 @@
-import { isValidNumber } from '../../../../utils/phoneUtil';
-
 const validate = values => {
   const errors = {};
 

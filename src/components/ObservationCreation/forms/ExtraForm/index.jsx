@@ -6,26 +6,37 @@ import Col from 'react-bootstrap/Col';
 import SectionTitle from '../../SectionTitle';
 import styles from './styles.module.scss';
 import validate from './validate';
-import TextareaInput from "../../../common/form/TextareaInput";
+import TextareaInput from '../../../common/form/TextareaInput';
+import MediaImageInputContainer from '../../../common/form/MediaImageInput/MediaImageInputContainer';
 
 const ExtraForm = ({ handleSubmit, previousStep, onSubmit }) => {
   return (
     <Fragment>
-      <SectionTitle title="Reseignez vos coordonnées" />
+      <SectionTitle title="Extra" />
       <form onSubmit={handleSubmit(onSubmit)} className={styles.form}>
         <Row>
           <Col xs={12} md={6}>
             <Field
-                name="comment"
-                type="textarea"
-                component={TextareaInput}
-                label="Commentaire"
+              name="image"
+              component={MediaImageInputContainer}
+              label="Prendre une photo"
+              formName="observation"
+              feedback="Partagez en photo votre ticket d'échantillon, écran de rendement ou un moment sympa de votre moisson :)"
+            />
+          </Col>
+          <Col xs={12} md={6}>
+            <Field
+              name="comment"
+              type="textarea"
+              component={TextareaInput}
+              label="Commentaire"
             />
           </Col>
         </Row>
         <div className={styles.navigationWrapper}>
           <NavigationBar
             previousStep={previousStep}
+            shouldSubmit={true}
             submitLabel="Suivant"
           />
         </div>
