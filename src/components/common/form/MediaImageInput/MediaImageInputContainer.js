@@ -7,7 +7,6 @@ import { createToastAction } from '../../../../actions/toast';
 import Toast from '../../../../models/toast';
 import { change } from 'redux-form';
 import MediaObject from '../../../../models/mediaObject';
-import Spinner from '../../Spinner';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 

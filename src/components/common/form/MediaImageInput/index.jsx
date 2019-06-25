@@ -41,7 +41,7 @@ const MediaImageInput = ({
           <label className={styles.label} htmlFor="single">
             <FontAwesomeIcon icon={faCamera} size="5x" />
           </label>
-          <input type="file" id="single" onChange={onChange} hidden />
+          <input type="file" id="single" onChange={onChange} hidden accept="image/*" />
         </Button>
         <Form.Control.Feedback type="invalid">{error}</Form.Control.Feedback>
         {feedback && <Form.Text className="text-muted">{feedback}</Form.Text>}
