@@ -84,7 +84,7 @@ class MediaImageInputContainer extends Component {
         required={props.required}
         meta={props.meta}
         feedback={props.feedback}
-        filePath={mediaObject.getFilePath(mediaObject)}
+        filePath={mediaObject.contentUrl}
       />
     );
   }

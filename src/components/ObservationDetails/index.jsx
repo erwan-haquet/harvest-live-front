@@ -117,10 +117,10 @@ const ObservationDetails = ({
                 <b>Photo:</b>
               </td>
               <td>
-                <a target="_BLANK" href={image.getFilePath(image)}>
+                <a target="_BLANK" href={image.contentUrl}>
                   <img
                     className={styles.image}
-                    src={image.getFilePath(image)}
+                    src={image.contentUrl}
                     alt="photo"
                   />
                 </a>
