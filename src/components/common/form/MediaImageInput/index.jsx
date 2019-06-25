@@ -5,6 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCamera, faTimes } from '@fortawesome/free-solid-svg-icons';
 import Button from 'react-bootstrap/Button';
 import styles from './styles.module.scss';
+import Spinner from '../../Spinner';
 
 const MediaImageInput = ({
   input,
@@ -16,10 +17,16 @@ const MediaImageInput = ({
   onRemove,
   feedback,
   filePath,
+  uploading,
 }) => (
   <Form.Group>
     <Label label={label} required={required} />
-    {!filePath && (
+    {uploading && (
+      <div className={styles.spinnerWrapper}>
+        <Spinner />
+      </div>
+    )}
+    {!uploading && !filePath && (
       <InputGroup>
         <Form.Control
           type="text"
@@ -40,7 +47,7 @@ const MediaImageInput = ({
         {feedback && <Form.Text className="text-muted">{feedback}</Form.Text>}
       </InputGroup>
     )}
-    {filePath && (
+    {!uploading && filePath && (
       <Fragment>
         <img src={filePath} className={styles.image} alt="uploaded_image" />
         <Button variant="link" onClick={onRemove} size="sm">

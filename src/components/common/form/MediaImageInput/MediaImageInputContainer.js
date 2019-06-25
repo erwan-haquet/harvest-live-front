@@ -7,6 +7,7 @@ import { createToastAction } from '../../../../actions/toast';
 import Toast from '../../../../models/toast';
 import { change } from 'redux-form';
 import MediaObject from '../../../../models/mediaObject';
+import Spinner from '../../Spinner';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
@@ -38,7 +39,9 @@ class MediaImageInputContainer extends Component {
     })
       .then(response => {
         response.json().then(results => {
-          dispatch(change(formName, input.name, `/media-objects/${results.id}`));
+          dispatch(
+            change(formName, input.name, `/media-objects/${results.id}`),
+          );
 
           this.setState({
             mediaObject: new MediaObject(results),
@@ -71,7 +74,10 @@ class MediaImageInputContainer extends Component {
   };
 
   render() {
-    const { props, state: { mediaObject } } = this;
+    const {
+      props,
+      state: { mediaObject, uploading },
+    } = this;
 
     return (
       <MediaImageInput
@@ -85,6 +91,7 @@ class MediaImageInputContainer extends Component {
         meta={props.meta}
         feedback={props.feedback}
         filePath={mediaObject.contentUrl}
+        uploading={uploading}
       />
     );
   }
