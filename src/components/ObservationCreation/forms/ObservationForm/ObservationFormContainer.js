@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import {
   getCulture,
   getType,
-} from '../../../../selectors/observationFormModal';
+} from '../../../../selectors/observationCreationModal';
 import { types } from '../../../../constants/observationTypes';
 import { cultures } from '../../../../constants/observationCultures';
 import WheatObservationForm from '../harvest/WheatObservationForm';

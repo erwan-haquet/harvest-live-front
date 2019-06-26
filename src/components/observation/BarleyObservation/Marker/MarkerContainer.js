@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import L from 'leaflet';
-import ObservationMarker from '../../../common/ObservationMarker';
+import Marker from '../../../observation/Marker';
 import { setSelectedObservation } from '../../../../actions/selectedObservation';
 import {openObservationDetailsAction} from "../../../../actions/observationDetails";
 import markerBarley from '../../../../images/marker-barley.png';
@@ -27,7 +27,7 @@ class MarkerContainer extends Component {
     });
 
     return (
-      <ObservationMarker
+      <Marker
         latLng={observation.coordinates}
         icon={icon}
         onClick={this.handleClick}

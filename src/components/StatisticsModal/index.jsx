@@ -5,7 +5,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles.module.scss';
 import chartImg from '../../images/chart.png';
 
-const ObservationDetails = ({ onClose }) => {
+const StatisticsModal = ({ onClose }) => {
   return (
     <div className={styles.wrapper}>
       <h5 className={styles.header}>
@@ -25,4 +25,4 @@ const ObservationDetails = ({ onClose }) => {
   );
 };
 
-export default ObservationDetails;
+export default StatisticsModal;

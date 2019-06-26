@@ -6,15 +6,15 @@ import TypeSelectionContainer from './TypeSelection/TypeSelectionContainer';
 import CultureSelectionContainer from './CultureSelection/CultureSelectionContainer';
 
 import {
-  nextStepObservationFormModalAction,
-  previousStepObservationFormModalAction,
-} from '../../actions/observationFormModal';
+  nextStepObservationCreationModalAction,
+  previousStepObservationCreationModalAction,
+} from '../../actions/observationCreationModal';
 import { connect } from 'react-redux';
 import {
   getCulture,
   getCurrentStep,
   getType,
-} from '../../selectors/observationFormModal';
+} from '../../selectors/observationCreationModal';
 import { types } from '../../constants/observationTypes';
 import { cultures } from '../../constants/observationCultures';
 import { postWheatObservationRequestAction } from '../../actions/wheatObservation';
@@ -57,12 +57,12 @@ class ObservationCreationContainer extends Component {
 
   nextStep = () => {
     const { dispatch } = this.props;
-    dispatch(nextStepObservationFormModalAction());
+    dispatch(nextStepObservationCreationModalAction());
   };
 
   previousStep = () => {
     const { dispatch } = this.props;
-    dispatch(previousStepObservationFormModalAction());
+    dispatch(previousStepObservationCreationModalAction());
   };
 
   render() {

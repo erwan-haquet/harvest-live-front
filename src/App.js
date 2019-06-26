@@ -8,10 +8,10 @@ import TopBarContainer from './components/TopBar/TopBarContainer';
 import MapContainer from './components/Map/MapContainer';
 import GeolocateButtonContainer from './components/buttons/GeolocateButton/GeolocateButtonContainer';
 import StatisticsModalContainer from './components/StatisticsModal/StatisticsModalContainer';
-import ObservationDetailsContainer from './components/ObservationDetails/ObservationDetailsContainer';
+import ObservationDetailsModalContainer from './components/modals/ObservationDetailsModal/ObservationDetailsModalContainer';
 import MapLayerButtonContainer from './components/buttons/MapLayerButton/MapLayerButtonContainer';
 import ObservationFiltersContainer from "./components/ObservationFilters/ObservationFiltersContainer";
-import ObservationFormModalContainer from "./components/ObservationFormModal/ObservationFormModalContainer";
+import ObservationCreationModalContainer from "./components/modals/ObservationCreationModal/ObservationCreationModalContainer";
 import ToastListContainer from "./components/common/toast/ToastList/ToastListContainer";
 
 import './App.css';
@@ -22,12 +22,12 @@ const App = () => (
     <TopBarContainer />
     <ToastListContainer />
     <MapContainer />
-    <ObservationDetailsContainer />
+    <ObservationDetailsModalContainer />
     <StatisticsModalContainer />
     <GeolocateButtonContainer />
     <MapLayerButtonContainer />
     <ObservationFiltersContainer />
-    <ObservationFormModalContainer />
+    <ObservationCreationModalContainer />
   </Provider>
 );
 

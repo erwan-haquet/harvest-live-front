@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import L from 'leaflet';
-import ObservationMarker from '../../../common/ObservationMarker';
+import Marker from '../../../observation/Marker';
 import { setSelectedObservation } from '../../../../actions/selectedObservation';
 import { connect } from 'react-redux';
 import { openObservationDetailsAction } from '../../../../actions/observationDetails';
@@ -27,7 +27,7 @@ class MarkerContainer extends Component {
     });
 
     return (
-      <ObservationMarker
+      <Marker
         onClick={this.handleClick}
         latLng={observation.coordinates}
         icon={icon}

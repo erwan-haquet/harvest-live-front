@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Record } from 'immutable';
 import { connect } from 'react-redux';
-import ObservationDetails from './index';
-import { getSelectedObservation } from '../../selectors/selectedObservation';
-import { isObservationDetailsOpen } from '../../selectors/observationDetails';
-import { closeObservationDetailsAction } from '../../actions/observationDetails';
-import { getOne } from '../../api/mediaObject';
+import ObservationDetailsModal from './index';
+import { getSelectedObservation } from '../../../selectors/selectedObservation';
+import { isObservationDetailsOpen } from '../../../selectors/observationDetails';
+import { closeObservationDetailsAction } from '../../../actions/observationDetails';
+import { getOne } from '../../../api/mediaObject';
 
-class ObservationDetailsContainer extends Component {
+class ObservationDetailsModalContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { image: null };
@@ -74,7 +74,7 @@ class ObservationDetailsContainer extends Component {
       const type = Record.getDescriptiveName(observation);
 
       return (
-        <ObservationDetails
+        <ObservationDetailsModal
           observation={observation}
           type={type}
           image={this.state.image}
@@ -94,4 +94,4 @@ class ObservationDetailsContainer extends Component {
 export default connect(state => ({
   observation: getSelectedObservation(state),
   isOpen: isObservationDetailsOpen(state),
-}))(ObservationDetailsContainer);
+}))(ObservationDetailsModalContainer);

@@ -8,7 +8,7 @@ import cx from 'classnames';
 
 import styles from './styles.module.scss';
 
-const ObservationDetails = ({
+const ObservationDetailsModal = ({
   observation,
   culture,
   type,
@@ -133,4 +133,4 @@ const ObservationDetails = ({
   </div>
 );
 
-export default ObservationDetails;
+export default ObservationDetailsModal;
