@@ -11,7 +11,7 @@ import toast from './toast';
 import mapStyle from './mapStyle';
 import statisticsModal from './statisticsModal';
 import filters from './filters';
-import observationFormModal from './observationFormModal';
+import observationCreationModal from './observationCreationModal';
 
 export default {
   location,
@@ -27,5 +27,5 @@ export default {
   mapStyle,
   statisticsModal,
   filters,
-  observationFormModal,
+  observationCreationModal,
 };

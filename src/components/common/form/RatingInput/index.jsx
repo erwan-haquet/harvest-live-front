@@ -14,6 +14,7 @@ const RatingInput = ({ input, meta: { touched, error }, label, required }) => (
       changeRating={input.onChange}
       numberOfStars={5}
       name="rating"
+      starDimension="40px"
     />
     {touched && error && (
       <Form.Control.Feedback
