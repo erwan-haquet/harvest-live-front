@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import L from 'leaflet';
-import Marker from '../../../observation/Marker';
+import Marker from '../../../common/Marker';
 import { setSelectedObservation } from '../../../../actions/selectedObservation';
 import {openObservationDetailsAction} from "../../../../actions/observationDetails";
 import markerBarley from '../../../../images/marker-barley.png';

@@ -4,7 +4,7 @@ import { faTimes } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
 
 import styles from './styles.module.scss';
-import ObservationCreationContainer from '../../ObservationCreation/ObservationCreationContainer';
+import ObservationCreationContainer from '../../observation/Creation/CreationContainer';
 
 const ObservationCreationModal = ({ currentStep, handleClose }) => (
   <div className={styles.wrapper}>

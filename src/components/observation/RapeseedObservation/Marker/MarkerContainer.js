@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import L from 'leaflet';
-import Marker from '../../../observation/Marker';
+import Marker from '../../../common/Marker';
 import { setSelectedObservation } from '../../../../actions/selectedObservation';
 import { connect } from 'react-redux';
 import { openObservationDetailsAction } from '../../../../actions/observationDetails';

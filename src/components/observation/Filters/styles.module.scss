@@ -1,0 +1,62 @@
+@import '../../../styles/colors';
+
+.list {
+  position: absolute;
+  list-style-type: none;
+  padding: 0 10px;
+
+  right: 10px;
+  top: 80px;
+
+  width: auto;
+  height: 46px;
+  background: white;
+
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 800;
+  opacity: 0.9;
+  border-radius: 50px;
+  border: 1px solid $silver !important;
+}
+
+.item {
+  padding: 2px 4px;
+  margin: 0 6px;
+  font-weight: bold;
+  cursor: pointer;
+  color: $silver;
+}
+
+.image {
+  width: 12px;
+  margin-top: -5px;
+  margin-right: 5px;
+}
+
+.selected {
+  color: $black
+}
+
+@media (max-width: 576px) {
+  .list {
+    padding: 0 5px;
+    left: 0;
+    right: 0;
+    border-radius: 0;
+    top: 70px;
+    border: none!important;
+  }
+  .item {
+    font-size: 0.7em;
+    text-align: center;
+    margin: 0 5px;
+  }
+}

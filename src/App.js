@@ -10,7 +10,7 @@ import GeolocateButtonContainer from './components/buttons/GeolocateButton/Geolo
 import StatisticsModalContainer from './components/StatisticsModal/StatisticsModalContainer';
 import ObservationDetailsModalContainer from './components/modals/ObservationDetailsModal/ObservationDetailsModalContainer';
 import MapLayerButtonContainer from './components/buttons/MapLayerButton/MapLayerButtonContainer';
-import ObservationFiltersContainer from "./components/ObservationFilters/ObservationFiltersContainer";
+import FiltersContainer from "./components/observation/Filters/FiltersContainer";
 import ObservationCreationModalContainer from "./components/modals/ObservationCreationModal/ObservationCreationModalContainer";
 import ToastListContainer from "./components/common/toast/ToastList/ToastListContainer";
 
@@ -26,7 +26,7 @@ const App = () => (
     <StatisticsModalContainer />
     <GeolocateButtonContainer />
     <MapLayerButtonContainer />
-    <ObservationFiltersContainer />
+    <FiltersContainer />
     <ObservationCreationModalContainer />
   </Provider>
 );

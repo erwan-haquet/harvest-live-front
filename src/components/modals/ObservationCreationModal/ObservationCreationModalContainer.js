@@ -15,7 +15,6 @@ class ObservationCreationModalContainer extends Component {
 
   render() {
     const { isOpen, currentStep } = this.props;
-    debugger;
 
     if (!isOpen) {
       return null;
