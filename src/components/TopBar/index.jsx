@@ -20,7 +20,8 @@ const TopBar = ({ onStatisticsClick }) => (
     <Button
       className={styles.actionButton}
       variant="darken-primary"
-      target="_BLANK"
+      target="_blank"
+      rel="noopener noreferrer"
       href="https://comparateuragricole.com"
     >
       <FontAwesomeIcon icon={faTruck} />

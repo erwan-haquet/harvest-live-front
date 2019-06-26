@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
 import L from 'leaflet';
-import ObservationMarker from '../../../../common/ObservationMarker';
-import { setSelectedObservation } from '../../../../../actions/selectedObservation';
+import ObservationMarker from '../../../common/ObservationMarker';
+import { setSelectedObservation } from '../../../../actions/selectedObservation';
 import { connect } from 'react-redux';
-import { openObservationDetailsAction } from '../../../../../actions/observationDetails';
-import markerWheat from '../../../../../images/marker-wheat.png';
+import { openObservationDetailsAction } from '../../../../actions/observationDetails';
+import markerSunflower from '../../../../images/marker-sunflower.png';
 
 class MarkerContainer extends Component {
   handleClick = () => {
@@ -18,7 +18,7 @@ class MarkerContainer extends Component {
     const { observation } = this.props;
 
     const icon = new L.Icon({
-      iconUrl: markerWheat,
+      iconUrl: markerSunflower,
       shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
       iconSize: [25, 41],
       iconAnchor: [12, 41],

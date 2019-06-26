@@ -9,7 +9,7 @@ import markerRapeseed from '../../images/marker-rapeseed.png';
 import markerWheat from '../../images/marker-wheat.png';
 import { cultures } from '../../constants/observationCultures';
 
-const ColorLegend = ({ onClick, selectedCulture }) => (
+const ObservationFilters = ({ onClick, selectedCulture }) => (
   <ul className={styles.list}>
     <li
       className={cx(styles.item, {
@@ -76,4 +76,4 @@ const ColorLegend = ({ onClick, selectedCulture }) => (
   </ul>
 );
 
-export default ColorLegend;
+export default ObservationFilters;

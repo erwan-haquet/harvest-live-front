@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
 
 import L from 'leaflet';
-import ObservationMarker from '../../../../common/ObservationMarker';
-import { setSelectedObservation } from '../../../../../actions/selectedObservation';
-import {openObservationDetailsAction} from "../../../../../actions/observationDetails";
-import markerBarley from '../../../../../images/marker-barley.png';
+import ObservationMarker from '../../../common/ObservationMarker';
+import { setSelectedObservation } from '../../../../actions/selectedObservation';
+import { connect } from 'react-redux';
+import { openObservationDetailsAction } from '../../../../actions/observationDetails';
+import markerCorn from '../../../../images/marker-corn.png';
 
 class MarkerContainer extends Component {
   handleClick = () => {
@@ -13,13 +13,13 @@ class MarkerContainer extends Component {
     dispatch(setSelectedObservation(observation));
     dispatch(openObservationDetailsAction());
   };
-
   render() {
     const { observation } = this.props;
 
     const icon = new L.Icon({
-      iconUrl: markerBarley,
-      shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+      iconUrl: markerCorn,
+      shadowUrl:
+        'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
       iconSize: [25, 41],
       iconAnchor: [12, 41],
       popupAnchor: [1, -34],
@@ -28,13 +28,12 @@ class MarkerContainer extends Component {
 
     return (
       <ObservationMarker
+        onClick={this.handleClick}
         latLng={observation.coordinates}
         icon={icon}
-        onClick={this.handleClick}
       />
     );
   }
 }
-
 
 export default connect()(MarkerContainer);

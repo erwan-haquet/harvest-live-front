@@ -117,11 +117,11 @@ const ObservationDetails = ({
                 <b>Photo:</b>
               </td>
               <td>
-                <a target="_BLANK" href={image.contentUrl}>
+                <a target="_blank" rel="noopener noreferrer" href={image.contentUrl}>
                   <img
                     className={styles.image}
                     src={image.contentUrl}
-                    alt="photo"
+                    alt="observation"
                   />
                 </a>
               </td>

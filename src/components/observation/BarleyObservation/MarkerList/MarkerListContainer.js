@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchBarleyObservationsRequestAction } from '../../../../../actions/barleyObservation';
-import { getBarleyObservations } from '../../../../../selectors/barleyObservation';
-import { getLocation } from '../../../../../selectors/location';
+import { fetchBarleyObservationsRequestAction } from '../../../../actions/barleyObservation';
+import { getBarleyObservations } from '../../../../selectors/barleyObservation';
+import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
-import { getSelectedCulture } from '../../../../../selectors/filters';
-import { cultures } from '../../../../../constants/observationCultures';
+import { getSelectedCulture } from '../../../../selectors/filters';
+import { cultures } from '../../../../constants/observationCultures';
 
 class MarkerListContainer extends Component {
   constructor(props) {
