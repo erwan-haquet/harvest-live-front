@@ -48,16 +48,21 @@ class MediaImageInputContainer extends Component {
           });
         });
       })
-      .catch(() => {
+      .catch(e => {
+        console.log(e.message);
         dispatch(change(formName, input.name, null));
+
+        const errorMessage =
+          e.message === 'Network request failed'
+            ? "La taille de l'image ne doit pas dépasser 8 Mo"
+            : 'Une erreur est survenue, merci de réessayer ultérieurement';
 
         this.setState({ uploading: false, mediaObject: new MediaObject() });
         dispatch(
           createToastAction(
             new Toast({
               title: 'Oops',
-              body:
-                'Une erreur est survenue, merci de réessayer ultérieurement',
+              body: errorMessage,
               variant: 'danger',
             }),
           ),

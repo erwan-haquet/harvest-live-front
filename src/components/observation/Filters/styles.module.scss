@@ -32,7 +32,8 @@
   margin: 0 6px;
   font-weight: bold;
   cursor: pointer;
-  color: $silver;
+  font-size: 0.9em;
+  opacity: 0.6;
 }
 
 .image {
@@ -42,7 +43,7 @@
 }
 
 .selected {
-  color: $black
+  opacity: 1;
 }
 
 @media (max-width: 576px) {

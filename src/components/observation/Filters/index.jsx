@@ -9,11 +9,11 @@ import markerRapeseed from '../../../images/marker-rapeseed.png';
 import markerWheat from '../../../images/marker-wheat.png';
 import { cultures } from '../../../constants/observationCultures';
 
-const Filters = ({ onClick, selectedCulture }) => (
+const Filters = ({ onClick, isActive }) => (
   <ul className={styles.list}>
     <li
       className={cx(styles.item, {
-        [styles.selected]: null === selectedCulture,
+        [styles.selected]: isActive(null),
       })}
       onClick={() => onClick()}
     >
@@ -21,7 +21,7 @@ const Filters = ({ onClick, selectedCulture }) => (
     </li>
     <li
       className={cx(styles.item, {
-        [styles.selected]: cultures.RAPESEED === selectedCulture,
+        [styles.selected]: isActive(cultures.RAPESEED),
       })}
       onClick={() => onClick(cultures.RAPESEED)}
     >
@@ -34,7 +34,7 @@ const Filters = ({ onClick, selectedCulture }) => (
     </li>
     <li
       className={cx(styles.item, {
-        [styles.selected]: cultures.SUNFLOWER === selectedCulture,
+        [styles.selected]: isActive(cultures.SUNFLOWER),
       })}
       onClick={() => onClick(cultures.SUNFLOWER)}
     >
@@ -47,7 +47,7 @@ const Filters = ({ onClick, selectedCulture }) => (
     </li>
     <li
       className={cx(styles.item, {
-        [styles.selected]: cultures.WHEAT === selectedCulture,
+        [styles.selected]: isActive(cultures.WHEAT),
       })}
       onClick={() => onClick(cultures.WHEAT)}
     >
@@ -57,7 +57,7 @@ const Filters = ({ onClick, selectedCulture }) => (
 
     <li
       className={cx(styles.item, {
-        [styles.selected]: cultures.CORN === selectedCulture,
+        [styles.selected]: isActive(cultures.CORN),
       })}
       onClick={() => onClick(cultures.CORN)}
     >
@@ -66,7 +66,7 @@ const Filters = ({ onClick, selectedCulture }) => (
     </li>
     <li
       className={cx(styles.item, {
-        [styles.selected]: cultures.BARLEY === selectedCulture,
+        [styles.selected]: isActive(cultures.BARLEY),
       })}
       onClick={() => onClick(cultures.BARLEY)}
     >

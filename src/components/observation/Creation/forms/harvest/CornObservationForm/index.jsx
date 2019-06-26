@@ -29,7 +29,7 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 required
             />
           </Col>
-          <Col xs={12} md={6}>
+          <Col xs={6}>
             <Field
                 name="yield"
                 type="number"

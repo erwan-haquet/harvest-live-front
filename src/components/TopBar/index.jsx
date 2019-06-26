@@ -24,7 +24,7 @@ const TopBar = ({ onStatisticsClick }) => (
       rel="noopener noreferrer"
       href="https://comparateuragricole.com"
     >
-      <FontAwesomeIcon icon={faTruck} />
+      <FontAwesomeIcon icon={faTruck} className={styles.sellIcon} />
       <span className={styles.markerText}>Vendre ma récolte</span>
     </Button>
     <Button variant="darken-primary" onClick={onStatisticsClick}>

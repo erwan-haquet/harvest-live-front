@@ -10,12 +10,13 @@ class FiltersContainer extends Component {
     dispatch(setSelectedCulture(culture));
   };
 
-  render() {
+  isActive = culture => {
     const { selectedCulture } = this.props;
+    return !selectedCulture || selectedCulture === culture;
+  };
 
-    return (
-      <Filters selectedCulture={selectedCulture} onClick={this.handleClick} />
-    );
+  render() {
+    return <Filters isActive={this.isActive} onClick={this.handleClick} />;
   }
 }
 
