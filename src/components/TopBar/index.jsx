@@ -15,7 +15,7 @@ const TopBar = ({ onStatisticsClick }) => (
     </div>
     <div className={styles.partner}>
       <span className={styles.partnerText}>En partenariat avec</span>
-      <a href="https://www.terre-net.fr/" target="_blank" rel="noopener noreferrer">
+      <a href="https://www.terre-net.fr/?utm_source=MoissonLive.com&utm_medium=link&utm_campaign=Moisson" target="_blank" rel="noopener noreferrer">
         <img src={terreNet} alt="logo" className={styles.partnerLogo} />
       </a>
     </div>
