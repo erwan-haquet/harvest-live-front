@@ -1,21 +1,10 @@
 import React from 'react';
 
 import MarkerContainer from '../Marker/MarkerContainer';
-import MarkerClusterGroup from 'react-leaflet-markercluster';
-import { createClusterCustomIcon } from '../../../common/MarkerCluster';
-import { cultures } from '../../../../constants/observationCultures';
 
-const MarkerList = ({ observations }) => (
-  <MarkerClusterGroup
-    showCoverageOnHover={false}
-    iconCreateFunction={cluster =>
-      createClusterCustomIcon({ cluster, observationType: cultures.BARLEY })
-    }
-  >
-    {observations.map((observation, key) => (
-      <MarkerContainer key={key} observation={observation} />
-    ))}
-  </MarkerClusterGroup>
-);
+const MarkerList = ({ observations }) =>
+    observations.map((observation, key) => (
+        <MarkerContainer key={key} observation={observation} />
+    ));
 
 export default MarkerList;

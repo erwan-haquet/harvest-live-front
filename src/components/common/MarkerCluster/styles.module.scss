@@ -9,6 +9,7 @@
   outline: none !important;
   background-clip: padding-box;
   border-radius: 20px;
+  background-color: #{$primary}80;
 
   :global {
     .circle {
@@ -19,53 +20,11 @@
       text-align: center;
       border-radius: 15px;
       font: 12px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+      background-color: #{$primary}CC;
     }
 
     .count {
       line-height: 30px;
-    }
-  }
-}
-
-.barley {
-  background-color: #{$barley-color}80;
-  :global {
-    .circle {
-      background-color: #{$barley-color}CC;
-    }
-  }
-}
-
-.wheat {
-  background-color: #{$wheat-color}80;
-  :global {
-    .circle {
-      background-color: #{$wheat-color}CC;
-    }
-  }
-}
-
-.sunflower {
-  background-color: #{$sunflower-color}80;
-  :global {
-    .circle {
-      background-color: #{$sunflower-color}CC;
-    }
-  }
-}
-.rapeseed {
-  background-color: #{$rapeseed-color}80;
-  :global {
-    .circle {
-      background-color: #{$rapeseed-color}CC;
-    }
-  }
-}
-.corn {
-  background-color: #{$corn-color}80;
-  :global {
-    .circle {
-      background-color: #{$corn-color}CC;
     }
   }
 }
