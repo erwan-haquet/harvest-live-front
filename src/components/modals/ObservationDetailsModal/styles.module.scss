@@ -10,7 +10,7 @@
   -o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   left: 20px;
-  top:90px;
+  top: 120px;
   z-index: 1200;
   opacity: 0.9;
   border-radius: 5px;
@@ -72,6 +72,6 @@
 @media (max-width: 576px) {
   .wrapper {
     left: 0;
-    top:70px;
+    top: 100px;
   }
 }

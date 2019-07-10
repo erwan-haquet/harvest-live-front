@@ -1,0 +1,44 @@
+@import '../../styles/colors';
+@import '../../styles/typography';
+
+.wrapper {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 30px;
+  background: $premium;
+  width: 100%;
+  z-index: 1200;
+  text-align: center;
+  padding: 2px;
+}
+
+.link {
+  font-size: 14px;
+  color: #fff;
+  text-decoration: underline;
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
+.icon {
+  margin-right: 5px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media (max-width: 576px) {
+  .link {
+    font-size: 12px;
+  }
+  .mobile {
+    display: inline;
+  }
+  .desktop {
+    display: none;
+  }
+}
