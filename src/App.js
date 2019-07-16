@@ -7,7 +7,6 @@ import { sagaMiddleware } from './middleware';
 import TopBarContainer from './components/TopBar/TopBarContainer';
 import MapContainer from './components/Map/MapContainer';
 import GeolocateButtonContainer from './components/buttons/GeolocateButton/GeolocateButtonContainer';
-import StatisticsModalContainer from './components/StatisticsModal/StatisticsModalContainer';
 import ObservationDetailsModalContainer from './components/modals/ObservationDetailsModal/ObservationDetailsModalContainer';
 import MapLayerButtonContainer from './components/buttons/MapLayerButton/MapLayerButtonContainer';
 import FiltersContainer from "./components/observation/Filters/FiltersContainer";
@@ -25,7 +24,6 @@ const App = () => (
     <ToastListContainer />
     <MapContainer />
     <ObservationDetailsModalContainer />
-    <StatisticsModalContainer />
     <GeolocateButtonContainer />
     <MapLayerButtonContainer />
     <FiltersContainer />

@@ -8,7 +8,7 @@ import terreNet from '../../images/terre-net.png';
 import styles from './styles.module.scss';
 import AddObservationButtonContainer from '../buttons/AddObservationButton/AddObservationButtonContainer';
 
-const TopBar = ({ onStatisticsClick }) => (
+const TopBar = () => (
   <div className={styles.wrapper}>
     <div className={styles.brand}>
       <div className={styles.logo} />
@@ -33,7 +33,12 @@ const TopBar = ({ onStatisticsClick }) => (
       <FontAwesomeIcon icon={faTruck} className={styles.sellIcon} />
       <span className={styles.markerText}>Vendre ma récolte</span>
     </Button>
-    <Button variant="darken-primary" onClick={onStatisticsClick}>
+    <Button
+        variant="darken-primary"
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://infogram.com/resultats-moisson-orge-2019-1hdw2jqke8dp4l0?live"
+    >
       <FontAwesomeIcon icon={faChartPie} />
       <span className={cx(styles.markerText, styles.statisticLabel)}>
         Statistiques

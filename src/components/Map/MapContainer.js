@@ -6,7 +6,6 @@ import { buildDefault, buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
 import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
 import { closeObservationDetailsAction } from '../../actions/observationDetails';
-import { closeStatisticsModalAction } from '../../actions/statisticsModal';
 import { getMapStyle } from '../../selectors/mapStyle';
 
 class MapContainer extends Component {
@@ -27,7 +26,6 @@ class MapContainer extends Component {
   handleMapClick = () => {
     const { dispatch } = this.props;
     dispatch(closeObservationDetailsAction());
-    dispatch(closeStatisticsModalAction());
   };
 
   render() {

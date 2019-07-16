@@ -9,7 +9,6 @@ import selectedObservation from './selectedObservation';
 import observationDetails from './observationDetails';
 import toast from './toast';
 import mapStyle from './mapStyle';
-import statisticsModal from './statisticsModal';
 import filters from './filters';
 import observationCreationModal from './observationCreationModal';
 
@@ -25,7 +24,6 @@ export default {
   observationDetails,
   toast,
   mapStyle,
-  statisticsModal,
   filters,
   observationCreationModal,
 };
