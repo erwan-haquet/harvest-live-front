@@ -15,16 +15,30 @@ const TopBar = () => (
     </div>
     <div className={styles.partner}>
       <span className={styles.partnerText}>En partenariat avec</span>
-      <a href="https://www.terre-net.fr/?utm_source=MoissonLive.com&utm_medium=link&utm_campaign=Moisson" target="_blank" rel="noopener noreferrer">
+      <a
+        href="https://www.terre-net.fr/?utm_source=MoissonLive.com&utm_medium=link&utm_campaign=Moisson"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
         <img src={terreNet} alt="logo" className={styles.partnerLogo} />
       </a>
     </div>
     <div className={styles.addObservationButtonWrapper}>
       <AddObservationButtonContainer />
     </div>
-
     <Button
-      className={styles.actionButton}
+      className={styles.statisticButton}
+      variant="premium"
+      target="_blank"
+      rel="noopener noreferrer"
+      href="https://infogram.com/resultats-moisson-orge-2019-1hdw2jqke8dp4l0?live"
+    >
+      <FontAwesomeIcon icon={faChartPie} />
+      <span className={cx(styles.markerText, styles.statisticLabel)}>
+        Resultats
+      </span>
+    </Button>
+    <Button
       variant="darken-primary"
       target="_blank"
       rel="noopener noreferrer"
@@ -32,17 +46,6 @@ const TopBar = () => (
     >
       <FontAwesomeIcon icon={faTruck} className={styles.sellIcon} />
       <span className={styles.markerText}>Vendre ma récolte</span>
-    </Button>
-    <Button
-        variant="darken-primary"
-        target="_blank"
-        rel="noopener noreferrer"
-        href="https://infogram.com/resultats-moisson-orge-2019-1hdw2jqke8dp4l0?live"
-    >
-      <FontAwesomeIcon icon={faChartPie} />
-      <span className={cx(styles.markerText, styles.statisticLabel)}>
-        Statistiques
-      </span>
     </Button>
   </div>
 );

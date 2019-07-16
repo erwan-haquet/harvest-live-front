@@ -96,6 +96,27 @@ p {
   }
 }
 
+.btn-premium {
+  color: white !important;
+  border: 1px solid $premium !important;
+  background-color: $premium !important;
+
+  &.outline {
+    color: $premium !important;
+    background: white !important;
+    border: 1px solid $premium !important;
+  }
+
+  &:active,
+  &:active:focus,
+  &:active:hover,
+  &:focus,
+  &:hover {
+    color: white !important;
+    background: $darken-premium !important;
+  }
+}
+
 .btn-rounded-light {
   color: $silver !important;
   border: 1px solid $silver !important;
