@@ -6,7 +6,7 @@ import { sagas as cornObservationSagas } from './cornObservation';
 import { sagas as rapeseedObservationSagas } from './rapeseedObservation';
 import { sagas as sunflowerObservationSagas } from './sunflowerObservation';
 import { sagas as wheatObservationSagas } from './wheatObservation';
-import { sagas as toastSagas } from './toast';
+import { sagas as toastSagas } from './ui/toast';
 
 export default function* saga() {
   yield all([

@@ -2,20 +2,20 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import MapLayerButton from '../MapLayerButton';
-import { getMapStyle } from '../../../selectors/mapStyle';
-import { setMapStyle } from '../../../actions/mapStyle';
-import { layers } from '../../../constants/mapStyle';
+import { getStyle } from '../../../selectors/ui/map';
+import { setStyle } from '../../../actions/ui/map';
+import { layers } from '../../../constants/ui/map';
 
 class MapLayerButtonContainer extends Component {
   handleClick = () => {
-    const { dispatch, mapStyle: currentMapStyle } = this.props;
+    const { dispatch, style } = this.props;
 
-    switch (currentMapStyle) {
+    switch (style) {
       case layers.STREET:
-        dispatch(setMapStyle(layers.SATELLITE));
+        dispatch(setStyle(layers.SATELLITE));
         break;
       case layers.SATELLITE:
-        dispatch(setMapStyle(layers.STREET));
+        dispatch(setStyle(layers.STREET));
         break;
       default:
         break;
@@ -28,5 +28,5 @@ class MapLayerButtonContainer extends Component {
 }
 
 export default connect(state => ({
-  mapStyle: getMapStyle(state),
+  style: getStyle(state),
 }))(MapLayerButtonContainer);

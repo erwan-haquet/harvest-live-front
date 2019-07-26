@@ -5,7 +5,7 @@ import TypeSelection from '../TypeSelection';
 import {
   nextStepObservationCreationModalAction,
   setTypeObservationCreationModalAction,
-} from '../../../../actions/observationCreationModal';
+} from '../../../../actions/ui/observationCreationModal';
 import { connect } from 'react-redux';
 
 class TypeSelectionContainer extends Component {

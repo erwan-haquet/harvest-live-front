@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import ToastList from '../ToastList';
 import { connect } from 'react-redux';
-import { getToasts } from '../../../../selectors/toast';
+import { getToasts } from '../../../../selectors/ui/toast';
 
 class ToastContainer extends Component {
   render() {

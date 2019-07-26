@@ -8,7 +8,7 @@ import cx from 'classnames';
 
 import styles from './styles.module.scss';
 
-const ObservationDetailsModal = ({
+const ObservationDetailsPopoverModal = ({
   observation,
   culture,
   type,
@@ -133,4 +133,4 @@ const ObservationDetailsModal = ({
   </div>
 );
 
-export default ObservationDetailsModal;
+export default ObservationDetailsPopoverModal;

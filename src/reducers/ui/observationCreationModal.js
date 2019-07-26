@@ -8,9 +8,9 @@ import {
   setCultureObservationCreationModalAction,
   setTypeObservationCreationModalAction,
   setStepObservationCreationModalAction,
-} from '../actions/observationCreationModal';
-import InitialState from '../models/initialState';
-import ObservationCreationModal from '../models/observationCreationModal';
+} from '../../actions/ui/observationCreationModal';
+import InitialState from '../../models/initialState';
+import ObservationCreationModal from '../../models/ui/observationCreationModal';
 
 export const REDUCER_KEY = 'observation-creation-modal';
 
@@ -37,5 +37,5 @@ const reducer = createReducer(
 );
 
 export default {
-    [REDUCER_KEY]: reducer,
+  [REDUCER_KEY]: reducer,
 };

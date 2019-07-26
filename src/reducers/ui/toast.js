@@ -1,7 +1,7 @@
 import { createReducer } from 'redux-act';
 import { List } from 'immutable';
-import { addToastAction, removeToastAction } from '../actions/toast';
-import InitialState from '../models/initialState';
+import { addToastAction, removeToastAction } from '../../actions/ui/toast';
+import InitialState from '../../models/initialState';
 
 export const REDUCER_KEY = 'toast';
 

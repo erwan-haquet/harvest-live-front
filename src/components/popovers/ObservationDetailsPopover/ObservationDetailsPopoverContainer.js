@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Record } from 'immutable';
 import { connect } from 'react-redux';
-import ObservationDetailsModal from './index';
+import ObservationDetailsPopoverModal from './index';
 import { getSelectedObservation } from '../../../selectors/selectedObservation';
-import { isObservationDetailsOpen } from '../../../selectors/observationDetails';
-import { closeObservationDetailsAction } from '../../../actions/observationDetails';
+import { isObservationDetailsPopoverOpen } from '../../../selectors/ui/observationDetailsPopover';
+import { closeObservationDetailsPopoverAction } from '../../../actions/ui/observationDetailsPopover';
 import { getOne } from '../../../api/mediaObject';
 
-class ObservationDetailsModalContainer extends Component {
+class ObservationDetailsPopoverModalContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { image: null };
@@ -64,7 +64,7 @@ class ObservationDetailsModalContainer extends Component {
 
   handleClose = () => {
     const { dispatch } = this.props;
-    dispatch(closeObservationDetailsAction());
+    dispatch(closeObservationDetailsPopoverAction());
   };
 
   render() {
@@ -78,7 +78,7 @@ class ObservationDetailsModalContainer extends Component {
       const type = Record.getDescriptiveName(observation);
 
       return (
-        <ObservationDetailsModal
+        <ObservationDetailsPopoverModal
           observation={observation}
           type={type}
           image={this.state.image}
@@ -97,5 +97,5 @@ class ObservationDetailsModalContainer extends Component {
 
 export default connect(state => ({
   observation: getSelectedObservation(state),
-  isOpen: isObservationDetailsOpen(state),
-}))(ObservationDetailsModalContainer);
+  isOpen: isObservationDetailsPopoverOpen(state),
+}))(ObservationDetailsPopoverModalContainer);

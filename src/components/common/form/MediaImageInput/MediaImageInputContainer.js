@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import MediaImageInput from './index';
 import fetch from 'cross-fetch';
-import { createToastAction } from '../../../../actions/toast';
+import { createToastAction } from '../../../../actions/ui/toast';
 import Toast from '../../../../models/toast';
 import { change } from 'redux-form';
 import MediaObject from '../../../../models/mediaObject';

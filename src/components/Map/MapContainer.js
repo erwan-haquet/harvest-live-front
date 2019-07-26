@@ -5,8 +5,8 @@ import Map from '../Map';
 import { buildDefault, buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
 import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
-import { closeObservationDetailsAction } from '../../actions/observationDetails';
-import { getMapStyle } from '../../selectors/mapStyle';
+import { closeObservationDetailsPopoverAction } from '../../actions/ui/observationDetailsPopover';
+import { getStyle } from '../../selectors/ui/map';
 
 class MapContainer extends Component {
   constructor(props) {
@@ -25,11 +25,11 @@ class MapContainer extends Component {
 
   handleMapClick = () => {
     const { dispatch } = this.props;
-    dispatch(closeObservationDetailsAction());
+    dispatch(closeObservationDetailsPopoverAction());
   };
 
   render() {
-    const { askedPosition, zoom, mapStyle } = this.props;
+    const { askedPosition, zoom, style } = this.props;
 
     const position =
       askedPosition.latitude || askedPosition.longitude
@@ -40,7 +40,7 @@ class MapContainer extends Component {
       <Map
         position={position}
         zoom={zoom}
-        style={mapStyle}
+        style={style}
         onClick={this.handleMapClick}
         onPositionChanged={this.handlePositionChanged}
       />
@@ -55,5 +55,5 @@ MapContainer.defaultProps = {
 export default connect(state => ({
   askedPosition: getAskedPosition(state),
   isFetching: isFetching(state),
-  mapStyle: getMapStyle(state),
+  style: getStyle(state),
 }))(MapContainer);

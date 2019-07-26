@@ -1,5 +1,5 @@
 import { Record } from 'immutable';
-import LatLng from './latLng';
+import LatLng from '../latLng';
 
 export const ObservationToast = Record(
   {

@@ -4,8 +4,8 @@ import ObservationCreationModal from './index';
 import {
   isObservationCreationModalOpen,
   getCurrentStep,
-} from '../../../selectors/observationCreationModal';
-import { closeObservationCreationModalAction } from '../../../actions/observationCreationModal';
+} from '../../../selectors/ui/observationCreationModal';
+import { closeObservationCreationModalAction } from '../../../actions/ui/observationCreationModal';
 
 class ObservationCreationModalContainer extends Component {
   handleClose = () => {

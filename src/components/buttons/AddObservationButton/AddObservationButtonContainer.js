@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import AddObservationButton from '../AddObservationButton';
-import { openObservationCreationModalAction } from '../../../actions/observationCreationModal';
+import { openObservationCreationModalAction } from '../../../actions/ui/observationCreationModal';
 
 class AddObservationButtonContainer extends Component {
   handleClick = () => {

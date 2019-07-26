@@ -4,14 +4,14 @@ import L from 'leaflet';
 import Marker from '../../../common/Marker';
 import { setSelectedObservation } from '../../../../actions/selectedObservation';
 import { connect } from 'react-redux';
-import { openObservationDetailsAction } from '../../../../actions/observationDetails';
+import { openObservationDetailsPopoverAction } from '../../../../actions/ui/observationDetailsPopover';
 import markerRapeseed from '../../../../images/marker-rapeseed.png';
 
 class MarkerContainer extends Component {
   handleClick = () => {
     const { dispatch, observation } = this.props;
     dispatch(setSelectedObservation(observation));
-    dispatch(openObservationDetailsAction());
+    dispatch(openObservationDetailsPopoverAction());
   };
 
   render() {

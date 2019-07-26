@@ -8,13 +8,13 @@ import CultureSelectionContainer from './CultureSelection/CultureSelectionContai
 import {
   nextStepObservationCreationModalAction,
   previousStepObservationCreationModalAction,
-} from '../../../actions/observationCreationModal';
+} from '../../../actions/ui/observationCreationModal';
 import { connect } from 'react-redux';
 import {
   getCulture,
   getCurrentStep,
   getType,
-} from '../../../selectors/observationCreationModal';
+} from '../../../selectors/ui/observationCreationModal';
 import { types } from '../../../constants/observationTypes';
 import { cultures } from '../../../constants/observationCultures';
 import { postWheatObservationRequestAction } from '../../../actions/wheatObservation';

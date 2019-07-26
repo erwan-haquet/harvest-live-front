@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import TopBar from '../TopBar';
-import { getMapStyle } from '../../selectors/mapStyle';
+import { getStyle } from '../../selectors/ui/map';
 
 class MapLayerButtonContainer extends Component {
   render() {
@@ -11,5 +11,5 @@ class MapLayerButtonContainer extends Component {
 }
 
 export default connect(state => ({
-  mapStyle: getMapStyle(state),
+  style: getStyle(state),
 }))(MapLayerButtonContainer);

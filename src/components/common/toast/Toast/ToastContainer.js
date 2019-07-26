@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Toast from './index';
 
 import { connect } from 'react-redux';
-import { removeToastAction } from '../../../../actions/toast';
+import { removeToastAction } from '../../../../actions/ui/toast';
 
 class ToastContainer extends Component {
   handleClose = () => {

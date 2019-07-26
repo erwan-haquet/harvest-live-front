@@ -5,7 +5,7 @@ import CultureSelection from '../CultureSelection';
 import {
   nextStepObservationCreationModalAction,
   setCultureObservationCreationModalAction,
-} from '../../../../actions/observationCreationModal';
+} from '../../../../actions/ui/observationCreationModal';
 import { connect } from 'react-redux';
 
 class CultureSelectionContainer extends Component {

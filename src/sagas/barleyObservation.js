@@ -14,10 +14,10 @@ import FormError from '../errors/FormError';
 import {
   closeObservationCreationModalAction,
   setStepObservationCreationModalAction,
-} from '../actions/observationCreationModal';
+} from '../actions/ui/observationCreationModal';
 import { setAskedPositionAction } from '../actions/askedPosition';
 import LatLng from '../models/latLng';
-import { createToastAction } from '../actions/toast';
+import { createToastAction } from '../actions/ui/toast';
 import Toast from '../models/toast';
 import { destroy } from 'redux-form';
 import { parseAndFormat } from '../utils/phoneUtil';
