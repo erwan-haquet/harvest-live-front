@@ -1,9 +1,11 @@
-import { put, call } from 'redux-saga/effects';
+import {put, call, takeEvery} from 'redux-saga/effects';
 import { List } from 'immutable';
 import { toRapeseedObservation } from '../models/rapeseedObservation';
 import {
+  fetchRapeseedObservationsRequestAction,
   fetchRapeseedObservationsSuccessAction,
   fetchRapeseedObservationsFailureAction,
+  postRapeseedObservationRequestAction,
   postRapeseedObservationSuccessAction,
   postRapeseedObservationFailureAction,
 } from '../actions/rapeseedObservation';
@@ -22,7 +24,7 @@ import { parseAndFormat } from '../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* fetchRapeseedObservationsRequestAction({
+export function* watchFetchRapeseedObservationsRequest({
   payload: { bounds },
 }) {
   try {
@@ -50,7 +52,7 @@ export function* fetchRapeseedObservationsRequestAction({
   }
 }
 
-export function* postRapeseedObservationRequestAction({ payload: { form } }) {
+export function* watchPostRapeseedObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
@@ -135,3 +137,8 @@ export function* postRapeseedObservationRequestAction({ payload: { form } }) {
     yield put(postRapeseedObservationFailureAction());
   }
 }
+
+export const sagas = [
+    takeEvery(fetchRapeseedObservationsRequestAction, watchFetchRapeseedObservationsRequest),
+    takeEvery(postRapeseedObservationRequestAction, watchPostRapeseedObservationRequest)
+];

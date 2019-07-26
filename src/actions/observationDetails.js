@@ -1,4 +1,4 @@
 import { createAction } from 'redux-act';
 
-export const openObservationDetailsAction = createAction();
-export const closeObservationDetailsAction = createAction();
+export const openObservationDetailsAction = createAction('observation-details/open');
+export const closeObservationDetailsAction = createAction('observation-details/close');

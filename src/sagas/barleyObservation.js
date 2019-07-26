@@ -1,9 +1,11 @@
-import { put, call } from 'redux-saga/effects';
+import {put, call, takeEvery} from 'redux-saga/effects';
 import { List } from 'immutable';
 import { toBarleyObservation } from '../models/barleyObservation';
 import {
+    fetchBarleyObservationsRequestAction,
   fetchBarleyObservationsSuccessAction,
   fetchBarleyObservationsFailureAction,
+  postBarleyObservationRequestAction,
   postBarleyObservationSuccessAction,
   postBarleyObservationFailureAction,
 } from '../actions/barleyObservation';
@@ -22,7 +24,7 @@ import { parseAndFormat } from '../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* fetchBarleyObservationsRequestAction({ payload: { bounds } }) {
+export function* watchFetchBarleyObservationsRequest({ payload: { bounds } }) {
   try {
     const response = yield call(
       fetch,
@@ -48,7 +50,7 @@ export function* fetchBarleyObservationsRequestAction({ payload: { bounds } }) {
   }
 }
 
-export function* postBarleyObservationRequestAction({ payload: { form } }) {
+export function* watchPostBarleyObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
@@ -131,3 +133,8 @@ export function* postBarleyObservationRequestAction({ payload: { form } }) {
     yield put(postBarleyObservationFailureAction());
   }
 }
+
+export const sagas = [
+    takeEvery(fetchBarleyObservationsRequestAction, watchFetchBarleyObservationsRequest),
+    takeEvery(postBarleyObservationRequestAction, watchPostBarleyObservationRequest)
+];

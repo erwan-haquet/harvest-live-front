@@ -1,9 +1,14 @@
-import { put, delay } from 'redux-saga/effects';
+import {put, delay, takeEvery} from 'redux-saga/effects';
 
-import { addToastAction, removeToastAction } from '../actions/toast';
+import {
+  createObservationToastAction,
+  createToastAction,
+  addToastAction,
+  removeToastAction
+} from '../actions/toast';
 import ObservationToast from '../models/observationToast';
 
-export function* createObservationToastAction({ payload: observation }) {
+export function* watchCreateObservationToast({ payload: observation }) {
   const toast = new ObservationToast({
     coordinates: observation.coordinates,
     message: `Nouvelle observation de ${observation.cultureName} à ${
@@ -15,8 +20,13 @@ export function* createObservationToastAction({ payload: observation }) {
   yield put(removeToastAction(toast));
 }
 
-export function* createToastAction({ payload: toast }) {
+export function* watchCreateToast({ payload: toast }) {
   yield put(addToastAction(toast));
   yield delay(7000);
   yield put(removeToastAction(toast));
 }
+
+export const sagas = [
+  takeEvery(createObservationToastAction, watchCreateObservationToast),
+  takeEvery(createToastAction, watchCreateToast)
+];

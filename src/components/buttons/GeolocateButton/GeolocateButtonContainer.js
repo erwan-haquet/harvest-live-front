@@ -55,7 +55,7 @@ class GeolocateButtonContainer extends Component {
   setLocation = position => {
     const { dispatch } = this.props;
 
-    // A kick and dirty fix to enforce a new position every time user require to recenter map on same position
+    // A quick and dirty fix to enforce a new position every time user require to recenter map on same position
     const randomFloat = parseFloat(
         (Math.random() * (0.0002 - 0.0001) + 0.0001).toFixed(6),
     );

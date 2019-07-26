@@ -1,9 +1,11 @@
-import { put, call } from 'redux-saga/effects';
+import { put, call, takeEvery } from 'redux-saga/effects';
 import { List } from 'immutable';
 import { toCornObservation } from '../models/cornObservation';
 import {
+  fetchCornObservationsRequestAction,
   fetchCornObservationsSuccessAction,
   fetchCornObservationsFailureAction,
+  postCornObservationRequestAction,
   postCornObservationSuccessAction,
   postCornObservationFailureAction,
 } from '../actions/cornObservation';
@@ -22,7 +24,7 @@ import { parseAndFormat } from '../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* fetchCornObservationsRequestAction({ payload: { bounds } }) {
+export function* watchFetchCornObservationsRequest({ payload: { bounds } }) {
   try {
     const response = yield call(
       fetch,
@@ -48,7 +50,7 @@ export function* fetchCornObservationsRequestAction({ payload: { bounds } }) {
   }
 }
 
-export function* postCornObservationRequestAction({ payload: { form } }) {
+export function* watchPostCornObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
@@ -62,18 +64,14 @@ export function* postCornObservationRequestAction({ payload: { form } }) {
       targetPrice: form.targetPrice ? parseFloat(form.targetPrice) : undefined,
     };
 
-    const response = yield call(
-      fetch,
-      `${apiUrl}/corn-observations`,
-      {
-        method: 'POST',
-        headers: {
-          accept: 'application/json',
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(body),
+    const response = yield call(fetch, `${apiUrl}/corn-observations`, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
       },
-    );
+      body: JSON.stringify(body),
+    });
 
     const responseBody = yield call([response, response.json]);
 
@@ -132,3 +130,11 @@ export function* postCornObservationRequestAction({ payload: { form } }) {
     yield put(postCornObservationFailureAction());
   }
 }
+
+export const sagas = [
+  takeEvery(
+    fetchCornObservationsRequestAction,
+    watchFetchCornObservationsRequest,
+  ),
+  takeEvery(postCornObservationRequestAction, watchPostCornObservationRequest),
+];

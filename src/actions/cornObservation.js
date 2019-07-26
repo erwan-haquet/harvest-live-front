@@ -1,9 +1,9 @@
 import { createAction } from 'redux-act';
 
-export const fetchCornObservationsRequestAction = createAction();
-export const fetchCornObservationsSuccessAction = createAction();
-export const fetchCornObservationsFailureAction = createAction();
+export const fetchCornObservationsRequestAction = createAction('corn-observation/post/request');
+export const fetchCornObservationsSuccessAction = createAction('corn-observation/post/success');
+export const fetchCornObservationsFailureAction = createAction('corn-observation/post/failure');
 
-export const postCornObservationRequestAction = createAction();
-export const postCornObservationSuccessAction = createAction();
-export const postCornObservationFailureAction = createAction();
+export const postCornObservationRequestAction = createAction('corn-observation/post/request');
+export const postCornObservationSuccessAction = createAction('corn-observation/post/success');
+export const postCornObservationFailureAction = createAction('corn-observation/post/failure');

@@ -1,9 +1,11 @@
-import { put, call } from 'redux-saga/effects';
+import {put, call, takeEvery} from 'redux-saga/effects';
 import { List } from 'immutable';
 import { toWheatObservation } from '../models/wheatObservation';
 import {
+  fetchWheatObservationsRequestAction,
   fetchWheatObservationsSuccessAction,
   fetchWheatObservationsFailureAction,
+  postWheatObservationRequestAction,
   postWheatObservationSuccessAction,
   postWheatObservationFailureAction,
 } from '../actions/wheatObservation';
@@ -22,7 +24,7 @@ import { parseAndFormat } from '../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* fetchWheatObservationsRequestAction({ payload: { bounds } }) {
+export function* watchFetchWheatObservationsRequest({ payload: { bounds } }) {
   try {
     const response = yield call(
       fetch,
@@ -48,7 +50,7 @@ export function* fetchWheatObservationsRequestAction({ payload: { bounds } }) {
   }
 }
 
-export function* postWheatObservationRequestAction({ payload: { form } }) {
+export function* watchPostWheatObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
@@ -133,3 +135,8 @@ export function* postWheatObservationRequestAction({ payload: { form } }) {
     yield put(postWheatObservationFailureAction());
   }
 }
+
+export const sagas = [
+    takeEvery(fetchWheatObservationsRequestAction, watchFetchWheatObservationsRequest),
+    takeEvery(postWheatObservationRequestAction, watchPostWheatObservationRequest)
+];

@@ -1,9 +1,11 @@
-import { put, call } from 'redux-saga/effects';
+import {put, call, takeEvery} from 'redux-saga/effects';
 import { List } from 'immutable';
 import { toSunflowerObservation } from '../models/sunflowerObservation';
 import {
+  fetchSunflowerObservationsRequestAction,
   fetchSunflowerObservationsSuccessAction,
   fetchSunflowerObservationsFailureAction,
+  postSunflowerObservationRequestAction,
   postSunflowerObservationSuccessAction,
   postSunflowerObservationFailureAction,
 } from '../actions/sunflowerObservation';
@@ -22,7 +24,7 @@ import { parseAndFormat } from '../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* fetchSunflowerObservationsRequestAction({
+export function* watchFetchSunflowerObservationsRequest({
   payload: { bounds },
 }) {
   try {
@@ -50,7 +52,7 @@ export function* fetchSunflowerObservationsRequestAction({
   }
 }
 
-export function* postSunflowerObservationRequestAction({ payload: { form } }) {
+export function* watchPostSunflowerObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
@@ -135,3 +137,8 @@ export function* postSunflowerObservationRequestAction({ payload: { form } }) {
     yield put(postSunflowerObservationFailureAction());
   }
 }
+
+export const sagas = [
+    takeEvery(fetchSunflowerObservationsRequestAction, watchFetchSunflowerObservationsRequest),
+    takeEvery(postSunflowerObservationRequestAction, watchPostSunflowerObservationRequest)
+];
