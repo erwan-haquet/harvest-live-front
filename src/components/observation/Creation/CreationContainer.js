@@ -17,11 +17,11 @@ import {
 } from '../../../selectors/ui/modal/observation/creation';
 import { types } from '../../../constants/observationTypes';
 import { cultures } from '../../../constants/observationCultures';
-import { postWheatObservationRequestAction } from '../../../actions/wheatObservation';
-import { postBarleyObservationRequestAction } from '../../../actions/barleyObservation';
-import {postSunflowerObservationRequestAction} from "../../../actions/sunflowerObservation";
-import {postCornObservationRequestAction} from "../../../actions/cornObservation";
-import {postRapeseedObservationRequestAction} from "../../../actions/rapeseedObservation";
+import { postWheatObservationRequestAction } from '../../../actions/observation/wheat';
+import { postBarleyObservationRequestAction } from '../../../actions/observation/barley';
+import {postSunflowerObservationRequestAction} from "../../../actions/observation/sunflower";
+import {postCornObservationRequestAction} from "../../../actions/observation/corn";
+import {postRapeseedObservationRequestAction} from "../../../actions/observation/rapeseed";
 import ExtraForm from "./forms/ExtraForm";
 
 class CreationContainer extends Component {

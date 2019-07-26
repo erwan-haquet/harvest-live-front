@@ -1,34 +1,34 @@
-import { put, call, takeEvery } from 'redux-saga/effects';
+import {put, call, takeEvery} from 'redux-saga/effects';
 import { List } from 'immutable';
-import { toCornObservation } from '../models/cornObservation';
+import { toBarleyObservation } from '../../models/observation/barley';
 import {
-  fetchCornObservationsRequestAction,
-  fetchCornObservationsSuccessAction,
-  fetchCornObservationsFailureAction,
-  postCornObservationRequestAction,
-  postCornObservationSuccessAction,
-  postCornObservationFailureAction,
-} from '../actions/cornObservation';
+    fetchBarleyObservationsRequestAction,
+  fetchBarleyObservationsSuccessAction,
+  fetchBarleyObservationsFailureAction,
+  postBarleyObservationRequestAction,
+  postBarleyObservationSuccessAction,
+  postBarleyObservationFailureAction,
+} from '../../actions/observation/barley';
 import fetch from 'cross-fetch';
-import FormError from '../errors/FormError';
+import FormError from '../../errors/FormError';
 import {
   closeModalAction,
-  setStepAction,
-} from '../actions/ui/modal/observation/creation';
-import { setAskedPositionAction } from '../actions/askedPosition';
-import LatLng from '../models/latLng';
-import { createToastAction } from '../actions/ui/toast';
-import Toast from '../models/toast';
+    setStepAction,
+} from '../../actions/ui/modal/observation/creation';
+import { setAskedPositionAction } from '../../actions/askedPosition';
+import LatLng from '../../models/latLng';
+import { createToastAction } from '../../actions/ui/toast';
+import Toast from '../../models/toast';
 import { destroy } from 'redux-form';
-import { parseAndFormat } from '../utils/phoneUtil';
+import { parseAndFormat } from '../../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* watchFetchCornObservationsRequest({ payload: { bounds } }) {
+export function* watchFetchBarleyObservationsRequest({ payload: { bounds } }) {
   try {
     const response = yield call(
       fetch,
-      `${apiUrl}/corn-observations?coordinates[within_box]=[${
+      `${apiUrl}/barley-observations?coordinates[within_box]=[${
         bounds.southWest.latitude
       },${bounds.southWest.longitude},${bounds.northEast.latitude},${
         bounds.northEast.longitude
@@ -41,37 +41,40 @@ export function* watchFetchCornObservationsRequest({ payload: { bounds } }) {
     );
     const data = yield call([response, response.json]);
     const list = new List(
-      data.map(observation => toCornObservation(observation)),
+      data.map(observation => toBarleyObservation(observation)),
     );
 
-    yield put(fetchCornObservationsSuccessAction(list));
+    yield put(fetchBarleyObservationsSuccessAction(list));
   } catch (error) {
-    yield put(fetchCornObservationsFailureAction());
+    yield put(fetchBarleyObservationsFailureAction());
   }
 }
 
-export function* watchPostCornObservationRequest({ payload: { form } }) {
+export function* watchPostBarleyObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
-      protein: parseFloat(form.protein),
-      fallingNumber: parseFloat(form.fallingNumber),
+      specificWeight: parseFloat(form.specificWeight),
       yield: parseFloat(form.yield),
       nitrogenQuantityUsed: parseFloat(form.nitrogenQuantityUsed),
       humidity: parseFloat(form.humidity),
-      place: form.place.label,
       phone: form.phone ? parseAndFormat(form.phone) : undefined,
+      place: form.place.label,
       targetPrice: form.targetPrice ? parseFloat(form.targetPrice) : undefined,
     };
 
-    const response = yield call(fetch, `${apiUrl}/corn-observations`, {
-      method: 'POST',
-      headers: {
-        accept: 'application/json',
-        'content-type': 'application/json',
+    const response = yield call(
+      fetch,
+      `${apiUrl}/barley-observations`,
+      {
+        method: 'POST',
+        headers: {
+          accept: 'application/json',
+          'content-type': 'application/json',
+        },
+        body: JSON.stringify(body),
       },
-      body: JSON.stringify(body),
-    });
+    );
 
     const responseBody = yield call([response, response.json]);
 
@@ -82,7 +85,7 @@ export function* watchPostCornObservationRequest({ payload: { form } }) {
       throw new Error(responseBody);
     }
 
-    yield put(postCornObservationSuccessAction());
+    yield put(postBarleyObservationSuccessAction());
     yield put(closeModalAction());
     yield put(setStepAction(1));
     yield put(destroy('observation'));
@@ -127,14 +130,11 @@ export function* watchPostCornObservationRequest({ payload: { form } }) {
         ),
       );
     }
-    yield put(postCornObservationFailureAction());
+    yield put(postBarleyObservationFailureAction());
   }
 }
 
 export const sagas = [
-  takeEvery(
-    fetchCornObservationsRequestAction,
-    watchFetchCornObservationsRequest,
-  ),
-  takeEvery(postCornObservationRequestAction, watchPostCornObservationRequest),
+    takeEvery(fetchBarleyObservationsRequestAction, watchFetchBarleyObservationsRequest),
+    takeEvery(postBarleyObservationRequestAction, watchPostBarleyObservationRequest)
 ];

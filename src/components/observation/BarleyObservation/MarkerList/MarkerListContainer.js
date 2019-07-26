@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchBarleyObservationsRequestAction } from '../../../../actions/barleyObservation';
-import { getBarleyObservations } from '../../../../selectors/barleyObservation';
+import { fetchBarleyObservationsRequestAction } from '../../../../actions/observation/barley';
+import { getBarleyObservations } from '../../../../selectors/observation/barley';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
 import { getSelectedCulture } from '../../../../selectors/filters';

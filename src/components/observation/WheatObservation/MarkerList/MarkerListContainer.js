@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchWheatObservationsRequestAction } from '../../../../actions/wheatObservation';
-import { getWheatObservations } from '../../../../selectors/wheatObservation';
+import { fetchWheatObservationsRequestAction } from '../../../../actions/observation/wheat';
+import { getWheatObservations } from '../../../../selectors/observation/wheat';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
 import { cultures } from '../../../../constants/observationCultures';

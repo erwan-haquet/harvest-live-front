@@ -1,11 +1,11 @@
 import { createReducer } from 'redux-act';
 import { List } from 'immutable';
-import InitialState from '../models/initialState';
+import InitialState from '../../models/initialState';
 import {
   fetchSunflowerObservationsFailureAction,
   fetchSunflowerObservationsRequestAction,
   fetchSunflowerObservationsSuccessAction,
-} from '../actions/sunflowerObservation';
+} from '../../actions/observation/sunflower';
 
 export const REDUCER_KEY = 'sunflower-observation';
 

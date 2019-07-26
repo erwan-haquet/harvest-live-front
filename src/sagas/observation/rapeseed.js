@@ -1,34 +1,36 @@
 import {put, call, takeEvery} from 'redux-saga/effects';
 import { List } from 'immutable';
-import { toBarleyObservation } from '../models/barleyObservation';
+import { toRapeseedObservation } from '../../models/observation/rapeseed';
 import {
-    fetchBarleyObservationsRequestAction,
-  fetchBarleyObservationsSuccessAction,
-  fetchBarleyObservationsFailureAction,
-  postBarleyObservationRequestAction,
-  postBarleyObservationSuccessAction,
-  postBarleyObservationFailureAction,
-} from '../actions/barleyObservation';
+  fetchRapeseedObservationsRequestAction,
+  fetchRapeseedObservationsSuccessAction,
+  fetchRapeseedObservationsFailureAction,
+  postRapeseedObservationRequestAction,
+  postRapeseedObservationSuccessAction,
+  postRapeseedObservationFailureAction,
+} from '../../actions/observation/rapeseed';
 import fetch from 'cross-fetch';
-import FormError from '../errors/FormError';
+import FormError from '../../errors/FormError';
 import {
-  closeModalAction,
+    closeModalAction,
     setStepAction,
-} from '../actions/ui/modal/observation/creation';
-import { setAskedPositionAction } from '../actions/askedPosition';
-import LatLng from '../models/latLng';
-import { createToastAction } from '../actions/ui/toast';
-import Toast from '../models/toast';
+} from '../../actions/ui/modal/observation/creation';
+import { setAskedPositionAction } from '../../actions/askedPosition';
+import LatLng from '../../models/latLng';
+import { createToastAction } from '../../actions/ui/toast';
+import Toast from '../../models/toast';
 import { destroy } from 'redux-form';
-import { parseAndFormat } from '../utils/phoneUtil';
+import { parseAndFormat } from '../../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* watchFetchBarleyObservationsRequest({ payload: { bounds } }) {
+export function* watchFetchRapeseedObservationsRequest({
+  payload: { bounds },
+}) {
   try {
     const response = yield call(
       fetch,
-      `${apiUrl}/barley-observations?coordinates[within_box]=[${
+      `${apiUrl}/rapeseed-observations?coordinates[within_box]=[${
         bounds.southWest.latitude
       },${bounds.southWest.longitude},${bounds.northEast.latitude},${
         bounds.northEast.longitude
@@ -41,31 +43,33 @@ export function* watchFetchBarleyObservationsRequest({ payload: { bounds } }) {
     );
     const data = yield call([response, response.json]);
     const list = new List(
-      data.map(observation => toBarleyObservation(observation)),
+      data.map(observation => toRapeseedObservation(observation)),
     );
 
-    yield put(fetchBarleyObservationsSuccessAction(list));
+    yield put(fetchRapeseedObservationsSuccessAction(list));
   } catch (error) {
-    yield put(fetchBarleyObservationsFailureAction());
+    yield put(fetchRapeseedObservationsFailureAction());
   }
 }
 
-export function* watchPostBarleyObservationRequest({ payload: { form } }) {
+export function* watchPostRapeseedObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
       specificWeight: parseFloat(form.specificWeight),
+      protein: parseFloat(form.protein),
+      fallingNumber: parseFloat(form.fallingNumber),
       yield: parseFloat(form.yield),
       nitrogenQuantityUsed: parseFloat(form.nitrogenQuantityUsed),
       humidity: parseFloat(form.humidity),
-      phone: form.phone ? parseAndFormat(form.phone) : undefined,
       place: form.place.label,
+      phone: form.phone ? parseAndFormat(form.phone) : undefined,
       targetPrice: form.targetPrice ? parseFloat(form.targetPrice) : undefined,
     };
 
     const response = yield call(
       fetch,
-      `${apiUrl}/barley-observations`,
+      `${apiUrl}/rapeseed-observations`,
       {
         method: 'POST',
         headers: {
@@ -85,7 +89,7 @@ export function* watchPostBarleyObservationRequest({ payload: { form } }) {
       throw new Error(responseBody);
     }
 
-    yield put(postBarleyObservationSuccessAction());
+    yield put(postRapeseedObservationSuccessAction());
     yield put(closeModalAction());
     yield put(setStepAction(1));
     yield put(destroy('observation'));
@@ -130,11 +134,11 @@ export function* watchPostBarleyObservationRequest({ payload: { form } }) {
         ),
       );
     }
-    yield put(postBarleyObservationFailureAction());
+    yield put(postRapeseedObservationFailureAction());
   }
 }
 
 export const sagas = [
-    takeEvery(fetchBarleyObservationsRequestAction, watchFetchBarleyObservationsRequest),
-    takeEvery(postBarleyObservationRequestAction, watchPostBarleyObservationRequest)
+    takeEvery(fetchRapeseedObservationsRequestAction, watchFetchRapeseedObservationsRequest),
+    takeEvery(postRapeseedObservationRequestAction, watchPostRapeseedObservationRequest)
 ];

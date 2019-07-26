@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchSunflowerObservationsRequestAction } from '../../../../actions/sunflowerObservation';
-import { getSunflowerObservations } from '../../../../selectors/sunflowerObservation';
+import { fetchSunflowerObservationsRequestAction } from '../../../../actions/observation/sunflower';
+import { getSunflowerObservations } from '../../../../selectors/observation/sunflower';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
 import { cultures } from '../../../../constants/observationCultures';

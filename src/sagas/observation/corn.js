@@ -1,36 +1,34 @@
-import {put, call, takeEvery} from 'redux-saga/effects';
+import { put, call, takeEvery } from 'redux-saga/effects';
 import { List } from 'immutable';
-import { toRapeseedObservation } from '../models/rapeseedObservation';
+import { toCornObservation } from '../../models/observation/corn';
 import {
-  fetchRapeseedObservationsRequestAction,
-  fetchRapeseedObservationsSuccessAction,
-  fetchRapeseedObservationsFailureAction,
-  postRapeseedObservationRequestAction,
-  postRapeseedObservationSuccessAction,
-  postRapeseedObservationFailureAction,
-} from '../actions/rapeseedObservation';
+  fetchCornObservationsRequestAction,
+  fetchCornObservationsSuccessAction,
+  fetchCornObservationsFailureAction,
+  postCornObservationRequestAction,
+  postCornObservationSuccessAction,
+  postCornObservationFailureAction,
+} from '../../actions/observation/corn';
 import fetch from 'cross-fetch';
-import FormError from '../errors/FormError';
+import FormError from '../../errors/FormError';
 import {
-    closeModalAction,
-    setStepAction,
-} from '../actions/ui/modal/observation/creation';
-import { setAskedPositionAction } from '../actions/askedPosition';
-import LatLng from '../models/latLng';
-import { createToastAction } from '../actions/ui/toast';
-import Toast from '../models/toast';
+  closeModalAction,
+  setStepAction,
+} from '../../actions/ui/modal/observation/creation';
+import { setAskedPositionAction } from '../../actions/askedPosition';
+import LatLng from '../../models/latLng';
+import { createToastAction } from '../../actions/ui/toast';
+import Toast from '../../models/toast';
 import { destroy } from 'redux-form';
-import { parseAndFormat } from '../utils/phoneUtil';
+import { parseAndFormat } from '../../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* watchFetchRapeseedObservationsRequest({
-  payload: { bounds },
-}) {
+export function* watchFetchCornObservationsRequest({ payload: { bounds } }) {
   try {
     const response = yield call(
       fetch,
-      `${apiUrl}/rapeseed-observations?coordinates[within_box]=[${
+      `${apiUrl}/corn-observations?coordinates[within_box]=[${
         bounds.southWest.latitude
       },${bounds.southWest.longitude},${bounds.northEast.latitude},${
         bounds.northEast.longitude
@@ -43,20 +41,19 @@ export function* watchFetchRapeseedObservationsRequest({
     );
     const data = yield call([response, response.json]);
     const list = new List(
-      data.map(observation => toRapeseedObservation(observation)),
+      data.map(observation => toCornObservation(observation)),
     );
 
-    yield put(fetchRapeseedObservationsSuccessAction(list));
+    yield put(fetchCornObservationsSuccessAction(list));
   } catch (error) {
-    yield put(fetchRapeseedObservationsFailureAction());
+    yield put(fetchCornObservationsFailureAction());
   }
 }
 
-export function* watchPostRapeseedObservationRequest({ payload: { form } }) {
+export function* watchPostCornObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
-      specificWeight: parseFloat(form.specificWeight),
       protein: parseFloat(form.protein),
       fallingNumber: parseFloat(form.fallingNumber),
       yield: parseFloat(form.yield),
@@ -67,18 +64,14 @@ export function* watchPostRapeseedObservationRequest({ payload: { form } }) {
       targetPrice: form.targetPrice ? parseFloat(form.targetPrice) : undefined,
     };
 
-    const response = yield call(
-      fetch,
-      `${apiUrl}/rapeseed-observations`,
-      {
-        method: 'POST',
-        headers: {
-          accept: 'application/json',
-          'content-type': 'application/json',
-        },
-        body: JSON.stringify(body),
+    const response = yield call(fetch, `${apiUrl}/corn-observations`, {
+      method: 'POST',
+      headers: {
+        accept: 'application/json',
+        'content-type': 'application/json',
       },
-    );
+      body: JSON.stringify(body),
+    });
 
     const responseBody = yield call([response, response.json]);
 
@@ -89,7 +82,7 @@ export function* watchPostRapeseedObservationRequest({ payload: { form } }) {
       throw new Error(responseBody);
     }
 
-    yield put(postRapeseedObservationSuccessAction());
+    yield put(postCornObservationSuccessAction());
     yield put(closeModalAction());
     yield put(setStepAction(1));
     yield put(destroy('observation'));
@@ -134,11 +127,14 @@ export function* watchPostRapeseedObservationRequest({ payload: { form } }) {
         ),
       );
     }
-    yield put(postRapeseedObservationFailureAction());
+    yield put(postCornObservationFailureAction());
   }
 }
 
 export const sagas = [
-    takeEvery(fetchRapeseedObservationsRequestAction, watchFetchRapeseedObservationsRequest),
-    takeEvery(postRapeseedObservationRequestAction, watchPostRapeseedObservationRequest)
+  takeEvery(
+    fetchCornObservationsRequestAction,
+    watchFetchCornObservationsRequest,
+  ),
+  takeEvery(postCornObservationRequestAction, watchPostCornObservationRequest),
 ];

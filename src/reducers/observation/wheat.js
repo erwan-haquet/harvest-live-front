@@ -1,11 +1,11 @@
 import { createReducer } from 'redux-act';
 import { List } from 'immutable';
-import InitialState from '../models/initialState';
+import InitialState from '../../models/initialState';
 import {
   fetchWheatObservationsFailureAction,
   fetchWheatObservationsRequestAction,
   fetchWheatObservationsSuccessAction,
-} from '../actions/wheatObservation';
+} from '../../actions/observation/wheat';
 
 export const REDUCER_KEY = 'wheat-observation';
 

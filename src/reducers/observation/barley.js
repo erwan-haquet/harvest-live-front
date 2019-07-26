@@ -4,8 +4,8 @@ import {
   fetchBarleyObservationsRequestAction,
   fetchBarleyObservationsSuccessAction,
   fetchBarleyObservationsFailureAction,
-} from '../actions/barleyObservation';
-import InitialState from '../models/initialState';
+} from '../../actions/observation/barley';
+import InitialState from '../../models/initialState';
 
 export const REDUCER_KEY = 'barley-observation';
 

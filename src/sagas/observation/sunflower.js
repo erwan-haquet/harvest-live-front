@@ -1,34 +1,36 @@
 import {put, call, takeEvery} from 'redux-saga/effects';
 import { List } from 'immutable';
-import { toWheatObservation } from '../models/wheatObservation';
+import { toSunflowerObservation } from '../../models/observation/sunflower';
 import {
-  fetchWheatObservationsRequestAction,
-  fetchWheatObservationsSuccessAction,
-  fetchWheatObservationsFailureAction,
-  postWheatObservationRequestAction,
-  postWheatObservationSuccessAction,
-  postWheatObservationFailureAction,
-} from '../actions/wheatObservation';
+  fetchSunflowerObservationsRequestAction,
+  fetchSunflowerObservationsSuccessAction,
+  fetchSunflowerObservationsFailureAction,
+  postSunflowerObservationRequestAction,
+  postSunflowerObservationSuccessAction,
+  postSunflowerObservationFailureAction,
+} from '../../actions/observation/sunflower';
 import fetch from 'cross-fetch';
-import FormError from '../errors/FormError';
+import FormError from '../../errors/FormError';
 import {
     closeModalAction,
     setStepAction,
-} from '../actions/ui/modal/observation/creation';
-import LatLng from '../models/latLng';
-import { setAskedPositionAction } from '../actions/askedPosition';
-import { createToastAction } from '../actions/ui/toast';
-import Toast from '../models/toast';
+} from '../../actions/ui/modal/observation/creation';
+import { setAskedPositionAction } from '../../actions/askedPosition';
+import LatLng from '../../models/latLng';
+import { createToastAction } from '../../actions/ui/toast';
+import Toast from '../../models/toast';
 import { destroy } from 'redux-form';
-import { parseAndFormat } from '../utils/phoneUtil';
+import { parseAndFormat } from '../../utils/phoneUtil';
 
 const apiUrl = process.env.REACT_APP_API_BASE_URL;
 
-export function* watchFetchWheatObservationsRequest({ payload: { bounds } }) {
+export function* watchFetchSunflowerObservationsRequest({
+  payload: { bounds },
+}) {
   try {
     const response = yield call(
       fetch,
-      `${apiUrl}/wheat-observations?coordinates[within_box]=[${
+      `${apiUrl}/sunflower-observations?coordinates[within_box]=[${
         bounds.southWest.latitude
       },${bounds.southWest.longitude},${bounds.northEast.latitude},${
         bounds.northEast.longitude
@@ -41,16 +43,16 @@ export function* watchFetchWheatObservationsRequest({ payload: { bounds } }) {
     );
     const data = yield call([response, response.json]);
     const list = new List(
-      data.map(observation => toWheatObservation(observation)),
+      data.map(observation => toSunflowerObservation(observation)),
     );
 
-    yield put(fetchWheatObservationsSuccessAction(list));
+    yield put(fetchSunflowerObservationsSuccessAction(list));
   } catch (error) {
-    yield put(fetchWheatObservationsFailureAction());
+    yield put(fetchSunflowerObservationsFailureAction());
   }
 }
 
-export function* watchPostWheatObservationRequest({ payload: { form } }) {
+export function* watchPostSunflowerObservationRequest({ payload: { form } }) {
   try {
     const body = {
       ...form,
@@ -67,7 +69,7 @@ export function* watchPostWheatObservationRequest({ payload: { form } }) {
 
     const response = yield call(
       fetch,
-      `${apiUrl}/wheat-observations`,
+      `${apiUrl}/sunflower-observations`,
       {
         method: 'POST',
         headers: {
@@ -87,7 +89,7 @@ export function* watchPostWheatObservationRequest({ payload: { form } }) {
       throw new Error(responseBody);
     }
 
-    yield put(postWheatObservationSuccessAction());
+    yield put(postSunflowerObservationSuccessAction());
     yield put(closeModalAction());
     yield put(setStepAction(1));
     yield put(destroy('observation'));
@@ -132,11 +134,11 @@ export function* watchPostWheatObservationRequest({ payload: { form } }) {
         ),
       );
     }
-    yield put(postWheatObservationFailureAction());
+    yield put(postSunflowerObservationFailureAction());
   }
 }
 
 export const sagas = [
-    takeEvery(fetchWheatObservationsRequestAction, watchFetchWheatObservationsRequest),
-    takeEvery(postWheatObservationRequestAction, watchPostWheatObservationRequest)
+    takeEvery(fetchSunflowerObservationsRequestAction, watchFetchSunflowerObservationsRequest),
+    takeEvery(postSunflowerObservationRequestAction, watchPostSunflowerObservationRequest)
 ];

@@ -4,8 +4,8 @@ import {
   fetchCornObservationsRequestAction,
   fetchCornObservationsSuccessAction,
   fetchCornObservationsFailureAction,
-} from '../actions/cornObservation';
-import InitialState from '../models/initialState';
+} from '../../actions/observation/corn';
+import InitialState from '../../models/initialState';
 
 export const REDUCER_KEY = 'corn-observation';
 

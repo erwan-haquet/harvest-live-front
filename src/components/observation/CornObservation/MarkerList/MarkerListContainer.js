@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchCornObservationsRequestAction } from '../../../../actions/cornObservation';
-import { getCornObservations } from '../../../../selectors/cornObservation';
+import { fetchCornObservationsRequestAction } from '../../../../actions/observation/corn';
+import { getCornObservations } from '../../../../selectors/observation/corn';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
 import { cultures } from '../../../../constants/observationCultures';

@@ -1,7 +1,7 @@
 import { Record, fromJS } from 'immutable';
-import LatLng from './latLng';
+import LatLng from '../latLng';
 
-export const SunflowerObservation = Record(
+export const BarleyObservation = Record(
   {
     specificWeight: null,
     email: null,
@@ -19,14 +19,14 @@ export const SunflowerObservation = Record(
     coordinates: new LatLng(),
     id: null,
     createdAt: null,
-    cultureName: 'Tournesol',
+    cultureName: 'Orge',
     image: null,
   },
-  'SunflowerObservation',
+  'BarleyObservation',
 );
 
-export const toSunflowerObservation = observation =>
-  new SunflowerObservation(
+export const toBarleyObservation = observation =>
+  new BarleyObservation(
     fromJS({
       ...observation,
       coordinates: new LatLng({
@@ -36,4 +36,4 @@ export const toSunflowerObservation = observation =>
     }),
   );
 
-export default SunflowerObservation;
+export default BarleyObservation;

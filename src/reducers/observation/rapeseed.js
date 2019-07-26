@@ -4,8 +4,8 @@ import {
   fetchRapeseedObservationsRequestAction,
   fetchRapeseedObservationsSuccessAction,
   fetchRapeseedObservationsFailureAction,
-} from '../actions/rapeseedObservation';
-import InitialState from '../models/initialState';
+} from '../../actions/observation/rapeseed';
+import InitialState from '../../models/initialState';
 
 export const REDUCER_KEY = 'rapeseed-observation';
 

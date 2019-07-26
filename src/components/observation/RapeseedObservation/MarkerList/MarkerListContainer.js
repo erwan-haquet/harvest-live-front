@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import { fetchRapeseedObservationsRequestAction } from '../../../../actions/rapeseedObservation';
-import { getRapeseedObservations } from '../../../../selectors/rapeseedObservation';
+import { fetchRapeseedObservationsRequestAction } from '../../../../actions/observation/rapeseed';
+import { getRapeseedObservations } from '../../../../selectors/observation/rapeseed';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
 import {cultures} from "../../../../constants/observationCultures";
