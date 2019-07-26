@@ -7,6 +7,8 @@ import {
 } from '../actions/rapeseedObservation';
 import InitialState from '../models/initialState';
 
+export const REDUCER_KEY = 'rapeseed-observation';
+
 const reducer = createReducer(
   {
     [fetchRapeseedObservationsRequestAction]: state =>
@@ -21,4 +23,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

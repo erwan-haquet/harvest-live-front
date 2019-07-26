@@ -7,6 +7,8 @@ import {
 import InitialState from '../models/initialState';
 import ObservationDetails from '../models/observationDetails';
 
+export const REDUCER_KEY = 'observation-details';
+
 const reducer = createReducer(
   {
     [openObservationDetailsAction]: state => state.setIn(['data', 'isOpen'], true),
@@ -17,4 +19,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

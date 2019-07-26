@@ -7,6 +7,8 @@ import {
 import InitialState from '../models/initialState';
 import LatLng from '../models/latLng';
 
+export const REDUCER_KEY = 'asked-position';
+
 const reducer = createReducer(
   {
     [setAskedPositionRequestAction]: state => state.set('isFetching', true),
@@ -19,4 +21,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

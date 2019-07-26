@@ -1,25 +1,5 @@
-@import 'styles/typography';
-@import 'styles/colors';
-
-body {
-  margin: 0;
-  font-family: $paragraph-font;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: $title-font;
-}
-
-p {
-  font-family: $paragraph-font;
-}
-
-// Bootstrap extented
+@import 'typography';
+@import 'colors';
 
 .btn {
   -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);

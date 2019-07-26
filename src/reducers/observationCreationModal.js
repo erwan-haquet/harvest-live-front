@@ -12,6 +12,8 @@ import {
 import InitialState from '../models/initialState';
 import ObservationCreationModal from '../models/observationCreationModal';
 
+export const REDUCER_KEY = 'observation-creation-modal';
+
 const reducer = createReducer(
   {
     [openObservationCreationModalAction]: state =>
@@ -34,4 +36,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

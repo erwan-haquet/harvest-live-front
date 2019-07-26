@@ -3,6 +3,8 @@ import { List } from 'immutable';
 import { addToastAction, removeToastAction } from '../actions/toast';
 import InitialState from '../models/initialState';
 
+export const REDUCER_KEY = 'toast';
+
 const reducer = createReducer(
   {
     [addToastAction]: (state, payload) => {
@@ -16,4 +18,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

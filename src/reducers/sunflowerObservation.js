@@ -7,6 +7,8 @@ import {
   fetchSunflowerObservationsSuccessAction,
 } from '../actions/sunflowerObservation';
 
+export const REDUCER_KEY = 'sunflower-observation';
+
 const reducer = createReducer(
   {
     [fetchSunflowerObservationsRequestAction]: state =>
@@ -21,4 +23,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

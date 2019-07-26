@@ -4,6 +4,8 @@ import {
 } from '../actions/selectedObservation';
 import InitialState from '../models/initialState';
 
+export const REDUCER_KEY = 'selected-observation';
+
 const reducer = createReducer(
   {
     [setSelectedObservation]: (state, payload) =>
@@ -14,4 +16,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

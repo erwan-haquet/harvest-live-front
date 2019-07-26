@@ -7,6 +7,8 @@ import {
   fetchWheatObservationsSuccessAction,
 } from '../actions/wheatObservation';
 
+export const REDUCER_KEY = 'wheat-observation';
+
 const reducer = createReducer(
   {
     [fetchWheatObservationsRequestAction]: state =>
@@ -21,4 +23,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};

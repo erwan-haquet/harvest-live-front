@@ -1,0 +1,22 @@
+@import 'typography';
+@import 'colors';
+@import 'bootstrap-extension';
+
+body {
+  margin: 0;
+  font-family: $paragraph-font;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: $title-font;
+}
+
+p {
+  font-family: $paragraph-font;
+}
+

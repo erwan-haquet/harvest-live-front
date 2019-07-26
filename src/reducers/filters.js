@@ -4,6 +4,8 @@ import { setSelectedCulture } from '../actions/filters';
 import InitialState from '../models/initialState';
 import Filters from '../models/filters';
 
+export const REDUCER_KEY = 'filters';
+
 const reducer = createReducer(
   {
     [setSelectedCulture]: (state, payload) =>
@@ -14,4 +16,6 @@ const reducer = createReducer(
   }),
 );
 
-export default reducer;
+export default {
+    [REDUCER_KEY]: reducer,
+};
