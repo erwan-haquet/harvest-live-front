@@ -11,7 +11,7 @@ import peas from '../../../../images/peas.jpg';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { cultures } from '../../../../constants/observationCultures';
+import { cultures } from '../../../../constants/observation';
 import NavigationBar from '../NavigationBar';
 import SectionTitle from '../SectionTitle';
 

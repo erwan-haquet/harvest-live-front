@@ -5,8 +5,7 @@ import {
   getCulture,
   getType,
 } from '../../../../../selectors/ui/modal/observation/creation';
-import { types } from '../../../../../constants/observationTypes';
-import { cultures } from '../../../../../constants/observationCultures';
+import { types, cultures } from '../../../../../constants/observation';
 import WheatObservationForm from '../harvest/WheatObservationForm';
 import BarleyObservationForm from '../harvest/BarleyObservationForm';
 import SunflowerObservationForm from '../harvest/SunflowerObservationForm';

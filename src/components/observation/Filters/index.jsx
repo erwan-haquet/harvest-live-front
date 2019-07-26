@@ -7,7 +7,7 @@ import markerBarley from '../../../images/marker-barley.png';
 import markerSunflower from '../../../images/marker-sunflower.png';
 import markerRapeseed from '../../../images/marker-rapeseed.png';
 import markerWheat from '../../../images/marker-wheat.png';
-import { cultures } from '../../../constants/observationCultures';
+import { cultures } from '../../../constants/observation';
 
 const Filters = ({ onClick, isActive }) => (
   <ul className={styles.list}>

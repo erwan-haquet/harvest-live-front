@@ -15,8 +15,7 @@ import {
   getCurrentStep,
   getType,
 } from '../../../selectors/ui/modal/observation/creation';
-import { types } from '../../../constants/observationTypes';
-import { cultures } from '../../../constants/observationCultures';
+import { types, cultures } from '../../../constants/observation';
 import { postWheatObservationRequestAction } from '../../../actions/observation/wheat';
 import { postBarleyObservationRequestAction } from '../../../actions/observation/barley';
 import {postSunflowerObservationRequestAction} from "../../../actions/observation/sunflower";

@@ -11,7 +11,7 @@ import styles from './styles.module.scss';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
-import { types } from '../../../../constants/observationTypes';
+import { types } from '../../../../constants/observation';
 import SectionTitle from '../SectionTitle';
 
 const CultureForm = ({ onClick }) => {

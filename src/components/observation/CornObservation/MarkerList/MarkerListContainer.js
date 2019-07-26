@@ -5,7 +5,7 @@ import { fetchCornObservationsRequestAction } from '../../../../actions/observat
 import { getCornObservations } from '../../../../selectors/observation/corn';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
-import { cultures } from '../../../../constants/observationCultures';
+import { cultures } from '../../../../constants/observation';
 import { getSelectedCulture } from '../../../../selectors/filters';
 
 class MarkerListContainer extends Component {
