@@ -1,4 +1,4 @@
-import { REDUCER_KEY } from '../../reducers/ui/observationCreationModal';
+import { REDUCER_KEY } from '../../../../reducers/ui/modal/observation/creation';
 
 export const isObservationCreationModalOpen = state => state[REDUCER_KEY].data.isOpen;
 export const getCurrentStep = state => state[REDUCER_KEY].data.currentStep;

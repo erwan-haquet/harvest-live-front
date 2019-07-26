@@ -3,16 +3,16 @@ import React, { Component } from 'react';
 import TypeSelection from '../TypeSelection';
 
 import {
-  nextStepObservationCreationModalAction,
-  setTypeObservationCreationModalAction,
-} from '../../../../actions/ui/observationCreationModal';
+  nextStepAction,
+  setTypeAction,
+} from '../../../../actions/ui/modal/observation/creation';
 import { connect } from 'react-redux';
 
 class TypeSelectionContainer extends Component {
   handleClick = type => {
     const { dispatch } = this.props;
-    dispatch(setTypeObservationCreationModalAction(type));
-    dispatch(nextStepObservationCreationModalAction());
+    dispatch(setTypeAction(type));
+    dispatch(nextStepAction());
   };
 
   render() {

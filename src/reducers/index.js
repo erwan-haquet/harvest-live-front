@@ -6,11 +6,11 @@ import rapeseedObservation from './rapeseedObservation';
 import sunflowerObservation from './sunflowerObservation';
 import wheatObservation from './wheatObservation';
 import selectedObservation from './selectedObservation';
-import ObservationDetailsModal from './ui/observationDetailsModal';
+import ObservationDetailsModal from './ui/modal/observation/details';
 import toast from './ui/toast';
 import map from './ui/map';
 import filters from './filters';
-import observationCreationModal from './ui/observationCreationModal';
+import observationCreationModal from './ui/modal/observation/creation';
 
 export default {
   ...location,

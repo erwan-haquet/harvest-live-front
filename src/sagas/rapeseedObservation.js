@@ -12,9 +12,9 @@ import {
 import fetch from 'cross-fetch';
 import FormError from '../errors/FormError';
 import {
-  closeObservationCreationModalAction,
-  setStepObservationCreationModalAction,
-} from '../actions/ui/observationCreationModal';
+    closeModalAction,
+    setStepAction,
+} from '../actions/ui/modal/observation/creation';
 import { setAskedPositionAction } from '../actions/askedPosition';
 import LatLng from '../models/latLng';
 import { createToastAction } from '../actions/ui/toast';
@@ -90,8 +90,8 @@ export function* watchPostRapeseedObservationRequest({ payload: { form } }) {
     }
 
     yield put(postRapeseedObservationSuccessAction());
-    yield put(closeObservationCreationModalAction());
-    yield put(setStepObservationCreationModalAction(1));
+    yield put(closeModalAction());
+    yield put(setStepAction(1));
     yield put(destroy('observation'));
 
     yield put(

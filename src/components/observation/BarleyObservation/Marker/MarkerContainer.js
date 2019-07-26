@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import L from 'leaflet';
 import Marker from '../../../common/Marker';
 import { setSelectedObservation } from '../../../../actions/selectedObservation';
-import { openObservationDetailsModalAction } from '../../../../actions/ui/observationDetailsModal';
+import { openObservationDetailsModalAction } from '../../../../actions/ui/modal/observation/details';
 import markerBarley from '../../../../images/marker-barley.png';
 
 class MarkerContainer extends Component {

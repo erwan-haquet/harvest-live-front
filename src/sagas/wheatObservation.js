@@ -12,9 +12,9 @@ import {
 import fetch from 'cross-fetch';
 import FormError from '../errors/FormError';
 import {
-  closeObservationCreationModalAction,
-  setStepObservationCreationModalAction,
-} from '../actions/ui/observationCreationModal';
+    closeModalAction,
+    setStepAction,
+} from '../actions/ui/modal/observation/creation';
 import LatLng from '../models/latLng';
 import { setAskedPositionAction } from '../actions/askedPosition';
 import { createToastAction } from '../actions/ui/toast';
@@ -88,8 +88,8 @@ export function* watchPostWheatObservationRequest({ payload: { form } }) {
     }
 
     yield put(postWheatObservationSuccessAction());
-    yield put(closeObservationCreationModalAction());
-    yield put(setStepObservationCreationModalAction(1));
+    yield put(closeModalAction());
+    yield put(setStepAction(1));
     yield put(destroy('observation'));
 
     yield put(

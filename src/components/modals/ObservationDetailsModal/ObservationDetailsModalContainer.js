@@ -3,8 +3,8 @@ import { Record } from 'immutable';
 import { connect } from 'react-redux';
 import ObservationDetailsModalModal from './index';
 import { getSelectedObservation } from '../../../selectors/selectedObservation';
-import { isObservationDetailsModalOpen } from '../../../selectors/ui/observationDetailsModal';
-import { closeObservationDetailsModalAction } from '../../../actions/ui/observationDetailsModal';
+import { isObservationDetailsModalOpen } from '../../../selectors/ui/modal/observation/details';
+import { closeObservationDetailsModalAction } from '../../../actions/ui/modal/observation/details';
 import { getOne } from '../../../api/mediaObject';
 
 class ObservationDetailsModalModalContainer extends Component {

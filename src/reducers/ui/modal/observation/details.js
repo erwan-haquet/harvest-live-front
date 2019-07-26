@@ -3,11 +3,11 @@ import { createReducer } from 'redux-act';
 import {
   openObservationDetailsModalAction,
   closeObservationDetailsModalAction,
-} from '../../actions/ui/observationDetailsModal';
-import InitialState from '../../models/initialState';
-import ObservationDetailsModal from '../../models/ui/observationDetailsModal';
+} from '../../../../actions/ui/modal/observation/details';
+import InitialState from '../../../../models/initialState';
+import ObservationDetailsModal from '../../../../models/ui/modal/observation/details';
 
-export const REDUCER_KEY = 'observation-details';
+export const REDUCER_KEY = 'ui/modal/observation/details';
 
 const reducer = createReducer(
   {

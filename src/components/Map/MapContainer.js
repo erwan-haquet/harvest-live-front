@@ -5,7 +5,7 @@ import Map from '../Map';
 import { buildDefault, buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
 import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
-import { closeObservationDetailsModalAction } from '../../actions/ui/observationDetailsModal';
+import { closeObservationDetailsModalAction } from '../../actions/ui/modal/observation/details';
 import { getStyle } from '../../selectors/ui/map';
 
 class MapContainer extends Component {

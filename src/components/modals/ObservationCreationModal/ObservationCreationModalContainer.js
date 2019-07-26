@@ -4,13 +4,13 @@ import ObservationCreationModal from './index';
 import {
   isObservationCreationModalOpen,
   getCurrentStep,
-} from '../../../selectors/ui/observationCreationModal';
-import { closeObservationCreationModalAction } from '../../../actions/ui/observationCreationModal';
+} from '../../../selectors/ui/modal/observation/creation';
+import { closeModalAction } from '../../../actions/ui/modal/observation/creation';
 
 class ObservationCreationModalContainer extends Component {
   handleClose = () => {
     const { dispatch } = this.props;
-    dispatch(closeObservationCreationModalAction());
+    dispatch(closeModalAction());
   };
 
   render() {
