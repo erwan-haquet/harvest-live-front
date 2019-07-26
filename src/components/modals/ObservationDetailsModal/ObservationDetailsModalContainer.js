@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { Record } from 'immutable';
 import { connect } from 'react-redux';
-import ObservationDetailsPopoverModal from './index';
+import ObservationDetailsModalModal from './index';
 import { getSelectedObservation } from '../../../selectors/selectedObservation';
-import { isObservationDetailsPopoverOpen } from '../../../selectors/ui/observationDetailsPopover';
-import { closeObservationDetailsPopoverAction } from '../../../actions/ui/observationDetailsPopover';
+import { isObservationDetailsModalOpen } from '../../../selectors/ui/observationDetailsModal';
+import { closeObservationDetailsModalAction } from '../../../actions/ui/observationDetailsModal';
 import { getOne } from '../../../api/mediaObject';
 
-class ObservationDetailsPopoverModalContainer extends Component {
+class ObservationDetailsModalModalContainer extends Component {
   constructor(props) {
     super(props);
     this.state = { image: null };
@@ -64,7 +64,7 @@ class ObservationDetailsPopoverModalContainer extends Component {
 
   handleClose = () => {
     const { dispatch } = this.props;
-    dispatch(closeObservationDetailsPopoverAction());
+    dispatch(closeObservationDetailsModalAction());
   };
 
   render() {
@@ -78,7 +78,7 @@ class ObservationDetailsPopoverModalContainer extends Component {
       const type = Record.getDescriptiveName(observation);
 
       return (
-        <ObservationDetailsPopoverModal
+        <ObservationDetailsModalModal
           observation={observation}
           type={type}
           image={this.state.image}
@@ -97,5 +97,5 @@ class ObservationDetailsPopoverModalContainer extends Component {
 
 export default connect(state => ({
   observation: getSelectedObservation(state),
-  isOpen: isObservationDetailsPopoverOpen(state),
-}))(ObservationDetailsPopoverModalContainer);
+  isOpen: isObservationDetailsModalOpen(state),
+}))(ObservationDetailsModalModalContainer);

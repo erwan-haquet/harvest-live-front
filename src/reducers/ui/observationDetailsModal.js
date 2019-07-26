@@ -1,23 +1,23 @@
 import { createReducer } from 'redux-act';
 
 import {
-  openObservationDetailsPopoverAction,
-  closeObservationDetailsPopoverAction,
-} from '../../actions/ui/observationDetailsPopover';
+  openObservationDetailsModalAction,
+  closeObservationDetailsModalAction,
+} from '../../actions/ui/observationDetailsModal';
 import InitialState from '../../models/initialState';
-import ObservationDetailsPopover from '../../models/ui/observationDetailsPopover';
+import ObservationDetailsModal from '../../models/ui/observationDetailsModal';
 
 export const REDUCER_KEY = 'observation-details';
 
 const reducer = createReducer(
   {
-    [openObservationDetailsPopoverAction]: state =>
+    [openObservationDetailsModalAction]: state =>
       state.setIn(['data', 'isOpen'], true),
-    [closeObservationDetailsPopoverAction]: state =>
+    [closeObservationDetailsModalAction]: state =>
       state.setIn(['data', 'isOpen'], false),
   },
   new InitialState({
-    data: new ObservationDetailsPopover(),
+    data: new ObservationDetailsModal(),
   }),
 );
 

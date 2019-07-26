@@ -6,7 +6,7 @@ import rapeseedObservation from './rapeseedObservation';
 import sunflowerObservation from './sunflowerObservation';
 import wheatObservation from './wheatObservation';
 import selectedObservation from './selectedObservation';
-import ObservationDetailsPopover from './ui/observationDetailsPopover';
+import ObservationDetailsModal from './ui/observationDetailsModal';
 import toast from './ui/toast';
 import map from './ui/map';
 import filters from './filters';
@@ -21,7 +21,7 @@ export default {
   ...sunflowerObservation,
   ...wheatObservation,
   ...selectedObservation,
-  ...ObservationDetailsPopover,
+  ...ObservationDetailsModal,
   ...toast,
   ...map,
   ...filters,
