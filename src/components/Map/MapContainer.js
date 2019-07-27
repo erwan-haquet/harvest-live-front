@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import Map from '../Map';
 import { buildDefault, buildFromLeafletMap } from '../../models/location';
 import { setLocationAction } from '../../actions/location';
-import { getAskedPosition, isFetching } from '../../selectors/askedPosition';
+import { getAskedPosition } from '../../selectors/askedPosition';
 import { closeObservationDetailsModalAction } from '../../actions/ui/modal/observation/details';
 import { getStyle } from '../../selectors/ui/map';
 
@@ -34,7 +34,7 @@ class MapContainer extends Component {
     const position =
       askedPosition.latitude || askedPosition.longitude
         ? [askedPosition.latitude, askedPosition.longitude]
-        : [48.449715, 1.492092]; // Setup location to chartres by default
+        : [48.449715, 1.492092]; // Default location is set to "Chartres"
 
     return (
       <Map
@@ -54,6 +54,5 @@ MapContainer.defaultProps = {
 
 export default connect(state => ({
   askedPosition: getAskedPosition(state),
-  isFetching: isFetching(state),
   style: getStyle(state),
 }))(MapContainer);

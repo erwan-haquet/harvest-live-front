@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import L from 'leaflet';
 import Marker from '../../../common/Marker';
-import { setSelectedObservation } from '../../../../actions/selectedObservation';
+import { selectObservationAction } from '../../../../actions/ui/modal/observation/details';
 import { connect } from 'react-redux';
 import { openObservationDetailsModalAction } from '../../../../actions/ui/modal/observation/details';
 import markerCorn from '../../../../images/marker-corn.png';
@@ -10,7 +10,7 @@ import markerCorn from '../../../../images/marker-corn.png';
 class MarkerContainer extends Component {
   handleClick = () => {
     const { dispatch, observation } = this.props;
-    dispatch(setSelectedObservation(observation));
+    dispatch(selectObservationAction(observation));
     dispatch(openObservationDetailsModalAction());
   };
   render() {
