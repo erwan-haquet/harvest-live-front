@@ -1,3 +1,3 @@
-import { REDUCER_KEY } from '../reducers/filters';
+import { REDUCER_KEY } from '../../reducers/ui/filters';
 
 export const getSelectedCulture = state => state[REDUCER_KEY].data.selectedCulture;

@@ -8,7 +8,7 @@ import wheatObservation from './observation/wheat';
 import ObservationDetailsModal from './ui/modal/observation/details';
 import toast from './ui/toast';
 import map from './ui/map';
-import filters from './filters';
+import filters from './ui/filters';
 import observationCreationModal from './ui/modal/observation/creation';
 
 export default {

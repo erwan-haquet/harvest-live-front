@@ -6,7 +6,7 @@ import { getSunflowerObservations } from '../../../../selectors/observation/sunf
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
 import { cultures } from '../../../../constants/observation';
-import { getSelectedCulture } from '../../../../selectors/filters';
+import { getSelectedCulture } from '../../../../selectors/ui/filters';
 
 class MarkerListContainer extends Component {
   constructor(props) {

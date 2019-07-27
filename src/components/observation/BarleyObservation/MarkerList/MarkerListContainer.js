@@ -5,7 +5,7 @@ import { fetchBarleyObservationsRequestAction } from '../../../../actions/observ
 import { getBarleyObservations } from '../../../../selectors/observation/barley';
 import { getLocation } from '../../../../selectors/location';
 import MarkerList from './index';
-import { getSelectedCulture } from '../../../../selectors/filters';
+import { getSelectedCulture } from '../../../../selectors/ui/filters';
 import { cultures } from '../../../../constants/observation';
 
 class MarkerListContainer extends Component {

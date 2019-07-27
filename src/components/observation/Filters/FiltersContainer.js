@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Filters from './index';
-import { setSelectedCulture } from '../../../actions/filters';
-import { getSelectedCulture } from '../../../selectors/filters';
+import { setSelectedCulture } from '../../../actions/ui/filters';
+import { getSelectedCulture } from '../../../selectors/ui/filters';
 
 class FiltersContainer extends Component {
   handleClick = culture => {

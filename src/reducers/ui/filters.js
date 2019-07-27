@@ -1,8 +1,8 @@
 import { createReducer } from 'redux-act';
 
-import { setSelectedCulture } from '../actions/filters';
-import InitialState from '../models/initialState';
-import Filters from '../models/filters';
+import { setSelectedCulture } from '../../actions/ui/filters';
+import InitialState from '../../models/initialState';
+import Filters from '../../models/filters';
 
 export const REDUCER_KEY = 'filters';
 
