@@ -3,7 +3,7 @@ import { List } from 'immutable';
 import { addToastAction, removeToastAction } from '../../actions/ui/toast';
 import InitialState from '../../models/initialState';
 
-export const REDUCER_KEY = 'toast';
+export const REDUCER_KEY = 'ui/toast';
 
 const reducer = createReducer(
   {

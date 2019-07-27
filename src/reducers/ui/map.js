@@ -3,7 +3,7 @@ import InitialState from '../../models/initialState';
 import UiMap from '../../models/ui/map';
 import { setStyle } from '../../actions/ui/map';
 
-export const REDUCER_KEY = 'ui-map';
+export const REDUCER_KEY = 'ui/map';
 
 const reducer = createReducer(
   {

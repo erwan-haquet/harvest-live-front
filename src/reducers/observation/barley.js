@@ -7,7 +7,7 @@ import {
 } from '../../actions/observation/barley';
 import InitialState from '../../models/initialState';
 
-export const REDUCER_KEY = 'barley-observation';
+export const REDUCER_KEY = 'observation/barley';
 
 const reducer = createReducer(
   {

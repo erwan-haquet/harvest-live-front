@@ -7,7 +7,7 @@ import {
 } from '../../actions/observation/corn';
 import InitialState from '../../models/initialState';
 
-export const REDUCER_KEY = 'corn-observation';
+export const REDUCER_KEY = 'observation/corn';
 
 const reducer = createReducer(
   {

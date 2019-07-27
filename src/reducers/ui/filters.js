@@ -4,7 +4,7 @@ import { setSelectedCulture } from '../../actions/ui/filters';
 import InitialState from '../../models/initialState';
 import Filters from '../../models/filters';
 
-export const REDUCER_KEY = 'filters';
+export const REDUCER_KEY = 'ui/filters';
 
 const reducer = createReducer(
   {

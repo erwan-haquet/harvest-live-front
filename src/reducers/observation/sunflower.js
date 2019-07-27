@@ -7,7 +7,7 @@ import {
   fetchSunflowerObservationsSuccessAction,
 } from '../../actions/observation/sunflower';
 
-export const REDUCER_KEY = 'sunflower-observation';
+export const REDUCER_KEY = 'observation/sunflower';
 
 const reducer = createReducer(
   {

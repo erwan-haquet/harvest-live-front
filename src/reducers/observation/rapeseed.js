@@ -7,7 +7,7 @@ import {
 } from '../../actions/observation/rapeseed';
 import InitialState from '../../models/initialState';
 
-export const REDUCER_KEY = 'rapeseed-observation';
+export const REDUCER_KEY = 'observation/rapeseed';
 
 const reducer = createReducer(
   {

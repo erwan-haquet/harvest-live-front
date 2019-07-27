@@ -7,7 +7,7 @@ import {
   fetchWheatObservationsSuccessAction,
 } from '../../actions/observation/wheat';
 
-export const REDUCER_KEY = 'wheat-observation';
+export const REDUCER_KEY = 'observation/wheat';
 
 const reducer = createReducer(
   {
