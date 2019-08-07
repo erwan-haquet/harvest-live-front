@@ -1,0 +1,39 @@
+@import '../../../styles/colors';
+
+.wrapper{
+    width:500px;
+    position: absolute;
+    top:170px;
+    right: 20px;
+    z-index: 1201;
+    background:white;
+    height: 500px;
+    max-height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+}
+
+.header{
+    background: $darken-premium;
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0
+  }
+  ::-webkit-scrollbar{
+    background: transparent;
+    width: 0px
+  }
+
+  .closeButton {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    font-size: 25px;
+  }

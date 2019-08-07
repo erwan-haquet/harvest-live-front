@@ -54,6 +54,7 @@
     "redux-act": "^1.7.6",
     "redux-devtools-extension": "^2.13.8",
     "redux-form": "^8.2.4",
-    "redux-saga": "^1.0.2"
+    "redux-saga": "^1.0.2",
+    "ws": "3.3.2"
   }
 }
