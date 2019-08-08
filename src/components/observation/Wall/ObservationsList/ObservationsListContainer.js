@@ -12,7 +12,7 @@ class ObservationsListContainer extends Component {
     render(){
         const {wheatObservations, barleyObservations, cornObservations, rapeseedObservations, sunflowerObservations  } = this.props;
 
-        const allCulturesObservations = wheatObservations.concat(barleyObservations, cornObservations, rapeseedObservations, sunflowerObservations)
+        const allCulturesObservations = wheatObservations.concat(barleyObservations, cornObservations, rapeseedObservations, sunflowerObservations);
 
         return <ObservationList observations={allCulturesObservations} />
     }

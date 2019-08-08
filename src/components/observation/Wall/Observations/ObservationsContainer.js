@@ -9,9 +9,18 @@ import sunflower from '../../../../images/sunflower.jpg'
 
 import WallObservation from './index';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
+import { selectObservationAction } from '../../../../actions/ui/modal/observation/details';
+import { openObservationDetailsModalAction } from '../../../../actions/ui/modal/observation/details';
 
 
 class ObservationsContainer extends Component {
+
+    handleClick = () => {
+        const { dispatch, observation } = this.props
+        dispatch(selectObservationAction(observation));
+        dispatch(openObservationDetailsModalAction());
+    };
+
 
     render() {
 
@@ -35,12 +44,12 @@ class ObservationsContainer extends Component {
         }
 
         const dist = () => {
-            let result = distanceInWordsToNow(observation.createdAt, {locale: fr})
+            let result = distanceInWordsToNow(observation.createdAt, { locale: fr })
             return result;
         }
 
         return (
-            <WallObservation image={image()} observation={observation} distance={dist()} />
+            <WallObservation image={image()} observation={observation} distance={dist()} onClick={this.handleClick} />
         );
     }
 }
