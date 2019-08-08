@@ -3,12 +3,11 @@ import Button from 'react-bootstrap/Button';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChartPie, faTruck } from '@fortawesome/free-solid-svg-icons';
 import cx from 'classnames';
-import { reduxForm } from 'redux-form';
 
 import terreNet from '../../images/terre-net.png';
 import styles from './styles.module.scss';
 import AddObservationButtonContainer from '../buttons/AddObservationButton/AddObservationButtonContainer';
-import AroundButtonContainer from '../buttons/AroundButton/AroundButtonContainer';
+import AroundButtonContainer from '../buttons/ObservationsAroundButton/ObservationsAroundButtonContainer';
 
 const TopBar = () => (
   <div className={styles.wrapper}>
@@ -55,8 +54,4 @@ const TopBar = () => (
   </div>
 );
 
-export default reduxForm({
-  form: 'input',
-  destroyOnUnmount: false,
-  forceUnregisterOnUnmount: true,
-})(TopBar);
+export default TopBar;

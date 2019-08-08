@@ -13,7 +13,7 @@ import FiltersContainer from "./components/observation/Filters/FiltersContainer"
 import ObservationCreationModalContainer from "./components/modals/ObservationCreationModal/ObservationCreationModalContainer";
 import ToastListContainer from "./components/common/toast/ToastList/ToastListContainer";
 import Headband from "./components/Headband";
-import AroundWindowModalContainer from './components/modals/AroundWindowModal/AroundWindowModalContainer'
+import ObservationsAroundMeWindowModalContainer from './components/modals/ObservationsAroundWindowModal/ObservationsAroundWindowModalContainer'
 
 import './App.css';
 import './styles/import.scss';
@@ -29,7 +29,7 @@ const App = () => (
     <MapLayerButtonContainer />
     <FiltersContainer />
     <ObservationCreationModalContainer />
-    <AroundWindowModalContainer />
+    <ObservationsAroundMeWindowModalContainer />
   </Provider>
 );
 

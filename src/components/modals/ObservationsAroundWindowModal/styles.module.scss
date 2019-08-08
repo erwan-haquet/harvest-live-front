@@ -1,0 +1,36 @@
+@import '../../../styles/colors';
+
+.wrapper{
+    width:650px;
+    position: absolute;
+    top:170px;
+    right: 20px;
+    z-index: 1201;
+    background:white;
+    max-height: 500px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow-y: scroll;
+}
+.observationLine{
+  background-color: rebeccapurple
+}
+
+.header{
+    background: $darken-premium;
+    font-weight: bold;
+    text-align: center;
+    height: 75px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    position: -webkit-sticky;
+    position: sticky;
+    top:0
+  }
+  .closeButton {
+    cursor: pointer;
+    position: absolute;
+    right: 5px;
+    top: 0px;
+    font-size: 25px;
+  }
