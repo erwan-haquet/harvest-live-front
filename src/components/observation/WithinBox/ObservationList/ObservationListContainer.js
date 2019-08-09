@@ -19,7 +19,13 @@ class ObservationsListContainer extends Component {
             sunflowerObservations
         );
 
-        return <ObservationList observations={allCulturesObservations} />
+        const sortedObservationsDates = allCulturesObservations.sort(
+            (observationA, observationB) => {
+                return (observationA.createdAt > observationB.createdAt) ? -1 : ((observationA.createdAt < observationB.createdAt) ? 1 :0);
+            }
+        )
+
+        return <ObservationList observations={sortedObservationsDates} />
     }
 }
 
