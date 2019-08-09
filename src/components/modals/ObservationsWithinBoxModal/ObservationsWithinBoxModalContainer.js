@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ObservationsAroundWindowModal from './index';
-import { closeAroundModal } from '../../../actions/ui/modal/around';
-import { isOpen } from '../../../selectors/ui/modal/around'
+import ObservationsWithinBoxModal from './index';
+import { closeWithinBoxModal } from '../../../actions/ui/modal/withinbox';
+import { isOpen } from '../../../selectors/ui/modal/withinbox'
 
-class ObservationsAroundWindowModalContainer extends Component {
+class ObservationsWithinBoxModalContainer extends Component {
     handleClose = () => {
         const { dispatch } = this.props;
-        dispatch(closeAroundModal());
+        dispatch(closeWithinBoxModal());
     };
 
     render() {
@@ -17,7 +17,7 @@ class ObservationsAroundWindowModalContainer extends Component {
         }
 
         return (
-            <ObservationsAroundWindowModal
+            <ObservationsWithinBoxModal
                 onClose={this.handleClose}
             />
         )
@@ -26,4 +26,4 @@ class ObservationsAroundWindowModalContainer extends Component {
 
 export default connect(state => ({
     isOpen: isOpen(state)
-}))(ObservationsAroundWindowModalContainer)
+}))(ObservationsWithinBoxModalContainer)

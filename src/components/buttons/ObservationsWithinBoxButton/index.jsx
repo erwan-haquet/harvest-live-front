@@ -5,11 +5,11 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBookOpen } from '@fortawesome/free-solid-svg-icons';
 import styles from './styles.module.scss';
 
-const AroundButton =({ onClick }) => (
+const ObservationsWithinBoxButton =({ onClick }) => (
     <Button variant="danger" onClick={onClick} className={styles.button}>
         <FontAwesomeIcon icon={faBookOpen} className={styles.icon} />
         <span className={styles.bookMarker}>Autour de moi</span>
     </Button>
 );
 
-export default AroundButton;
+export default ObservationsWithinBoxButton;

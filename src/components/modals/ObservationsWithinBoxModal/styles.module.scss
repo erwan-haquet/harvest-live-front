@@ -1,18 +1,19 @@
 @import '../../../styles/colors';
 
 .wrapper{
-    width:650px;
+    width:670px;
     position: absolute;
-    top:170px;
-    right: 20px;
+    left: 20px;
+    top: 120px;
     z-index: 1201;
     background:white;
-    max-height: 500px;
+    max-height: 600px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow-y: scroll;
 }
-.observationLine{
-  background-color: rebeccapurple
+.observations{
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .header{
@@ -25,7 +26,8 @@
     align-items: center;
     position: -webkit-sticky;
     position: sticky;
-    top:0
+    top:0;
+    z-index: 1202;
   }
   .closeButton {
     cursor: pointer;

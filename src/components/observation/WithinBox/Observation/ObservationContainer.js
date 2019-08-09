@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import fr from 'date-fns';
+import fr from '../../../../../node_modules/date-fns/locale/fr';
 import wheat from '../../../../images/wheat.jpg';
 import barley from '../../../../images/barley.jpg';
 import corn from '../../../../images/corn.jpg';
 import rapeseed from '../../../../images/rapeseed.jpg';
 import sunflower from '../../../../images/sunflower.jpg'
 
-import WallObservation from './index';
+import Observation from './index';
 import distanceInWordsToNow from 'date-fns/distance_in_words_to_now';
 import { selectObservationAction } from '../../../../actions/ui/modal/observation/details';
 import { openObservationDetailsModalAction } from '../../../../actions/ui/modal/observation/details';
 
 
-class ObservationsContainer extends Component {
+class ObservationContainer extends Component {
 
     handleClick = () => {
         const { dispatch, observation } = this.props
@@ -43,14 +43,15 @@ class ObservationsContainer extends Component {
             }
         }
 
+
         const dist = () => {
             let result = distanceInWordsToNow(observation.createdAt, { locale: fr })
             return result;
         }
 
         return (
-            <WallObservation image={image()} observation={observation} distance={dist()} onClick={this.handleClick} />
+            <Observation image={image()} observation={observation} distance={dist()} onClick={this.handleClick} />
         );
     }
 }
-export default connect()(ObservationsContainer)
+export default connect()(ObservationContainer)

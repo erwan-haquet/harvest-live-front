@@ -1,5 +1,5 @@
 import React from 'react';
-import ObservationContainer from '../Observations/ObservationsContainer';
+import ObservationContainer from '../Observation/ObservationContainer';
 
 const ObservationList = ({observations}) =>
     observations.map((observation)=>(

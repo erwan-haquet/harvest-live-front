@@ -10,7 +10,7 @@ import toast from './ui/toast';
 import map from './ui/map';
 import filters from './ui/filters';
 import observationCreationModal from './ui/modal/observation/creation';
-import aroundWindowModal from './ui/modal/around';
+import withinBoxModal from './ui/modal/withinbox';
 
 export default {
   ...location,
@@ -25,5 +25,5 @@ export default {
   ...map,
   ...filters,
   ...observationCreationModal,
-  ...aroundWindowModal
+  ...withinBoxModal
 };

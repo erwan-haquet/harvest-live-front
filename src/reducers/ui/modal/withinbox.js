@@ -1,24 +1,24 @@
 import { createReducer } from 'redux-act';
 
 import {
-    openAroundModal,
-    closeAroundModal
-} from '../../../actions/ui/modal/around';
+    openWithinBoxModal,
+    closeWithinBoxModal
+} from '../../../actions/ui/modal/withinbox';
 
 import InitialState from '../../../models/initialState';
-import AroundModal from '../../../models/ui/modal/around';
+import WithinBoxModal from '../../../models/ui/modal/withinbox';
 
 export const REDUCER_KEY = 'ui/modal/around';
 
 const reducer = createReducer(
     {
-        [openAroundModal]: state =>
+        [openWithinBoxModal]: state =>
             state.setIn(['data', 'isOpen'], true),
-        [closeAroundModal]: state =>
+        [closeWithinBoxModal]: state =>
             state.setIn(['data', 'isOpen'], false)
     },
     new InitialState({
-      data: new AroundModal(),
+      data: new WithinBoxModal(),
     }),
 );
 

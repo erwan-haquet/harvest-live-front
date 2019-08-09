@@ -5,25 +5,29 @@ import Container from 'react-bootstrap/Container';
 import styles from './styles.module.scss';
 import StarRatings from 'react-star-ratings';
 
-const WallObservation = ({ image, observation, distance, onClick }) => (
+const Observation = ({ image, observation, distance, onClick }) => (
     <Container>
-        <Row className="mb-4" onClick={onClick} >
+        <Row className={styles.wrapper} onClick={onClick} >
             <Col className={styles.observationText} xs={3}>
                 <img src={image} alt="culture's name" />
             </Col>
             <Col className={styles.observationText} xs={9}>
-                <p>Culture de {observation.cultureName}</p>
-                <p>Partagée il y a {distance} à {observation.place}  </p>
-                <p><StarRatings
+                <figure>
+                    <h4>Culture de {observation.cultureName}</h4>
+                    <figcaption><small>Partagée il y a {distance} à {observation.place} </small></figcaption>
+                </figure>
+                <div className={styles.starswrapper}> <StarRatings
+
                     rating={observation.yieldNotation}
                     starRatedColor="#F37F2B"
                     numberOfStars={5}
                     name="rating"
-                    starDimension="20px"
-                /></p>
+                    starDimension="18px"
+                />
+                </div>
             </Col>
         </Row >
     </Container >
 );
 
-export default WallObservation;
+export default Observation;
