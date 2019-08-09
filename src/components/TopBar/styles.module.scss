@@ -69,7 +69,11 @@
 .aroundButtonWrapper{
   margin-right: 10px;
 }
-
+@media (max-width:1024px){
+  .aroundButtonWrapper{
+    display: none
+  }
+}
 @media (max-width: 992px) {
   .statisticButton {
     margin-left: auto !important;
