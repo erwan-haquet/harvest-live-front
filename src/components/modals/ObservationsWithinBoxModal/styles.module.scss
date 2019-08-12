@@ -1,38 +1,45 @@
 @import '../../../styles/colors';
-
-.wrapper{
-    width:670px;
+.wrapper {
+    width: 670px;
     position: absolute;
     left: 20px;
     top: 120px;
-    z-index: 1201;
-    background:white;
-    max-height: 600px;
+    z-index: 1199;
+    background: white;
+    max-height: 820px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     overflow-y: scroll;
 }
-.observations{
-  padding-left: 15px;
-  padding-right: 15px;
+
+.observations {
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.header{
+.header {
     background: $darken-premium;
     font-weight: bold;
     text-align: center;
     height: 75px;
-    display:flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     position: -webkit-sticky;
     position: sticky;
-    top:0;
+    top: 0;
     z-index: 1202;
-  }
-  .closeButton {
+}
+
+.closeButton {
     cursor: pointer;
     position: absolute;
     right: 5px;
     top: 0px;
     font-size: 25px;
-  }
+}
+
+@media (max-width: 1026px) {
+    .wrapper {
+        display: none;
+    }
+}

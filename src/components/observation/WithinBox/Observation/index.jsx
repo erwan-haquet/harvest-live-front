@@ -5,7 +5,7 @@ import Container from 'react-bootstrap/Container';
 import styles from './styles.module.scss';
 import StarRatings from 'react-star-ratings';
 
-const Observation = ({ image, observation, distance, onClick }) => (
+const Observation = ({ image, observation, distance, onClick, cultureMethod }) => (
     <Container>
         <Row className={styles.wrapper} onClick={onClick} >
             <Col className={styles.observationText} xs={3}>
@@ -16,7 +16,13 @@ const Observation = ({ image, observation, distance, onClick }) => (
                     <h4>Culture de {observation.cultureName}</h4>
                     <figcaption><small>Partagée il y a {distance} à {observation.place} </small></figcaption>
                 </figure>
-                <div className={styles.starswrapper}> <StarRatings
+                <span className={styles.culturesDetailsWrapper}>
+                    <p>
+                        <small>{cultureMethod} </small>
+                        <small>{observation.yield} q</small>
+                    </p>
+                </span>
+                <div className={styles.starswrapper}><StarRatings
 
                     rating={observation.yieldNotation}
                     starRatedColor="#F37F2B"

@@ -21,6 +21,19 @@ class ObservationContainer extends Component {
         dispatch(openObservationDetailsModalAction());
     };
 
+    getCultivationMethod = method => {
+        switch (method) {
+            case 'conventional':
+                return 'Conventionnelle';
+            case 'simplified cultivation methods':
+                return 'TCS';
+            case 'organic farming':
+                return 'Agriculture biologique';
+            default:
+                return 'NC';
+        }
+    };
+
 
     render() {
 
@@ -49,8 +62,16 @@ class ObservationContainer extends Component {
             return result;
         }
 
-        return (
-            <Observation image={image()} observation={observation} distance={dist()} onClick={this.handleClick} />
+        return ( <
+            Observation
+
+            image = { image() }
+            observation = { observation }
+            distance = { dist() }
+            onClick = { this.handleClick }
+            cultureMethod = { this.getCultivationMethod(observation.cultivationMethod) }
+
+            />
         );
     }
 }
