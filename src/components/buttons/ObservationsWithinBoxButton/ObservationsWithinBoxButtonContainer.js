@@ -2,16 +2,17 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 import ObservationsWithinBoxButton from '../ObservationsWithinBoxButton';
-import { openWithinBoxModal } from '../../../actions/ui/modal/withinbox'
+import { openModal } from '../../../actions/ui/modal/observationsWithinBox'
 
-class ObservationsWithinBoxButtonContainer extends Component{
+class ObservationsWithinBoxButtonContainer extends Component {
     handleClick = () => {
         const { dispatch } = this.props;
-        dispatch(openWithinBoxModal())
+        dispatch(openModal())
     };
 
-    render(){
-        return <ObservationsWithinBoxButton onClick={this.handleClick} />
+    render() {
+        return <ObservationsWithinBoxButton onClick = { this.handleClick }
+        />
     }
 }
 

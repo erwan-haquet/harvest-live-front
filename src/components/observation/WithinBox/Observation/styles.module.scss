@@ -26,12 +26,12 @@
     margin-right: 30px;
 }
 
-.observationText img {
-    height: 9rem;
-    position: relative;
-}
-
 .starswrapper {
     position: absolute;
     bottom: 0px;
+}
+
+.image {
+    max-width: 125px;
+    height: auto;
 }

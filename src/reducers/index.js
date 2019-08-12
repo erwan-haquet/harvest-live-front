@@ -10,20 +10,20 @@ import toast from './ui/toast';
 import map from './ui/map';
 import filters from './ui/filters';
 import observationCreationModal from './ui/modal/observation/creation';
-import withinBoxModal from './ui/modal/withinbox';
+import withinBoxModal from './ui/modal/observationsWithinBox';
 
 export default {
-  ...location,
-  ...askedPosition,
-  ...barleyObservation,
-  ...cornObservation,
-  ...rapeseedObservation,
-  ...sunflowerObservation,
-  ...wheatObservation,
-  ...ObservationDetailsModal,
-  ...toast,
-  ...map,
-  ...filters,
-  ...observationCreationModal,
-  ...withinBoxModal
+    ...location,
+    ...askedPosition,
+    ...barleyObservation,
+    ...cornObservation,
+    ...rapeseedObservation,
+    ...sunflowerObservation,
+    ...wheatObservation,
+    ...ObservationDetailsModal,
+    ...toast,
+    ...map,
+    ...filters,
+    ...observationCreationModal,
+    ...withinBoxModal
 };

@@ -57,7 +57,7 @@ class ObservationContainer extends Component {
         }
 
 
-        const dist = () => {
+        const createdSince = () => {
             let result = distanceInWordsToNow(observation.createdAt, { locale: fr })
             return result;
         }
@@ -67,7 +67,7 @@ class ObservationContainer extends Component {
 
             image = { image() }
             observation = { observation }
-            distance = { dist() }
+            creationDate = { createdSince() }
             onClick = { this.handleClick }
             cultureMethod = { this.getCultivationMethod(observation.cultivationMethod) }
 

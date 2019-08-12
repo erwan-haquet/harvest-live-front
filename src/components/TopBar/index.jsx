@@ -27,7 +27,7 @@ const TopBar = () => (
     <div className={styles.addObservationButtonWrapper}>
       <AddObservationButtonContainer />
     </div>
-    <div className={styles.aroundButtonWrapper}>
+    <div className={styles.observationsWithinBoxButtonWrapper}>
       <ObservationsWithinBoxButtonContainer />
     </div>
     <Button

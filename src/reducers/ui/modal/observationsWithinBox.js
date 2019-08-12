@@ -1,24 +1,23 @@
 import { createReducer } from 'redux-act';
 
 import {
-    openWithinBoxModal,
-    closeWithinBoxModal
-} from '../../../actions/ui/modal/withinbox';
+    openModal,
+    closeModal
+} from '../../../actions/ui/modal/observationsWithinBox';
 
 import InitialState from '../../../models/initialState';
-import WithinBoxModal from '../../../models/ui/modal/withinbox';
+import WithinBoxModal from '../../../models/ui/modal/observationsWithinBox';
 
 export const REDUCER_KEY = 'ui/modal/around';
 
-const reducer = createReducer(
-    {
-        [openWithinBoxModal]: state =>
+const reducer = createReducer({
+        [openModal]: state =>
             state.setIn(['data', 'isOpen'], true),
-        [closeWithinBoxModal]: state =>
+        [closeModal]: state =>
             state.setIn(['data', 'isOpen'], false)
     },
     new InitialState({
-      data: new WithinBoxModal(),
+        data: new WithinBoxModal(),
     }),
 );
 
