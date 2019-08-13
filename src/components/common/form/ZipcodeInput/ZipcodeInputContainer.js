@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { change } from 'redux-form';
 import LatLng from '../../../../models/latLng';
-import ZipcodeInput from "./index";
+import ZipcodeInput from './index';
 
 class ZipcodeInputContainer extends Component {
   handleChange = option => {
@@ -11,7 +11,7 @@ class ZipcodeInputContainer extends Component {
 
     const coordinates = new LatLng({
       longitude: option.value.centre.coordinates[0],
-      latitude: option.value.centre.coordinates[1],
+      latitude: option.value.centre.coordinates[1]
     });
 
     dispatch(change(formName, 'coordinates', coordinates));
@@ -21,26 +21,41 @@ class ZipcodeInputContainer extends Component {
   mapOptionsToValues = options => {
     return options.map(option => ({
       value: option,
-      label: `${option.codesPostaux[0]} ${option.nom}`,
+      label: `${option.codesPostaux[0]} ${option.nom}`
     }));
   };
 
   loadOptions = (inputValue, callback) => {
-    if (!inputValue || inputValue.length !== 5) {
+    if (!inputValue) {
       return callback([]);
     }
 
-    fetch(
-      `https://geo.api.gouv.fr/communes?codePostal=${inputValue}&fields=centre,codesPostaux`,
-    ).then(response => {
-      response.json().then(results => {
+    let resultsArray = [];
+
+    const zipcodePromise = fetch(
+      `https://geo.api.gouv.fr/communes?codePostal=${inputValue}&fields=centre,codesPostaux`
+    );
+    const townPromise = fetch(
+      `https://geo.api.gouv.fr/communes?nom=${inputValue}&fields=centre,codesPostaux`
+    );
+
+    //Two promises are used to get the Geo API response and the results are stored into an array and used as callback
+    Promise.all([zipcodePromise, townPromise])
+      .then(promises =>
+        Promise.all(
+          promises.map(responses =>
+            responses.json().then(response => resultsArray.concat(...response))
+          )
+        )
+      )
+      .then(results => resultsArray.concat(...results))
+      .then(result => {
         if (this.props.mapOptionsToValues) {
-          callback(this.props.mapOptionsToValues(results));
+          callback(this.props.mapOptionsToValues(result));
         } else {
-          callback(this.mapOptionsToValues(results));
+          callback(this.mapOptionsToValues(result));
         }
       });
-    });
   };
 
   render() {
