@@ -26,11 +26,9 @@ class ZipcodeInputContainer extends Component {
   };
 
   loadOptions = (inputValue, callback) => {
-    if (!inputValue) {
+    if (!inputValue || inputValue.length < 3) {
       return callback([]);
     }
-
-    let resultsArray = [];
 
     const zipcodePromise = fetch(
       `https://geo.api.gouv.fr/communes?codePostal=${inputValue}&fields=centre,codesPostaux`
@@ -38,6 +36,8 @@ class ZipcodeInputContainer extends Component {
     const townPromise = fetch(
       `https://geo.api.gouv.fr/communes?nom=${inputValue}&fields=centre,codesPostaux`
     );
+
+    const resultsArray = [];
 
     //Two promises are used to get the Geo API response and the results are stored into an array and used as callback
     Promise.all([zipcodePromise, townPromise])
