@@ -35,7 +35,7 @@ class MarkerListContainer extends Component {
       return null;
     }
 
-    return <MarkerList observations={rapeseedObservations} />;
+    return null;
   }
 }
 
