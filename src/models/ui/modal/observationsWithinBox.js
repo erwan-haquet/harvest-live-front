@@ -1,8 +1,7 @@
 import { Record } from 'immutable';
 
-export const WithinBoxModal = Record({
-    isOpen:false,
-    observation:false
+export const ObservationsWithinBoxModal = Record({
+    isOpen:false
 },);
 
-export default WithinBoxModal;
+export default ObservationsWithinBoxModal;

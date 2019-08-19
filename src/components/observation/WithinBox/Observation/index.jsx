@@ -22,7 +22,7 @@ const Observation = ({ image, observation, creationDate, onClick, cultureMethod 
                         <small>{observation.yield} q</small>
                     </p>
                 </span>
-                <div className={styles.starswrapper}><StarRatings
+                <div className={styles.starsWrapper}><StarRatings
 
                     rating={observation.yieldNotation}
                     starRatedColor="#F37F2B"
