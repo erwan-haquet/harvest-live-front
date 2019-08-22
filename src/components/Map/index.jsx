@@ -7,7 +7,8 @@ import CornMarkerListContainer from '../observation/CornObservation/MarkerList/M
 import RapeseedMarkerListContainer from '../observation/RapeseedObservation/MarkerList/MarkerListContainer';
 import SunflowerMarkerListContainer from '../observation/SunflowerObservation/MarkerList/MarkerListContainer';
 import WheatMarkerListContainer from '../observation/WheatObservation/MarkerList/MarkerListContainer';
-import ObservationsListContainer from '../observation/Observations/ObservationsListContainer';
+import ObservationsListContainer from '../../components/observation/ObservationsMarkers/ObservationsListContainer';
+import MarkerClusterContainer from '../../components/observation/ObservationsClusterMarkers/MarkerClusterContainer';
 
 const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
   return (
@@ -29,6 +30,7 @@ const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
         <RapeseedMarkerListContainer />
         <SunflowerMarkerListContainer />
         <WheatMarkerListContainer />
+        <MarkerClusterContainer />
       </LeafletMap>
     </div>
   );
