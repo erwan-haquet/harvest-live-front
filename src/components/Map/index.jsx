@@ -13,7 +13,7 @@ const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
     <div className={styles.wrapper}>
       <LeafletMap
         maxZoom={14}
-        minZoom={8}
+        minZoom={6}
         center={position}
         zoom={zoom}
         onMoveEnd={onPositionChanged}
