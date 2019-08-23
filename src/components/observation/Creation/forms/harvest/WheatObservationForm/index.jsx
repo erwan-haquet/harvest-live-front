@@ -34,6 +34,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 name="yield"
                 type="number"
                 component={FieldInput}
+                min={0}
                 label="Rendement"
                 append="q"
                 required
@@ -44,6 +45,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 name="humidity"
                 type="number"
                 component={FieldInput}
+                min={0}
                 label="Humidité"
                 append="%"
                 required
@@ -54,6 +56,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 name="specificWeight"
                 type="number"
                 component={FieldInput}
+                min={0}
                 label="Pois spécifique"
                 append="kg/hl"
                 required
@@ -64,6 +67,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 name="protein"
                 type="number"
                 component={FieldInput}
+                min={0}
                 label="Protéines"
                 append="%"
                 required
@@ -74,6 +78,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 name="fallingNumber"
                 type="number"
                 component={FieldInput}
+                min={0}
                 label="Temps de chute"
                 append="s"
             />
@@ -97,6 +102,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="variety"
               type="text"
               component={FieldInput}
+              min={0}
               label="Variété"
             />
           </Col>
@@ -119,6 +125,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="nitrogenQuantityUsed"
               type="number"
               component={FieldInput}
+              min={0}
               label="Quantité d'azote utilisée"
               append="u"
             />
@@ -139,6 +146,7 @@ const WheatObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="targetPrice"
               type="number"
               component={FieldInput}
+              min={0}
               label="Prix objectif de vente"
               append="€/T"
             />

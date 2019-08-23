@@ -34,6 +34,7 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 name="yield"
                 type="number"
                 component={FieldInput}
+                min={0}
                 label="Rendement"
                 append="q"
                 required
@@ -44,6 +45,7 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 name="humidity"
                 type="number"
                 component={FieldInput}
+                min={0}
                 label="Humidité"
                 append="%"
                 required
@@ -68,6 +70,7 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="variety"
               type="text"
               component={FieldInput}
+              min={0}
               label="Variété"
             />
           </Col>
@@ -91,6 +94,7 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="nitrogenQuantityUsed"
               type="number"
               component={FieldInput}
+              min={0}
               label="Quantité d'azote utilisée"
               append="u"
             />
@@ -110,6 +114,7 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="targetPrice"
               type="number"
               component={FieldInput}
+              min={0}
               label="Prix objectif de vente"
               append="€/T"
             />
