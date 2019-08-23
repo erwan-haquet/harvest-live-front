@@ -2,11 +2,6 @@ import React from 'react';
 import { Map as LeafletMap, TileLayer } from 'react-leaflet';
 
 import styles from './styles.module.scss';
-import BarleyMarkerListContainer from '../observation/BarleyObservation/MarkerList/MarkerListContainer';
-import CornMarkerListContainer from '../observation/CornObservation/MarkerList/MarkerListContainer';
-import RapeseedMarkerListContainer from '../observation/RapeseedObservation/MarkerList/MarkerListContainer';
-import SunflowerMarkerListContainer from '../observation/SunflowerObservation/MarkerList/MarkerListContainer';
-import WheatMarkerListContainer from '../observation/WheatObservation/MarkerList/MarkerListContainer';
 import ObservationsListContainer from '../../components/observation/ObservationsMarkers/ObservationsListContainer';
 import MarkerClusterContainer from '../../components/observation/ObservationsClusterMarkers/MarkerClusterContainer';
 
@@ -25,11 +20,6 @@ const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
       >
         <TileLayer url={style} />
         <ObservationsListContainer />
-        <BarleyMarkerListContainer />
-        <CornMarkerListContainer />
-        <RapeseedMarkerListContainer />
-        <SunflowerMarkerListContainer />
-        <WheatMarkerListContainer />
         <MarkerClusterContainer />
       </LeafletMap>
     </div>
