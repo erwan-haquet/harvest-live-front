@@ -12,7 +12,6 @@ class FiltersContainer extends Component {
 
   isActive = culture => {
     const { selectedCulture } = this.props;
-    console.log(selectedCulture)
     return !selectedCulture || selectedCulture === culture;
   };
 
