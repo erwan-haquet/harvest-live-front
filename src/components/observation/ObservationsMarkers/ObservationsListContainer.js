@@ -87,7 +87,7 @@ class ObservationsListContainer extends Component {
       selectedCulture
     ).groupBy(item => item.coordinates);
 
-    return observationsGroupedByCoordinates.map((cluster, coordinates) => {
+    return observationsGroupedByCoordinates.entrySeq().map(([coordinates, cluster]) => {
       if (cluster.isEmpty()) {
         return null;
       }

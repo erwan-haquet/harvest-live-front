@@ -26,10 +26,6 @@ class ObservationDetailsModalModalContainer extends Component {
         });
       });
     }
-
-    if (!prevProps.observation || prevProps.observation.id !== observation.id) {
-      console.log(observation.id);
-    }
   }
 
   getCultivationMethod = method => {
