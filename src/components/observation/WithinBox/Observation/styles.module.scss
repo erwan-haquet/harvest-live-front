@@ -1,38 +1,49 @@
 @import '../../../../styles/colors.scss';
 
 .wrapper {
-    border: 0.2px solid $faded-grey;
-    margin-bottom: 12px;
-    margin-left: 200px;
-    padding-top: 15px;
-    padding-bottom: 15px;
+  min-height: 150px;
+  border: 0.2px solid $faded-grey;
+  margin-bottom: 12px;
+  margin-left: 200px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
 }
 
 .wrapper:hover {
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.75);
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
 }
 
-.observationText {
-    cursor: pointer;
+.title {
+  font-weight: bold;
+  color: $dark-grey;
+  font-size: 1.2em;
+  small {
+    font-size: 0.7em;
+  }
 }
 
-.observationText h4 {
-    font-weight: bold;
-    color: $dark-grey
+.culturesDetailsWrapper {
+  list-style: none;
+  color: $dark-grey;
+  font-size: 0.9em;
+  margin-bottom: 0;
 }
 
-.culturesDetailsWrapper small {
-    margin-right: 30px;
+.culturesDetailsItem {
+  line-height: 2em;
 }
 
-.starsWrapper {
-    position: absolute;
-    bottom: 0px;
+.yieldNotationStars {
+  margin-left: 10px;
 }
 
 .image {
-    max-width: 125px;
-    height: 115px;
+  width: 120px;
+  height: 120px;
+  margin-right: 15px;
+  float: left;
 }

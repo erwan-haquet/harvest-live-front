@@ -1,45 +1,46 @@
 @import '../../../styles/colors';
 .wrapper {
-    width: 670px;
-    position: absolute;
-    left: 20px;
-    top: 120px;
-    z-index: 1199;
-    background: white;
-    max-height: 820px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow-y: scroll;
+  width: 40vw;
+  position: absolute;
+  left: 0px;
+  top: 100px;
+  z-index: 1199;
+  background: white;
+  max-height: 90vh;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow-y: scroll;
 }
 
 .observations {
-    padding-left: 15px;
-    padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .header {
-    background: $darken-premium;
-    font-weight: bold;
-    text-align: center;
-    height: 75px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: -webkit-sticky;
-    position: sticky;
-    top: 0;
-    z-index: 1202;
+  background: $premium;
+  font-weight: bold;
+  text-align: center;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  top: 0;
+  z-index: 1202;
+  color: #fff;
+}
+
+.title {
+  flex: 6;
 }
 
 .closeButton {
-    cursor: pointer;
-    position: absolute;
-    right: 5px;
-    top: 0px;
-    font-size: 25px;
+  cursor: pointer;
+  font-size: 25px;
+  flex: 1;
 }
 
 @media (max-width: 1026px) {
-    .wrapper {
-        display: none;
-    }
+  .wrapper {
+    display: none;
+  }
 }
