@@ -3,7 +3,6 @@ import { Map as LeafletMap, TileLayer } from 'react-leaflet';
 
 import styles from './styles.module.scss';
 import ObservationsListContainer from '../../components/observation/ObservationsMarkers/ObservationsListContainer';
-import MarkerClusterContainer from '../../components/observation/ObservationsClusterMarkers/MarkerClusterContainer';
 
 const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
   return (
@@ -20,7 +19,6 @@ const Map = ({ zoom, position, style, onPositionChanged, onClick }) => {
       >
         <TileLayer url={style} />
         <ObservationsListContainer />
-        <MarkerClusterContainer />
       </LeafletMap>
     </div>
   );
