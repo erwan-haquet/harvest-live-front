@@ -62,7 +62,7 @@ const ObservationDetailsModalModal = ({
               />
             </td>
           </tr>
-          {observation.specificWeight && (
+          {Boolean(observation.specificWeight) && (
             <tr>
               <td>
                 <b>Poid spécifique:</b>
@@ -70,7 +70,7 @@ const ObservationDetailsModalModal = ({
               <td>{observation.specificWeight} kg/hl</td>
             </tr>
           )}
-          {observation.protein && (
+          {Boolean(observation.protein) && (
             <tr>
               <td>
                 <b>Protéine:</b>

@@ -26,32 +26,36 @@ class ZipcodeInputContainer extends Component {
   };
 
   loadOptions = (inputValue, callback) => {
-    if (!inputValue) {
+    if (!inputValue || inputValue.length < 3) {
       return callback([]);
     }
 
-    fetch(
+    const zipcodePromise = fetch(
       `https://geo.api.gouv.fr/communes?codePostal=${inputValue}&fields=centre,codesPostaux`
-    ).then(response => {
-      response.json().then(results => {
-        if (this.props.mapOptionsToValues) {
-          callback(this.props.mapOptionsToValues(results));
-        } else {
-          callback(this.mapOptionsToValues(results));
-        }
-      });
-    });
-    fetch(
+    );
+    const townPromise = fetch(
       `https://geo.api.gouv.fr/communes?nom=${inputValue}&fields=centre,codesPostaux`
-    ).then(response => {
-      response.json().then(results => {
+    );
+
+    const resultsArray = [];
+
+    //Two promises are used to get the Geo API response and the results are stored into an array and used as callback
+    Promise.all([zipcodePromise, townPromise])
+      .then(promises =>
+        Promise.all(
+          promises.map(responses =>
+            responses.json().then(response => resultsArray.concat(...response))
+          )
+        )
+      )
+      .then(results => resultsArray.concat(...results))
+      .then(result => {
         if (this.props.mapOptionsToValues) {
-          callback(this.props.mapOptionsToValues(results));
+          callback(this.props.mapOptionsToValues(result));
         } else {
-          callback(this.mapOptionsToValues(results));
+          callback(this.mapOptionsToValues(result));
         }
       });
-    });
   };
 
   render() {
