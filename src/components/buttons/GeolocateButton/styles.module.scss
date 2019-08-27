@@ -1,8 +1,13 @@
 @import '../../../styles/colors';
-
 .wrapper {
-  position: absolute;
-  top: 230px;
-  right: 10px;
-  z-index: 999;
+    position: absolute;
+    top: 110px;
+    right: 10px;
+    z-index: 999;
+}
+
+@media (max-width: 576px) {
+    .wrapper {
+        top: 150px;
+    }
 }
