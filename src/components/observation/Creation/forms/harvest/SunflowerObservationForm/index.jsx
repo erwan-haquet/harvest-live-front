@@ -112,6 +112,13 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               type="number"
               component={RatingInput}
               label="Note de rendement comparé aux 5 dernières années"
+              legends={{
+                1: 'Nettement inférieur',
+                2: 'Inférieur',
+                3: 'Moyen',
+                4: 'Supérieur',
+                5: 'Nettement supérieur'
+              }}
               append="€/T"
               required
             />
