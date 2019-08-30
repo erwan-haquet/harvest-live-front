@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import LatLng from '../../../models/latLng';
-import { connect } from 'react-redux';
-import ObservationsClusterMarkers from '.';
+import ObservationsClusterMarkerList from '.';
 import { List } from 'immutable';
 
-class MarkerClusterContainer extends Component {
+class ObservationsClusterMarkerListContainer extends Component {
   placeOnCircle = ({ observation, numberOfSlices, slicePosition, center }) => {
     if (numberOfSlices <= 1) {
       return observation;
@@ -36,12 +35,12 @@ class MarkerClusterContainer extends Component {
       });
     });
 
-    return <ObservationsClusterMarkers observations={spreadOutObservations} />;
+    return <ObservationsClusterMarkerList observations={spreadOutObservations} />;
   }
 }
 
-MarkerClusterContainer.defaultProps = {
+ObservationsClusterMarkerListContainer.defaultProps = {
   observations: List()
 };
 
-export default connect()(MarkerClusterContainer);
+export default ObservationsClusterMarkerListContainer;

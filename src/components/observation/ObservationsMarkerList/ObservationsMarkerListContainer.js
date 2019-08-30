@@ -5,8 +5,7 @@ import { getCornObservations } from '../../../selectors/observation/corn';
 import { getBarleyObservations } from '../../../selectors/observation/barley';
 import { getSunflowerObservations } from '../../../selectors/observation/sunflower';
 import { getRapeseedObservations } from '../../../selectors/observation/rapeseed';
-import MarkerClusterContainer from '../ObservationsClusterMarkers/MarkerClusterContainer';
-import Observation from '../Observation';
+import ObservationsClusterMarkerListContainer from '../ObservationsClusterMarkerList/ObservationsClusterMarkerListContainer';
 import { getSelectedCulture } from '../../../selectors/ui/filters';
 import { fetchWheatObservationsRequestAction } from '../../../actions/observation/wheat';
 import { fetchBarleyObservationsRequestAction } from '../../../actions/observation/barley';
@@ -14,6 +13,8 @@ import { fetchRapeseedObservationsRequestAction } from '../../../actions/observa
 import { fetchCornObservationsRequestAction } from '../../../actions/observation/corn';
 import { fetchSunflowerObservationsRequestAction } from '../../../actions/observation/sunflower';
 import { getLocation } from '../../../selectors/location';
+import ObservationContainer from '../Observation/ObservationContainer';
+
 
 class ObservationsListContainer extends Component {
   constructor(props) {
@@ -94,12 +95,12 @@ class ObservationsListContainer extends Component {
 
       if (cluster.size === 1) {
         return (
-          <Observation observation={cluster.first()} key={coordinates} />
+          <ObservationContainer observation={cluster.first()} key={coordinates} />
         );
       }
 
       return (
-        <MarkerClusterContainer
+        <ObservationsClusterMarkerListContainer
           observations={cluster}
           coordinates={coordinates}
           key={coordinates}

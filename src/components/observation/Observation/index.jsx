@@ -1,26 +1,48 @@
 import React from 'react';
+import markerRapeseed from '../../../images/marker-rapeseed.png';
+import markerSunflower from '../../../images/marker-sunflower.png';
+import markerWheat from '../../../images/marker-wheat.png';
+import markerBarley from '../../../images/marker-barley.png';
+import markerCorn from '../../../images/marker-corn.png';
+import Marker from '../../common/Marker';
+import L from 'leaflet';
 
-import WheatMarkerContainer from '../WheatObservation/Marker/MarkerContainer';
-import BarleyMarkerContainer from '../BarleyObservation/Marker/MarkerContainer';
-import RapeseedMarkerContainer from '../RapeseedObservation/Marker/MarkerContainer';
-import CornMarkerContainer from '../CornObservation/Marker/MarkerContainer';
-import SunFlowerMarkerContainer from '../SunflowerObservation/Marker/MarkerContainer';
+const Observation = ({ observation, onClick }) => {
 
-const Observation = ({ observation }) => {
+  var updatedIconUrl = null;
+
   switch (observation.cultureName) {
     case 'Colza':
-      return <RapeseedMarkerContainer observation={observation} />;
+      updatedIconUrl = markerRapeseed;
+      break;
     case 'Blé':
-      return <WheatMarkerContainer observation={observation} />;
+      updatedIconUrl = markerWheat;
+      break;
     case 'Orge':
-      return <BarleyMarkerContainer observation={observation} />;
+      updatedIconUrl = markerBarley;
+      break;
     case 'Maïs':
-      return <CornMarkerContainer observation={observation} />;
+      updatedIconUrl = markerCorn;
+      break;
     case 'Tournesol':
-      return <SunFlowerMarkerContainer observation={observation} />;
+      updatedIconUrl = markerSunflower;
+      break;
     default:
       return null;
   }
+
+  const icon = new L.Icon({
+    iconUrl: updatedIconUrl,
+    shadowUrl:
+      'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+  });
+
+  
+  return <Marker icon={icon} onClick={onClick} latLng={observation.coordinates}  />;
 };
 
 export default Observation;
