@@ -20,44 +20,44 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
         <Row>
           <Col xs={12} md={6}>
             <Field
-                name="place"
-                type="select"
-                component={ZipcodeInputContainer}
-                label="Lieu de la récolte"
-                formName="observation"
-                placeholder="votre code postal"
-                required
+              name="place"
+              type="select"
+              component={ZipcodeInputContainer}
+              label="Lieu de la récolte"
+              formName="observation"
+              placeholder="votre code postal"
+              required
             />
           </Col>
           <Col xs={12} md={6}>
             <Field
-                name="yield"
-                type="number"
-                component={FieldInput}
-                label="Rendement"
-                append="q"
-                required
+              name="yield"
+              type="number"
+              component={FieldInput}
+              label="Rendement"
+              append="q"
+              required
             />
           </Col>
 
           <Col xs={6}>
             <Field
-                name="humidity"
-                type="number"
-                component={FieldInput}
-                label="Humidité"
-                append="%"
-                required
+              name="humidity"
+              type="number"
+              component={FieldInput}
+              label="Humidité"
+              append="%"
+              required
             />
           </Col>
           <Col xs={6}>
             <Field
-                name="specificWeight"
-                type="number"
-                component={FieldInput}
-                label="Pois spécifique"
-                append="kg/hl"
-                required
+              name="specificWeight"
+              type="number"
+              component={FieldInput}
+              label="Pois spécifique"
+              append="kg/hl"
+              required
             />
           </Col>
           <Col xs={12} md={6}>
@@ -117,7 +117,7 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
                 2: 'Inférieur',
                 3: 'Moyen',
                 4: 'Supérieur',
-                5: 'Nettement supérieur'
+                5: 'Nettement supérieur',
               }}
               append="€/T"
               required
@@ -132,10 +132,13 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               append="€/T"
             />
           </Col>
-
         </Row>
         <div className={styles.navigationWrapper}>
-          <NavigationBar previousStep={previousStep} shouldSubmit={true} submitLabel="Suivant" />
+          <NavigationBar
+            previousStep={previousStep}
+            shouldSubmit={true}
+            submitLabel="Suivant"
+          />
         </div>
       </form>
     </Fragment>

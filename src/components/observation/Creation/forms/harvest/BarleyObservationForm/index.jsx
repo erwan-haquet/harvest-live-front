@@ -15,121 +15,121 @@ import LatLng from '../../../../../../models/latLng';
 const BarleyObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
   return (
     <Fragment>
-      <SectionTitle title='Reseignez votre observation' />
+      <SectionTitle title="Reseignez votre observation" />
       <form onSubmit={handleSubmit(onSubmit)}>
         <Row>
           <Col xs={12} md={6}>
             <Field
-              name='place'
-              type='select'
+              name="place"
+              type="select"
               component={ZipcodeInputContainer}
-              label='Lieu de la récolte'
-              formName='observation'
-              placeholder='votre code postal'
+              label="Lieu de la récolte"
+              formName="observation"
+              placeholder="votre code postal"
               required
             />
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name='yield'
-              type='number'
+              name="yield"
+              type="number"
               component={FieldInput}
-              label='Rendement'
-              append='q'
+              label="Rendement"
+              append="q"
               required
             />
           </Col>
           <Col xs={6}>
             <Field
-              name='humidity'
-              type='number'
+              name="humidity"
+              type="number"
               component={FieldInput}
-              label='Humidité'
-              append='%'
+              label="Humidité"
+              append="%"
               required
             />
           </Col>
           <Col xs={6}>
             <Field
-              name='specificWeight'
-              type='number'
+              name="specificWeight"
+              type="number"
               component={FieldInput}
-              label='Pois spécifique'
-              append='kg/hl'
+              label="Pois spécifique"
+              append="kg/hl"
               required
             />
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name='cultivationMethod'
-              type='select'
+              name="cultivationMethod"
+              type="select"
               component={SelectInput}
-              label='Pratique culturale'
+              label="Pratique culturale"
               required
               choices={[
                 { value: 'conventional', label: 'Conventionnel' },
                 { value: 'simplified cultivation methods', label: 'TCS' },
-                { value: 'organic farming', label: 'Bio' }
+                { value: 'organic farming', label: 'Bio' },
               ]}
             />
           </Col>
 
           <Col xs={12} md={6}>
             <Field
-              name='variety'
-              type='text'
+              name="variety"
+              type="text"
               component={FieldInput}
-              label='Variété'
+              label="Variété"
             />
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name='nitrogenProductUsed'
-              type='select'
+              name="nitrogenProductUsed"
+              type="select"
               component={SelectInput}
-              label='Engrais Azoté utilisé'
+              label="Engrais Azoté utilisé"
               choices={[
                 { value: 'Solution Azotée', label: 'Solution Azotée' },
                 { value: 'Ammonitrate', label: 'Ammonitrate' },
                 { value: 'Urée 46', label: 'Urée 46' },
-                { value: 'Autre engrais azoté', label: 'Autre engrais azoté' }
+                { value: 'Autre engrais azoté', label: 'Autre engrais azoté' },
               ]}
             />
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name='nitrogenQuantityUsed'
-              type='number'
+              name="nitrogenQuantityUsed"
+              type="number"
               component={FieldInput}
               label="Quantité d'azote utilisée"
-              append='u'
+              append="u"
             />
           </Col>
 
           <Col xs={12} md={6}>
             <Field
-              name='yieldNotation'
-              type='number'
+              name="yieldNotation"
+              type="number"
               component={RatingInput}
-              label='Note de rendement comparé aux 5 dernières années'
-              append='€/T'
+              label="Note de rendement comparé aux 5 dernières années"
+              append="€/T"
               legends={{
                 1: 'Nettement inférieur',
                 2: 'Inférieur',
                 3: 'Moyen',
                 4: 'Supérieur',
-                5: 'Nettement supérieur'
+                5: 'Nettement supérieur',
               }}
               required
             />
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name='targetPrice'
-              type='number'
+              name="targetPrice"
+              type="number"
               component={FieldInput}
-              label='Prix objectif de vente'
-              append='€/T'
+              label="Prix objectif de vente"
+              append="€/T"
             />
           </Col>
         </Row>
@@ -137,7 +137,7 @@ const BarleyObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
           <NavigationBar
             previousStep={previousStep}
             shouldSubmit={true}
-            submitLabel='Suivant'
+            submitLabel="Suivant"
           />
         </div>
       </form>
@@ -152,6 +152,6 @@ export default reduxForm({
   validate,
   initialValues: {
     yieldNotation: -1,
-    coordinates: new LatLng()
-  }
+    coordinates: new LatLng(),
+  },
 })(BarleyObservationForm);
