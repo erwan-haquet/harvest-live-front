@@ -16,17 +16,17 @@ const RatingInput = ({
     <br />
     <StarRatings
       rating={input.value}
-      starRatedColor='#F37F2B'
-      starHoverColor='#F37F2B'
+      starRatedColor="#F37F2B"
+      starHoverColor="#F37F2B"
       changeRating={input.onChange}
       numberOfStars={5}
-      name='rating'
-      starDimension='40px'
+      name="rating"
+      starDimension="40px"
     />
     {touched && error && (
       <Form.Control.Feedback
-        className='invalid-feedback d-block'
-        type='invalid'
+        className="invalid-feedback d-block"
+        type="invalid"
       >
         {error}
       </Form.Control.Feedback>
