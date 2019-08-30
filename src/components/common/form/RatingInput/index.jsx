@@ -2,8 +2,15 @@ import React from 'react';
 import { Form } from 'react-bootstrap';
 import Label from '../Label';
 import StarRatings from 'react-star-ratings';
+import styles from './styles.module.scss';
 
-const RatingInput = ({ input, meta: { touched, error }, label, required }) => (
+const RatingInput = ({
+  input,
+  meta: { touched, error },
+  label,
+  required,
+  legends
+}) => (
   <Form.Group>
     <Label label={label} required={required} />
     <br />
@@ -23,6 +30,11 @@ const RatingInput = ({ input, meta: { touched, error }, label, required }) => (
       >
         {error}
       </Form.Control.Feedback>
+    )}
+    {input.value > 0 && (
+      <div legends={legends} className={styles.legendWrapper}>
+        {legends[input.value]}
+      </div>
     )}
   </Form.Group>
 );
