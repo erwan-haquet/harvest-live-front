@@ -12,6 +12,9 @@ const validate = values => {
   if (!values.protein) {
     errors.protein = 'Ce champs est requis';
   }
+  if(values.protein <= 0){
+    errors.protein ='Ce champs doit être un nombre supérieur à 0'
+  }
   if (!values.humidity) {
     errors.humidity = 'Ce champs est requis';
   }
@@ -25,3 +28,5 @@ const validate = values => {
 };
 
 export default validate;
+
+
