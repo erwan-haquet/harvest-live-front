@@ -82,7 +82,6 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="variety"
               type="text"
               component={FieldInput}
-              min={0}
               label="Variété"
             />
           </Col>
