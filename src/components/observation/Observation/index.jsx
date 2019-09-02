@@ -9,7 +9,7 @@ import L from 'leaflet';
 
 const Observation = ({ observation, onClick }) => {
 
-  var updatedIconUrl = null;
+  let updatedIconUrl = null;
 
   switch (observation.cultureName) {
     case 'Colza':
