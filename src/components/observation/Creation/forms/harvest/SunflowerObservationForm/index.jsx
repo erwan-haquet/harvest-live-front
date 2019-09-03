@@ -31,33 +31,36 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
           </Col>
           <Col xs={12} md={6}>
             <Field
-              name="yield"
-              type="number"
-              component={FieldInput}
-              label="Rendement"
-              append="q"
-              required
+                name="yield"
+                type="number"
+                component={FieldInput}
+                min={0}
+                label="Rendement"
+                append="q"
+                required
             />
           </Col>
 
           <Col xs={6}>
             <Field
-              name="humidity"
-              type="number"
-              component={FieldInput}
-              label="Humidité"
-              append="%"
-              required
+                name="humidity"
+                type="number"
+                component={FieldInput}
+                min={0}
+                label="Humidité"
+                append="%"
+                required
             />
           </Col>
           <Col xs={6}>
             <Field
-              name="specificWeight"
-              type="number"
-              component={FieldInput}
-              label="Pois spécifique"
-              append="kg/hl"
-              required
+                name="specificWeight"
+                type="number"
+                component={FieldInput}
+                min={0}
+                label="Pois spécifique"
+                append="kg/hl"
+                required
             />
           </Col>
           <Col xs={12} md={6}>
@@ -101,6 +104,7 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="nitrogenQuantityUsed"
               type="number"
               component={FieldInput}
+              min={0}
               label="Quantité d'azote utilisée"
               append="u"
             />
@@ -128,6 +132,7 @@ const SunflowerObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               name="targetPrice"
               type="number"
               component={FieldInput}
+              min={0}
               label="Prix objectif de vente"
               append="€/T"
             />

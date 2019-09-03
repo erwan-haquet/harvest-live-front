@@ -14,12 +14,14 @@ const ZipcodeInput = ({
   handleChange,
   placeholder,
   required,
+  noOptionsMessage,
   ...props
 }) => (
   <Form.Group>
     <Label label={label} required={required} />
     <AsyncSelect
       valueKey="value"
+      noOptionsMessage={()=>'Veuillez entrer un code postal'}
       cacheOptions
       value={value}
       loadOptions={loadOptions}
