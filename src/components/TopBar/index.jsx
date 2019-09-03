@@ -7,6 +7,7 @@ import cx from 'classnames';
 import terreNet from '../../images/terre-net.png';
 import styles from './styles.module.scss';
 import AddObservationButtonContainer from '../buttons/AddObservationButton/AddObservationButtonContainer';
+import ObservationsWithinBoxButtonContainer from '../buttons/ObservationsWithinBoxButton/ObservationsWithinBoxButtonContainer';
 
 const TopBar = () => (
   <div className={styles.wrapper}>
@@ -25,6 +26,9 @@ const TopBar = () => (
     </div>
     <div className={styles.addObservationButtonWrapper}>
       <AddObservationButtonContainer />
+    </div>
+    <div className={styles.observationsWithinBoxButtonWrapper}>
+      <ObservationsWithinBoxButtonContainer />
     </div>
     <Button
       className={styles.statisticButton}

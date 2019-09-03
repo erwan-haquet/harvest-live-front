@@ -1,0 +1,48 @@
+@import '../../../../styles/colors.scss';
+
+.wrapper {
+  min-height: 150px;
+  border: 0.2px solid $faded-grey;
+  margin-bottom: 12px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  cursor: pointer;
+}
+
+.wrapper:hover {
+  -webkit-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  -moz-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  -o-box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+}
+
+.title {
+  font-weight: bold;
+  color: $dark-grey;
+  font-size: 1.2em;
+  small {
+    font-size: 0.7em;
+  }
+}
+
+.culturesDetailsWrapper {
+  list-style: none;
+  color: $dark-grey;
+  font-size: 0.9em;
+  margin-bottom: 0;
+}
+
+.culturesDetailsItem {
+  line-height: 2em;
+}
+
+.yieldNotationStars {
+  margin-left: 10px;
+}
+
+.image {
+  width: 120px;
+  height: 120px;
+  margin-right: 15px;
+  float: left;
+}

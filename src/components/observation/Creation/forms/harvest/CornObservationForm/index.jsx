@@ -20,13 +20,13 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
         <Row>
           <Col xs={12} md={6}>
             <Field
-                name="place"
-                type="select"
-                component={ZipcodeInputContainer}
-                label="Lieu de la récolte"
-                formName="observation"
-                placeholder="votre code postal"
-                required
+              name="place"
+              type="select"
+              component={ZipcodeInputContainer}
+              label="Lieu de la récolte"
+              formName="observation"
+              placeholder="votre code postal"
+              required
             />
           </Col>
           <Col xs={6}>
@@ -104,6 +104,13 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
               type="number"
               component={RatingInput}
               label="Note de rendement comparé aux 5 dernières années"
+              legends={{
+                1: 'Nettement inférieur',
+                2: 'Inférieur',
+                3: 'Moyen',
+                4: 'Supérieur',
+                5: 'Nettement supérieur',
+              }}
               append="€/T"
               required
             />
@@ -120,7 +127,11 @@ const CornObservationForm = ({ handleSubmit, previousStep, onSubmit }) => {
           </Col>
         </Row>
         <div className={styles.navigationWrapper}>
-          <NavigationBar previousStep={previousStep} shouldSubmit={true} submitLabel="Suivant" />
+          <NavigationBar
+            previousStep={previousStep}
+            shouldSubmit={true}
+            submitLabel="Suivant"
+          />
         </div>
       </form>
     </Fragment>
